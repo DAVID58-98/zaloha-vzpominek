@@ -19,17 +19,27 @@
 <title>Záloha vzpomínek – Profesionální digitalizace VHS, Hi8, Mini DV a DVD na USB | Praha</title>
 
 <!-- ============================================================ -->
-<!-- FAVICON – PLACEHOLDER (doplnit URL po nahrání souborů na server) -->
+<!-- FAVICON – kompletní sada (podle Brand kitu, sekce 04)        -->
 <!-- ============================================================ -->
-<!-- 
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="icon" type="image/x-icon" href="favicon.ico">
--->
+<!-- SVG favicon (moderní prohlížeče - ostrý ve všech velikostech) -->
+<link rel="icon" type="image/svg+xml" href="Favicon/favigon-svg.svg">
+<!-- PNG fallback pro starší prohlížeče -->
+<link rel="icon" type="image/png" sizes="32x32" href="Favicon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="Favicon/favicon-16.png">
+<link rel="icon" type="image/png" sizes="96x96" href="Favicon/favicon-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="Favicon/favicon-192.png">
+<!-- Apple touch icon (iOS „přidat na plochu") -->
+<link rel="apple-touch-icon" sizes="180x180" href="Favicon/favicon-180.png">
+<!-- Barva prohlížecí lišty na Androidu / PWA -->
 <meta name="theme-color" content="#fa4d01">
 <meta name="apple-mobile-web-app-title" content="Záloha vzpomínek">
+<!-- Open Graph obrázek (FB, LinkedIn, WhatsApp…) -->
+<meta property="og:image" content="https://www.zaloha-vzpominek.cz/Favicon/favicon-512.png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<!-- Twitter / X karta -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.zaloha-vzpominek.cz/Favicon/favicon-512.png">
 
 <!-- ============================================================ -->
 <!-- GOOGLE FONTS – Unbounded (nadpisy) + Poppins (texty)         -->
@@ -2983,7 +2993,7 @@ tr.pl-min td:first-child { color: var(--black); }
 .zv-cookie-overlay {
   position: fixed;
   bottom: 24px;
-  left: 24px;
+  right: 24px;
   z-index: 10000;
   display: none;
   animation: zv-cookie-slideup 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -3462,8 +3472,7 @@ tr.pl-min td:first-child { color: var(--black); }
       <!-- VHS -->
       <div class="cassette-card reveal">
         <div class="cassette-img-wrap">
-          <!-- POZN: až bude URL na fotku, vložit zde <img src="..." alt="VHS kazeta" loading="lazy"> -->
-          <div class="cassette-placeholder" data-label="VHS"></div>
+          <img src="Kazety/VHS.png" alt="VHS kazeta" loading="lazy">
         </div>
         <h3>VHS</h3>
         <p>Klasické rodinné videokazety z videopřehrávačů.</p>
@@ -3472,7 +3481,7 @@ tr.pl-min td:first-child { color: var(--black); }
       <!-- VHS-C -->
       <div class="cassette-card reveal">
         <div class="cassette-img-wrap">
-          <div class="cassette-placeholder" data-label="VHS-C"></div>
+          <img src="Kazety/VHS-C.png" alt="VHS-C kazeta" loading="lazy">
         </div>
         <h3>VHS-C</h3>
         <p>Malé kazety z rodinných videokamer.</p>
@@ -3481,7 +3490,7 @@ tr.pl-min td:first-child { color: var(--black); }
       <!-- Hi8 / Video8 -->
       <div class="cassette-card reveal">
         <div class="cassette-img-wrap">
-          <div class="cassette-placeholder" data-label="Hi8"></div>
+          <img src="Kazety/Hi8.png" alt="Hi8 / Video8 kazeta" loading="lazy">
         </div>
         <h3>Hi8 / Video8</h3>
         <p>8mm kazety z kamer Sony Handycam.</p>
@@ -3490,7 +3499,7 @@ tr.pl-min td:first-child { color: var(--black); }
       <!-- Mini DV -->
       <div class="cassette-card reveal">
         <div class="cassette-img-wrap">
-          <div class="cassette-placeholder" data-label="Mini DV"></div>
+          <img src="Kazety/Mini%20DV.png" alt="Mini DV kazeta" loading="lazy">
         </div>
         <h3>Mini DV</h3>
         <p>Digitální kazety z přelomu milénia.</p>
@@ -3579,7 +3588,7 @@ tr.pl-min td:first-child { color: var(--black); }
                 <div class="tape-row">
                   <div class="tape-row-left">
                     <div class="tape-thumb" data-label="VHS">
-                      <!-- POZN: až bude URL na fotku, vložit zde <img src="..." alt="VHS"> -->
+                      <img src="Kazety/VHS.png" alt="VHS" loading="lazy">
                     </div>
                     <div class="tape-row-label">VHS<small>klasické velké kazety</small></div>
                   </div>
@@ -3593,7 +3602,7 @@ tr.pl-min td:first-child { color: var(--black); }
                 <div class="tape-row">
                   <div class="tape-row-left">
                     <div class="tape-thumb" data-label="VHS-C">
-                      <!-- POZN: až bude URL na fotku, vložit zde <img src="..." alt="VHS-C"> -->
+                      <img src="Kazety/VHS-C.png" alt="VHS-C" loading="lazy">
                     </div>
                     <div class="tape-row-label">VHS-C<small>malé kazety z kamer</small></div>
                   </div>
@@ -3607,7 +3616,7 @@ tr.pl-min td:first-child { color: var(--black); }
                 <div class="tape-row">
                   <div class="tape-row-left">
                     <div class="tape-thumb" data-label="Hi8">
-                      <!-- POZN: až bude URL na fotku, vložit zde <img src="..." alt="Hi8 / Video8"> -->
+                      <img src="Kazety/Hi8.png" alt="Hi8 / Video8" loading="lazy">
                     </div>
                     <div class="tape-row-label">Hi8 / Video8<small>kazety Sony Handycam</small></div>
                   </div>
@@ -3621,7 +3630,7 @@ tr.pl-min td:first-child { color: var(--black); }
                 <div class="tape-row">
                   <div class="tape-row-left">
                     <div class="tape-thumb" data-label="Mini DV">
-                      <!-- POZN: až bude URL na fotku, vložit zde <img src="..." alt="Mini DV"> -->
+                      <img src="Kazety/Mini%20DV.png" alt="Mini DV" loading="lazy">
                     </div>
                     <div class="tape-row-label">Mini DV<small>digitální kazetky</small></div>
                   </div>
@@ -3805,7 +3814,7 @@ tr.pl-min td:first-child { color: var(--black); }
                   <tr><td><strong>Uložení do cloudu</strong><br><small>do 3 GB záznamu, zabezpečeno heslem</small></td><td class="pl-price">50 Kč</td></tr>
                   <tr><td><strong>Uložení na DVD</strong><br><small>archivační DVD+R DL s prodlouženou životností + obal</small></td><td class="pl-price">50 Kč / ks</td></tr>
                   <tr><td><strong>Digitalizace DVD disku</strong><br><small>cena za 1 ks</small></td><td class="pl-price">250 Kč</td></tr>
-                  <tr><td><strong>Odeslání kazet zpět Balíkovnou</strong><br><small>od 5 kazet zdarma · doručení na adresu 99 Kč · dobírka +19 Kč</small></td><td class="pl-price">69 Kč</td></tr>
+                  <tr><td><strong>Odeslání kazet zpět Balíkovnou</strong><br><small>od zakázky 1.000 Kč zdarma · pojištěno do 50 000 Kč</small></td><td class="pl-price">69 Kč</td></tr>
                   <tr class="pl-min"><td><strong>Minimální cena za zakázku</strong><br><small>při kratším záznamu nebo prázdné kazetě</small></td><td class="pl-price">300 Kč</td></tr>
                 </tbody>
               </table>
@@ -4109,8 +4118,7 @@ tr.pl-min td:first-child { color: var(--black); }
 
       <button class="article-card" data-article="vhs">
         <div class="article-visual">
-          <!-- POZN: až bude URL na fotku, vložit zde <img src="..." alt="Digitalizace VHS kazet" loading="lazy"> -->
-          <div class="article-placeholder">📼</div>
+          <img src="Clanky/vhs.png" alt="Digitalizace VHS kazet" loading="lazy">
         </div>
         <div class="article-body">
           <h4>Digitalizace VHS kazet</h4>
@@ -4121,8 +4129,7 @@ tr.pl-min td:first-child { color: var(--black); }
 
       <button class="article-card" data-article="vhsc">
         <div class="article-visual">
-          <!-- POZN: až bude URL na fotku, vložit zde <img src="..." alt="VHS-C z rodinných kamer" loading="lazy"> -->
-          <div class="article-placeholder">📼</div>
+          <img src="Clanky/vhs-c.png" alt="VHS-C z rodinných kamer" loading="lazy">
         </div>
         <div class="article-body">
           <h4>VHS-C z rodinných kamer</h4>
@@ -4133,8 +4140,7 @@ tr.pl-min td:first-child { color: var(--black); }
 
       <button class="article-card" data-article="hi8">
         <div class="article-visual">
-          <!-- POZN: až bude URL na fotku, vložit zde <img src="..." alt="Hi8 a Video8 ze Sony" loading="lazy"> -->
-          <div class="article-placeholder">📼</div>
+          <img src="Clanky/hi8.png" alt="Hi8 a Video8 ze Sony" loading="lazy">
         </div>
         <div class="article-body">
           <h4>Hi8 a Video8 ze Sony</h4>
@@ -4145,8 +4151,7 @@ tr.pl-min td:first-child { color: var(--black); }
 
       <button class="article-card" data-article="minidv">
         <div class="article-visual">
-          <!-- POZN: až bude URL na fotku, vložit zde <img src="..." alt="Mini DV do PC a na USB" loading="lazy"> -->
-          <div class="article-placeholder">📼</div>
+          <img src="Clanky/minidv.png" alt="Mini DV do PC a na USB" loading="lazy">
         </div>
         <div class="article-body">
           <h4>Mini DV do PC a na USB</h4>
@@ -4157,8 +4162,7 @@ tr.pl-min td:first-child { color: var(--black); }
 
       <button class="article-card" data-article="dvd">
         <div class="article-visual">
-          <!-- POZN: až bude URL na fotku, vložit zde <img src="..." alt="DVD na USB do MP4" loading="lazy"> -->
-          <div class="article-placeholder">📼</div>
+          <img src="Clanky/dvd.png" alt="DVD na USB do MP4" loading="lazy">
         </div>
         <div class="article-body">
           <h4>DVD na USB do MP4</h4>
@@ -4169,8 +4173,7 @@ tr.pl-min td:first-child { color: var(--black); }
 
       <button class="article-card" data-article="darek">
         <div class="article-visual">
-          <!-- POZN: až bude URL na fotku, vložit zde <img src="..." alt="VHS jako originální dárek" loading="lazy"> -->
-          <div class="article-placeholder">📼</div>
+          <img src="Clanky/darek.png" alt="VHS jako originální dárek" loading="lazy">
         </div>
         <div class="article-body">
           <h4>VHS jako originální dárek</h4>
@@ -4181,8 +4184,7 @@ tr.pl-min td:first-child { color: var(--black); }
 
       <button class="article-card" data-article="kapacita">
         <div class="article-visual">
-          <!-- POZN: až bude URL na fotku, vložit zde <img src="..." alt="Kolik se vejde na USB" loading="lazy"> -->
-          <div class="article-placeholder">📼</div>
+          <img src="Clanky/usb.png" alt="Kolik se vejde na USB" loading="lazy">
         </div>
         <div class="article-body">
           <h4>Kolik se vejde na USB</h4>
@@ -4193,8 +4195,7 @@ tr.pl-min td:first-child { color: var(--black); }
 
       <button class="article-card" data-article="neznamy">
         <div class="article-visual">
-          <!-- POZN: až bude URL na fotku, vložit zde <img src="..." alt="Neznámý obsah kazety" loading="lazy"> -->
-          <div class="article-placeholder">📼</div>
+          <img src="Clanky/obsah-kazet.png" alt="Neznámý obsah kazety" loading="lazy">
         </div>
         <div class="article-body">
           <h4>Neznámý obsah kazety</h4>
@@ -4205,8 +4206,7 @@ tr.pl-min td:first-child { color: var(--black); }
 
       <button class="article-card" data-article="oprava">
         <div class="article-visual">
-          <!-- POZN: až bude URL na fotku, vložit zde <img src="..." alt="Oprava poškozených kazet" loading="lazy"> -->
-          <div class="article-placeholder">📼</div>
+          <img src="Clanky/oprava.png" alt="Oprava poškozených kazet" loading="lazy">
         </div>
         <div class="article-body">
           <h4>Oprava poškozených kazet</h4>
@@ -4217,8 +4217,7 @@ tr.pl-min td:first-child { color: var(--black); }
 
       <button class="article-card" data-article="levne">
         <div class="article-visual">
-          <!-- POZN: až bude URL na fotku, vložit zde <img src="..." alt="Proč nekupovat levné převodníky" loading="lazy"> -->
-          <div class="article-placeholder">📼</div>
+          <img src="Clanky/grabber.png" alt="Proč nekupovat levné převodníky" loading="lazy">
         </div>
         <div class="article-body">
           <h4>Proč nekupovat levné převodníky</h4>
@@ -4229,8 +4228,7 @@ tr.pl-min td:first-child { color: var(--black); }
 
       <button class="article-card" data-article="postou">
         <div class="article-visual">
-          <!-- POZN: až bude URL na fotku, vložit zde <img src="..." alt="Zaslání kazet poštou" loading="lazy"> -->
-          <div class="article-placeholder">📼</div>
+          <img src="Clanky/doprava.png" alt="Zaslání kazet poštou" loading="lazy">
         </div>
         <div class="article-body">
           <h4>Zaslání kazet poštou</h4>
@@ -4241,8 +4239,7 @@ tr.pl-min td:first-child { color: var(--black); }
 
       <button class="article-card" data-article="zivotnost">
         <div class="article-visual">
-          <!-- POZN: až bude URL na fotku, vložit zde <img src="..." alt="Životnost kazet" loading="lazy"> -->
-          <div class="article-placeholder">📼</div>
+          <img src="Clanky/zivotnost.png" alt="Životnost kazet" loading="lazy">
         </div>
         <div class="article-body">
           <h4>Životnost kazet</h4>
