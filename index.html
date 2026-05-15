@@ -16,18 +16,18 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="cs_CZ">
 <meta property="og:url" content="https://www.zaloha-vzpominek.cz/">
-<title>Záloha vzpomínek – Profesionální digitalizace VHS, Hi8, Mini DV a DVD na USB | Praha</title>
+<title>Záloha vzpomínek – Digitalizace kazet Praha</title>
 
 <!-- ============================================================ -->
 <!-- FAVICON – kompletní sada (podle Brand kitu, sekce 04)        -->
 <!-- ============================================================ -->
-<!-- SVG favicon (moderní prohlížeče - ostrý ve všech velikostech) -->
-<link rel="icon" type="image/svg+xml" href="Favicon/favigon-svg.svg">
-<!-- PNG fallback pro starší prohlížeče -->
+<!-- Safari/older browsers: PNG primární. Pořadí: prohlížeč použije první vhodnou. -->
 <link rel="icon" type="image/png" sizes="32x32" href="Favicon/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="Favicon/favicon-16.png">
 <link rel="icon" type="image/png" sizes="96x96" href="Favicon/favicon-96.png">
 <link rel="icon" type="image/png" sizes="192x192" href="Favicon/favicon-192.png">
+<!-- SVG (Chrome/Firefox/Edge - vždy ostré, Safari ignoruje) -->
+<link rel="icon" type="image/svg+xml" href="Favicon/favigon-svg.svg">
 <!-- Apple touch icon (iOS „přidat na plochu") -->
 <link rel="apple-touch-icon" sizes="180x180" href="Favicon/favicon-180.png">
 <!-- Barva prohlížecí lišty na Androidu / PWA -->
@@ -909,19 +909,8 @@ img, svg { display: block; max-width: 100%; }
   width: 100%;
   max-width: 460px;
   position: relative;
-  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.25));
-}
-.cassette-wrap::before {
-  /* pozadí ozdoba */
-  content: '';
-  position: absolute;
-  inset: -10%;
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgba(250, 77, 1, 0.1) 0%,
-    transparent 70%
-  );
-  z-index: -1;
+  /* drop-shadow odstraněn - v Safari kombinace s nekonečnou animací (cívky)
+     způsobovala blikání pseudo-elementu kolem. SVG kazeta má vlastní stín uvnitř. */
 }
 @keyframes spin {
   to {
@@ -1217,71 +1206,47 @@ section {
 
 .cassette-card {
   position: relative;
-  background: var(--white);
-  border: 1px solid var(--gray-border);
+  background: transparent; /* průhledné - kazety vypadají, že jsou přímo na webu */
+  border: none;
   border-radius: 18px;
-  padding: 24px 22px 26px;
+  padding: 20px 18px 24px;
   cursor: default;
   text-align: center;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s;
-  overflow: hidden;
+  transition: transform 0.35s ease;
 }
-.cassette-card::before {
-  /* horní oranžový proužek - "tape" akcent */
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--accent), #ff7a3a);
-  transform: scaleX(0.3);
-  transform-origin: left;
-  transition: transform 0.4s ease;
-}
-.cassette-card::after {
-  /* jemný gradient v rohu */
-  content: '';
-  position: absolute;
-  top: -40%; right: -40%;
-  width: 200px; height: 200px;
-  background: radial-gradient(circle, rgba(250,77,1,0.06), transparent 70%);
-  pointer-events: none;
-  transition: opacity 0.4s;
-  opacity: 0.4;
-}
+/* hover - jen lehký posun nahoru, žádné box-shadow ani border (vše průhledné) */
 .cassette-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(13, 13, 13, 0.08);
-  border-color: rgba(250, 77, 1, 0.3);
+  transform: translateY(-8px);
 }
-.cassette-card:hover::before { transform: scaleX(1); }
-.cassette-card:hover::after  { opacity: 1; }
 
 .cassette-img-wrap {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 200px; /* pevná výška = všechny obrázky stejně velké, ať mají různý poměr */
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   position: relative;
   z-index: 1;
 }
 .cassette-img-wrap img {
-  max-width: 100%;
+  max-width: 92%;
   max-height: 100%;
+  width: auto;
+  height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 12px 26px rgba(0,0,0,0.18));
+  filter: drop-shadow(0 14px 28px rgba(0,0,0,0.22));
   transition: transform 0.5s ease;
 }
 .cassette-card:hover .cassette-img-wrap img {
   transform: scale(1.06) rotate(-2deg);
 }
 
-/* Designový placeholder - dokud nemáme fotky */
+/* Placeholder zachovat pro případ, že by se obrázek nenačetl */
 .cassette-placeholder {
   width: 100%;
   height: 100%;
@@ -1312,18 +1277,23 @@ section {
 }
 
 .cassette-card h3 {
-  font-size: 1.22rem;
-  margin-bottom: 8px;
+  font-size: 1.35rem;
+  margin-bottom: 10px;
   letter-spacing: -0.015em;
   position: relative;
   z-index: 1;
+  color: var(--black);
+  transition: color 0.25s;
 }
+.cassette-card:hover h3 { color: var(--accent); }
 .cassette-card p {
   font-size: 0.92rem;
   color: var(--gray-text);
   line-height: 1.55;
   position: relative;
   z-index: 1;
+  max-width: 240px; /* sjednotí šířku textu - všechny popisy budou zalomeny stejně */
+  margin: 0 auto;
 }
 
 /* Pruh "Jednotná cena" */
@@ -1867,18 +1837,14 @@ tr.pl-min td:first-child { color: var(--black); }
 .tape-thumb {
   flex-shrink: 0;
   width: 56px;
-  height: 42px;
-  border-radius: 8px;
-  background:
-    linear-gradient(135deg, rgba(245, 239, 228, 0.9) 0%, rgba(232, 222, 200, 0.9) 100%);
-  border: 1px dashed rgba(13, 13, 13, 0.15);
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden;
 }
 .tape-thumb::before {
+  /* fallback label - jen když není obrázek */
   content: attr(data-label);
   font-family: 'Unbounded', sans-serif;
   font-weight: 600;
@@ -1888,13 +1854,13 @@ tr.pl-min td:first-child { color: var(--black); }
   white-space: nowrap;
 }
 .tape-thumb img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.18));
 }
-.tape-thumb img + ::before { display: none; } /* když je obrázek, schovat label */
 .tape-thumb:has(img)::before { content: none; } /* moderní prohlížeče */
 .tape-row-label {
   font-size: 0.92rem;
@@ -2355,46 +2321,58 @@ tr.pl-min td:first-child { color: var(--black); }
 .article-card {
   flex: 0 0 290px;
   scroll-snap-align: start;
-  background: var(--white);
   border-radius: var(--radius-md);
   border: 1px solid var(--gray-border);
   cursor: pointer;
-  transition: all 0.25s;
+  transition: all 0.3s;
   display: flex;
   flex-direction: column;
   text-align: left;
   width: 100%;
   overflow: hidden;
 }
+/* Alternující barvy pro zpestření - každá lichá bílá, každá sudá lehce do oranžova */
+.article-card:nth-child(odd)  { background: var(--white); }
+.article-card:nth-child(even) {
+  background: linear-gradient(160deg, #fff5ec 0%, #ffe9d6 100%);
+  border-color: rgba(250, 77, 1, 0.18);
+}
 .article-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   border-color: var(--accent);
-  box-shadow: var(--shadow-mid);
+  box-shadow: 0 18px 40px rgba(13, 13, 13, 0.10);
 }
 @media (max-width: 600px) {
-  .article-card { flex: 0 0 82%; }
+  .article-card { flex: 0 0 240px; } /* na mobilu menší - vidět víc karet */
+}
+@media (max-width: 400px) {
+  .article-card { flex: 0 0 220px; }
 }
 
 .article-visual {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 4 / 3; /* vyšší prostor pro obrázek */
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--bg-cream-light) 0%, var(--bg-cream-dark) 100%);
   overflow: hidden;
-  padding: 18px;
-  border-bottom: 1px solid var(--gray-border);
+  padding: 22px 22px 16px;
 }
+/* lichá karta - krémové pozadí; sudá - mírně tmavší oranžový tón */
+.article-card:nth-child(odd)  .article-visual { background: linear-gradient(135deg, var(--bg-cream-light) 0%, var(--bg-cream-dark) 100%); }
+.article-card:nth-child(even) .article-visual { background: linear-gradient(135deg, #ffefe0 0%, #ffd8b8 100%); }
+
 .article-visual img {
   max-width: 100%;
   max-height: 100%;
+  width: auto;
+  height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.18));
-  transition: transform 0.4s ease;
+  filter: drop-shadow(0 10px 22px rgba(0,0,0,0.22));
+  transition: transform 0.45s ease;
 }
 .article-card:hover .article-visual img {
-  transform: scale(1.06) rotate(-2deg);
+  transform: scale(1.08) rotate(-2deg);
 }
 
 /* Placeholder dokud nemáme finální fotky */
@@ -2410,7 +2388,7 @@ tr.pl-min td:first-child { color: var(--black); }
 }
 
 .article-body {
-  padding: 20px 22px 22px;
+  padding: 18px 22px 22px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -2435,6 +2413,14 @@ tr.pl-min td:first-child { color: var(--black); }
   align-items: center;
   gap: 4px;
   align-self: flex-start;
+}
+
+/* Auto-scroll: pro plynulý pohyb dočasně vypnout scroll-snap */
+.articles-slider[data-autoscroll="true"] {
+  scroll-snap-type: none;
+}
+.articles-slider[data-autoscroll="true"].user-scrolling {
+  scroll-snap-type: x mandatory; /* až uživatel scroll sám, vrátit snap */
 }
 
 /* ============================================================
@@ -5204,9 +5190,9 @@ calculate();
         var max = autoTrack.scrollWidth - autoTrack.clientWidth;
         if (autoTrack.scrollLeft >= max - 1) {
           autoTrack.scrollTo({ left: 0, behavior: 'smooth' });
-          pauseUntil = Date.now() + 1000; // dopřát čas smooth scrollu
+          pauseUntil = Date.now() + 1500; // dopřát čas smooth scrollu
         } else {
-          autoTrack.scrollLeft += 0.5;
+          autoTrack.scrollLeft += 1.2; // viditelnější rychlost (~72 px/s při 60fps)
         }
       }
       requestAnimationFrame(tick);
