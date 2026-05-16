@@ -1385,89 +1385,13 @@ section {
   display: block;
   background: #1a1a1a;
 }
-
-/* VHS filtr na PŘED video - kombinace barevné degradace a mírného rozostření */
-.compare-video-before {
-  filter:
-    saturate(0.7)
-    contrast(0.92)
-    brightness(0.95)
-    hue-rotate(-8deg)
-    blur(0.6px);
-  /* lehký posun kvůli efektu "trackingu" */
-}
-.compare-video-after {
-  /* PO video bez filtru - plná kvalita */
-  filter: none;
-}
+/* Filtry odstraněny - VHS efekt je vypálený přímo v souboru svatba-before.mp4.
+   Důvod: mobilní GPU zápasilo s blur+filter+overlay animacemi, video se sekalo. */
 
 /* PŘED – stylizace, vlnky, šum, rámeček */
 .compare-before {
   background: #1a1a1a;
   overflow: hidden;
-}
-.compare-before-inner {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at center, #c89c5c 0%, #8a6437 50%, #3a2810 100%);
-  filter: contrast(0.85) saturate(0.6) blur(0.5px);
-}
-/* rámec VHS */
-.compare-before::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(rgba(0,0,0,0.45), transparent 8%, transparent 92%, rgba(0,0,0,0.45)),
-    linear-gradient(90deg, rgba(0,0,0,0.4), transparent 8%, transparent 92%, rgba(0,0,0,0.4));
-  z-index: 3;
-  pointer-events: none;
-}
-/* šum */
-.compare-before::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='nz'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.45 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23nz)'/%3E%3C/svg%3E");
-  mix-blend-mode: overlay;
-  opacity: 0.7;
-  z-index: 4;
-  pointer-events: none;
-  animation: noiseMove 0.8s steps(6) infinite;
-}
-@keyframes noiseMove {
-  0%   { transform: translate(0, 0); }
-  50%  { transform: translate(2%, -3%); }
-  100% { transform: translate(-2%, 1%); }
-}
-/* scanlines */
-.compare-scanlines {
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    to bottom,
-    transparent 0px,
-    transparent 2px,
-    rgba(0,0,0,0.15) 2px,
-    rgba(0,0,0,0.15) 3px
-  );
-  z-index: 5;
-  pointer-events: none;
-}
-/* tracking line */
-.compare-tracking {
-  position: absolute;
-  left: 0; right: 0;
-  height: 18px;
-  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.18), transparent);
-  z-index: 6;
-  pointer-events: none;
-  animation: trackingMove 5s linear infinite;
-}
-@keyframes trackingMove {
-  0% { top: -20px; }
-  100% { top: 100%; }
 }
 /* HUD na "PŘED" */
 .compare-hud {
@@ -1508,21 +1432,7 @@ section {
 
 /* PO – moderní čistý obraz */
 .compare-after {
-  background: linear-gradient(135deg, #5a8fb8 0%, #a3c4dc 50%, #f0d8a4 100%);
-  /* clip-path nastavi se inline */
-}
-.compare-after-inner {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at 30% 40%, #f5d68e 0%, transparent 50%),
-    radial-gradient(ellipse at 70% 60%, #6b9bc4 0%, #4a7099 60%, #2a4866 100%);
-}
-.compare-after-inner::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.2));
+  background: #1a1a1a;
 }
 .compare-after-clip {
   position: absolute;
@@ -2168,20 +2078,24 @@ tr.pl-min td:first-child { color: var(--black); }
   gap: 12px;
   flex-wrap: wrap;
 }
-/* Tlačítko Sbalit - hezky kontrastní na tmavém pozadí kalkulačky/ceníku */
+/* Tlačítko Sbalit - viditelné jak na tmavém (kalkulačka), tak světlém (ceník) pozadí */
 .calc-collapse-btn {
-  background: transparent;
+  background: rgba(13, 13, 13, 0.85);
   color: var(--bg-cream);
-  border: 2px solid rgba(245, 239, 228, 0.35);
+  border: 2px solid var(--black);
   font-size: 0.92rem;
+  font-weight: 600;
   padding: 12px 22px;
   border-radius: 100px;
   cursor: pointer;
   transition: all 0.2s;
+  font-family: inherit;
 }
 .calc-collapse-btn:hover {
-  background: rgba(245, 239, 228, 0.1);
-  border-color: rgba(245, 239, 228, 0.7);
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--white);
+  transform: translateY(-1px);
 }
 @media (max-width: 600px) {
   .calc-cta { flex-direction: column; align-items: stretch; }
@@ -3575,32 +3489,30 @@ tr.pl-min td:first-child { color: var(--black); }
     <div class="reveal section-center">
       <span class="section-eyebrow">Rozdíl, který uvidíte</span>
       <h2 class="section-title">Z vybledlého šumu zpět <em>k ostrému obrazu.</em></h2>
-      <p class="section-lead">Z vybledlého šumu k ostrému obrazu. Profesionální TBC, redukce šumu a vyvážení barev.</p>
+      <p class="section-lead">Z vybledlého šumu k ostrému obrazu.<br>Profesionální TBC, redukce šumu a vyvážení barev.</p>
     </div>
 
     <div class="compare-wrap reveal">
       <div class="compare-slider" id="compareSlider">
-        <!-- PŘED – stejné video, ale s VHS filtrem -->
+        <!-- PŘED – video s vypáleným VHS efektem (žádné CSS filtry) -->
         <div class="compare-img compare-before">
           <video class="compare-video compare-video-before"
-                 src="Video/svatba.mp4"
+                 src="Video/svatba-before.mp4"
                  autoplay muted loop playsinline preload="metadata"
                  disablepictureinpicture
                  aria-hidden="true"></video>
-          <div class="compare-scanlines"></div>
-          <div class="compare-tracking"></div>
           <div class="compare-hud">
             <div>▶ PLAY</div>
             <div class="compare-hud-rec">REC</div>
           </div>
-          <div class="compare-hud-date">SP 18.06.1995</div>
+          <div class="compare-hud-date">SP 12.08.1998</div>
         </div>
 
-        <!-- PO – stejné video v plné kvalitě -->
+        <!-- PO – čisté video v plné kvalitě -->
         <div class="compare-after-clip" id="compareAfterClip">
           <div class="compare-img compare-after">
             <video class="compare-video compare-video-after"
-                   src="Video/svatba.mp4"
+                   src="Video/svatba-after.mp4"
                    autoplay muted loop playsinline preload="metadata"
                    disablepictureinpicture
                    aria-hidden="true"></video>
