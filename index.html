@@ -1375,9 +1375,35 @@ section {
   background-position: center;
 }
 
+/* === VIDEO uvnitř compare slideru === */
+.compare-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #1a1a1a;
+}
+
+/* VHS filtr na PŘED video - kombinace barevné degradace a mírného rozostření */
+.compare-video-before {
+  filter:
+    saturate(0.7)
+    contrast(0.92)
+    brightness(0.95)
+    hue-rotate(-8deg)
+    blur(0.6px);
+  /* lehký posun kvůli efektu "trackingu" */
+}
+.compare-video-after {
+  /* PO video bez filtru - plná kvalita */
+  filter: none;
+}
+
 /* PŘED – stylizace, vlnky, šum, rámeček */
 .compare-before {
-  background: #2a1a08;
+  background: #1a1a1a;
   overflow: hidden;
 }
 .compare-before-inner {
@@ -2110,6 +2136,19 @@ tr.pl-min td:first-child { color: var(--black); }
   font-weight: 700;
   font-size: 1.8rem;
   color: var(--accent);
+  white-space: nowrap; /* nikdy nezalomit "Kč" pod číslo */
+}
+/* Mobilní zobrazení: cena pod popiskem, vycentrovaná */
+@media (max-width: 600px) {
+  .calc-result-total {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+  }
+  .calc-result-total span:last-child {
+    font-size: 2rem; /* lehce větší - když je sama na řádku, ať vynikne */
+  }
 }
 .calc-min-notice {
   margin-top: 14px;
@@ -2126,6 +2165,27 @@ tr.pl-min td:first-child { color: var(--black); }
   margin-top: 22px;
   display: flex;
   justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+/* Tlačítko Sbalit - hezky kontrastní na tmavém pozadí kalkulačky/ceníku */
+.calc-collapse-btn {
+  background: transparent;
+  color: var(--bg-cream);
+  border: 2px solid rgba(245, 239, 228, 0.35);
+  font-size: 0.92rem;
+  padding: 12px 22px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.calc-collapse-btn:hover {
+  background: rgba(245, 239, 228, 0.1);
+  border-color: rgba(245, 239, 228, 0.7);
+}
+@media (max-width: 600px) {
+  .calc-cta { flex-direction: column; align-items: stretch; }
+  .calc-collapse-btn { width: 100%; }
 }
 
 .calc-empty {
@@ -2212,7 +2272,16 @@ tr.pl-min td:first-child { color: var(--black); }
   scroll-snap-align: start;
 }
 @media (max-width: 600px) {
-  .reviews-slider .review { flex: 0 0 86%; }
+  .reviews-slider {
+    /* padding po stranách = (100% - card_width) / 2; karta je 86% → padding 7% */
+    padding-left: 7%;
+    padding-right: 7%;
+    gap: 14%;
+  }
+  .reviews-slider .review {
+    flex: 0 0 86%;
+    scroll-snap-align: center; /* karta se zacentruje v viewportu */
+  }
 }
 
 /* generické šipky pro slidery */
@@ -2330,7 +2399,10 @@ tr.pl-min td:first-child { color: var(--black); }
   text-align: left;
   width: 100%;
   overflow: hidden;
+  color: var(--black); /* button defaultně dědí systémovou modrou na iOS - explicitně přepsat */
+  font-family: inherit;
 }
+.article-card h4 { color: var(--black); } /* pro jistotu i na h4 */
 /* Alternující barvy pro zpestření - každá lichá bílá, každá sudá lehce do oranžova */
 .article-card:nth-child(odd)  { background: var(--white); }
 .article-card:nth-child(even) {
@@ -3446,10 +3518,9 @@ tr.pl-min td:first-child { color: var(--black); }
     <div class="reveal section-center">
       <span class="section-eyebrow">Jaké kazety digitalizujeme</span>
       <h2 class="section-title">Čtyři <em>klasické formáty</em> – jedna jednotná cena.</h2>
-      <p class="section-lead">VHS, VHS-C, Hi8/Video8 i Mini DV – účtujeme férově dle skutečné délky záznamu. Prázdná místa, šum a TV reklamy nepočítáme.</p>
+      <p class="section-lead">Účtujeme férově dle skutečné délky záznamu. Prázdná místa, šum a TV reklamy nepočítáme.</p>
       <div class="cassettes-unified-price">
         <span>250 Kč / hodina</span>
-        <small>jednotná cena pro všechny formáty</small>
       </div>
     </div>
 
@@ -3509,9 +3580,13 @@ tr.pl-min td:first-child { color: var(--black); }
 
     <div class="compare-wrap reveal">
       <div class="compare-slider" id="compareSlider">
-        <!-- PŘED – stylizovaný VHS obraz -->
+        <!-- PŘED – stejné video, ale s VHS filtrem -->
         <div class="compare-img compare-before">
-          <div class="compare-before-inner"></div>
+          <video class="compare-video compare-video-before"
+                 src="Video/svatba.mp4"
+                 autoplay muted loop playsinline preload="metadata"
+                 disablepictureinpicture
+                 aria-hidden="true"></video>
           <div class="compare-scanlines"></div>
           <div class="compare-tracking"></div>
           <div class="compare-hud">
@@ -3521,10 +3596,14 @@ tr.pl-min td:first-child { color: var(--black); }
           <div class="compare-hud-date">SP 18.06.1995</div>
         </div>
 
-        <!-- PO – moderní obraz -->
+        <!-- PO – stejné video v plné kvalitě -->
         <div class="compare-after-clip" id="compareAfterClip">
           <div class="compare-img compare-after">
-            <div class="compare-after-inner"></div>
+            <video class="compare-video compare-video-after"
+                   src="Video/svatba.mp4"
+                   autoplay muted loop playsinline preload="metadata"
+                   disablepictureinpicture
+                   aria-hidden="true"></video>
           </div>
         </div>
 
@@ -3766,6 +3845,7 @@ tr.pl-min td:first-child { color: var(--black); }
 
             <div class="calc-cta">
               <a href="#kontakt" class="btn btn-primary" onclick="prefillContactForm()">Nezávazně poptat přesnou cenu →</a>
+              <button type="button" class="btn btn-secondary calc-collapse-btn" onclick="collapseCalc()">Sbalit kalkulačku ↑</button>
             </div>
 
           </div>
@@ -3836,6 +3916,9 @@ tr.pl-min td:first-child { color: var(--black); }
                   <tr><td>21 a více hodin záznamu</td><td class="pl-price">199 Kč/h <small>(−20 %)</small></td></tr>
                 </tbody>
               </table>
+            </div>
+            <div class="calc-cta" style="margin-top:18px;">
+              <button type="button" class="btn btn-secondary calc-collapse-btn" onclick="collapsePricelist()">Sbalit ceník ↑</button>
             </div>
           </div>
         </div>
@@ -4848,8 +4931,25 @@ function toggleCalc() {
   setTimeout(calculate, 50);
 }
 
+function collapseCalc() {
+  var el = document.getElementById('calcToggle');
+  el.classList.remove('open');
+  // jemně odscrollovat na začátek kalkulačky, aby uživatel viděl, kam se sbalila
+  setTimeout(function() {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 50);
+}
+
 function togglePricelist() {
   document.getElementById('pricelistToggle').classList.toggle('open');
+}
+
+function collapsePricelist() {
+  var el = document.getElementById('pricelistToggle');
+  el.classList.remove('open');
+  setTimeout(function() {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 50);
 }
 
 function adjustTape(type, delta) {
@@ -5144,6 +5244,29 @@ calculate();
     if (dragging) move(e.touches[0].clientX);
   }, { passive: true });
   window.addEventListener('touchend', function() { dragging = false; });
+
+  // Synchronizace dvou videí (PŘED a PO musí hrát stejný frame)
+  var videoBefore = slider.querySelector('.compare-video-before');
+  var videoAfter  = slider.querySelector('.compare-video-after');
+  if (videoBefore && videoAfter) {
+    // Vyrovnat čas: kdykoliv se PO video posune, dorovnat PŘED
+    videoAfter.addEventListener('timeupdate', function() {
+      if (Math.abs(videoBefore.currentTime - videoAfter.currentTime) > 0.15) {
+        videoBefore.currentTime = videoAfter.currentTime;
+      }
+    });
+    // Pokus o autoplay (iOS někdy autoplay vyžaduje user interaction; muted+playsinline většinou stačí)
+    var tryPlay = function() {
+      var pBefore = videoBefore.play();
+      var pAfter = videoAfter.play();
+      if (pBefore && pBefore.catch) pBefore.catch(function(){});
+      if (pAfter && pAfter.catch) pAfter.catch(function(){});
+    };
+    tryPlay();
+    // Pokud autoplay zablokován, spustit při prvním scroll/touch
+    document.addEventListener('scroll', tryPlay, { once: true, passive: true });
+    document.addEventListener('touchstart', tryPlay, { once: true, passive: true });
+  }
 })();
 
 
