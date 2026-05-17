@@ -1,0 +1,30 @@
+{
+  "name": "Záloha vzpomínek",
+  "short_name": "Záloha vzpomínek",
+  "description": "Profesionální digitalizace VHS, Hi8, Mini DV a DVD na USB. Praha.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5efe4",
+  "theme_color": "#fa4d01",
+  "lang": "cs",
+  "icons": [
+    {
+      "src": "Favicon/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "Favicon/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "Favicon/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

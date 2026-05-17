@@ -19,27 +19,32 @@
 <title>Záloha vzpomínek – Digitalizace kazet | Praha</title>
 
 <!-- ============================================================ -->
-<!-- FAVICON – kompletní sada (podle Brand kitu, sekce 04)        -->
+<!-- FAVICON – kompletní sada (dle Google Search docs + Brand kit) -->
 <!-- ============================================================ -->
-<!-- Safari/older browsers: PNG primární. Pořadí: prohlížeč použije první vhodnou. -->
-<link rel="icon" type="image/png" sizes="32x32" href="Favicon/favicon-32.png">
+<!-- Klasická ICO ikona (primární favicon dle Google Search guidelines) -->
+<link rel="icon" href="Favicon/favicon-ICO.ico" sizes="any">
+<!-- PNG varianty pro různá rozlišení -->
 <link rel="icon" type="image/png" sizes="16x16" href="Favicon/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="Favicon/favicon-32.png">
 <link rel="icon" type="image/png" sizes="96x96" href="Favicon/favicon-96.png">
 <link rel="icon" type="image/png" sizes="192x192" href="Favicon/favicon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="Favicon/favicon-512.png">
 <!-- SVG (Chrome/Firefox/Edge - vždy ostré, Safari ignoruje) -->
 <link rel="icon" type="image/svg+xml" href="Favicon/favigon-svg.svg">
 <!-- Apple touch icon (iOS „přidat na plochu") -->
 <link rel="apple-touch-icon" sizes="180x180" href="Favicon/favicon-180.png">
+<!-- Web App Manifest (Android/PWA - Chrome doporučuje) -->
+<link rel="manifest" href="site.webmanifest">
 <!-- Barva prohlížecí lišty na Androidu / PWA -->
 <meta name="theme-color" content="#fa4d01">
 <meta name="apple-mobile-web-app-title" content="Záloha vzpomínek">
 <!-- Open Graph obrázek (FB, LinkedIn, WhatsApp…) -->
-<meta property="og:image" content="https://www.zaloha-vzpominek.cz/Favicon/favicon-512.png">
+<meta property="og:image" content="https://www.zalohavzpominek.cz/Favicon/favicon-512.png">
 <meta property="og:image:width" content="512">
 <meta property="og:image:height" content="512">
 <!-- Twitter / X karta -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://www.zaloha-vzpominek.cz/Favicon/favicon-512.png">
+<meta name="twitter:image" content="https://www.zalohavzpominek.cz/Favicon/favicon-512.png">
 
 <!-- ============================================================ -->
 <!-- GOOGLE FONTS – Unbounded (nadpisy) + Poppins (texty)         -->
@@ -1396,38 +1401,43 @@ section {
 /* HUD na "PŘED" */
 .compare-hud {
   position: absolute;
-  top: 18px;
-  left: 20px;
+  top: 28px;
+  left: 32px;
   font-family: 'VT323', monospace;
   color: #fff;
-  font-size: 1rem;
+  font-size: 1.4rem;
   z-index: 7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
   letter-spacing: 0.08em;
 }
 .compare-hud-rec {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  margin-top: 4px;
+  gap: 8px;
+  margin-top: 6px;
 }
 .compare-hud-rec::before {
   content: '';
-  width: 9px;
-  height: 9px;
+  width: 11px;
+  height: 11px;
   background: #ff2222;
   border-radius: 50%;
   animation: recBlink 1.2s steps(1) infinite;
 }
 .compare-hud-date {
   position: absolute;
-  bottom: 18px;
-  right: 20px;
+  top: 28px;          /* změněno: z bottom na top - pravý horní roh */
+  right: 32px;
   font-family: 'VT323', monospace;
   color: #fff;
-  font-size: 0.95rem;
+  font-size: 1.25rem;
   z-index: 7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+  letter-spacing: 0.06em;
+}
+@media (max-width: 600px) {
+  .compare-hud { top: 18px; left: 20px; font-size: 1.1rem; }
+  .compare-hud-date { top: 18px; right: 20px; font-size: 1rem; }
 }
 
 /* PO – moderní čistý obraz */
@@ -1489,13 +1499,13 @@ section {
 }
 .compare-label-before {
   left: 18px;
-  background: rgba(0,0,0,0.55);
+  background: var(--accent);
   color: #fff;
 }
 .compare-label-after {
   right: 18px;
-  background: rgba(255,255,255,0.85);
-  color: var(--black);
+  background: var(--accent);
+  color: #fff;
 }
 
 .compare-hint {
@@ -3308,7 +3318,7 @@ tr.pl-min td:first-child { color: var(--black); }
       </h1>
 
       <p class="hero-sub">
-        Zachráníme vaše vzpomínky dříve, než je čas smaže. Profesionální převod kazet do digitální podoby.
+        Zachráníme vaše vzpomínky dříve, než je čas smaže.<br>Profesionální převod kazet do digitální podoby.
       </p>
 
       <div class="hero-actions">
@@ -3432,7 +3442,7 @@ tr.pl-min td:first-child { color: var(--black); }
     <div class="reveal section-center">
       <span class="section-eyebrow">Jaké kazety digitalizujeme</span>
       <h2 class="section-title">Čtyři <em>klasické formáty</em> – jedna jednotná cena.</h2>
-      <p class="section-lead">Účtujeme férově dle skutečné délky záznamu. Prázdná místa, šum a TV reklamy nepočítáme.</p>
+      <p class="section-lead">Účtujeme férově dle skutečné délky záznamu.<br>Prázdná místa, šum a TV reklamy nepočítáme.</p>
       <div class="cassettes-unified-price">
         <span>250 Kč / hodina</span>
       </div>
@@ -3488,8 +3498,8 @@ tr.pl-min td:first-child { color: var(--black); }
   <div class="container">
     <div class="reveal section-center">
       <span class="section-eyebrow">Rozdíl, který uvidíte</span>
-      <h2 class="section-title">Z vybledlého šumu zpět <em>k ostrému obrazu.</em></h2>
-      <p class="section-lead">Z vybledlého šumu k ostrému obrazu.<br>Profesionální TBC, redukce šumu a vyvážení barev.</p>
+      <h2 class="section-title">Z vybledlého šumu <em>zpět.</em></h2>
+      <p class="section-lead">Profesionální TBC, redukce šumu a vyvážení barev.<br>Autentický výsledek bez zásahů AI.</p>
     </div>
 
     <div class="compare-wrap reveal">
