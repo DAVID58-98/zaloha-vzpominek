@@ -21,8 +21,8 @@
 <!-- ============================================================ -->
 <!-- FAVICON – kompletní sada (dle Google Search docs + Brand kit) -->
 <!-- ============================================================ -->
-<!-- Klasická ICO ikona (primární favicon dle Google Search guidelines) -->
-<link rel="icon" href="Favicon/favicon-ICO.ico" sizes="any">
+<!-- Klasická ICO ikona (primární favicon dle Google Search guidelines, hostovaná v rootu) -->
+<link rel="icon" href="favicon.ico" sizes="any">
 <!-- PNG varianty pro různá rozlišení -->
 <link rel="icon" type="image/png" sizes="16x16" href="Favicon/favicon-16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="Favicon/favicon-32.png">
@@ -1157,16 +1157,25 @@ section {
   border-color: var(--accent);
 }
 .why-icon {
-  width: 56px;
-  height: 56px;
-  background: var(--accent-soft);
-  color: var(--accent);
-  border-radius: 14px;
+  width: 84px;
+  height: 84px;
+  background: linear-gradient(135deg, var(--bg-cream-light), var(--bg-cream-dark));
+  border-radius: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
+  transition: transform 0.4s ease, background 0.4s;
+}
+.why-card:hover .why-icon {
+  transform: scale(1.06) rotate(-3deg);
+  background: linear-gradient(135deg, #fff0e2, #ffd9b8);
+}
+.why-icon img {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  display: block;
 }
 .why-card h3 {
   font-size: 1.2rem;
@@ -2138,31 +2147,69 @@ tr.pl-min td:first-child { color: var(--black); }
 
 .benefit {
   display: flex;
-  gap: 18px;
-  padding: 24px;
+  gap: 20px;
+  padding: 26px 24px;
   background: var(--white);
   border-radius: var(--radius-md);
   border: 1px solid var(--gray-border);
+  transition: all 0.3s ease;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
 }
+.benefit::before {
+  /* dekorativní oranžový gradient v rohu - viditelný při hoveru */
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(250, 77, 1, 0.10), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.35s;
+  pointer-events: none;
+}
+.benefit:hover {
+  border-color: rgba(250, 77, 1, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(13, 13, 13, 0.06);
+}
+.benefit:hover::before { opacity: 1; }
+
 .benefit-icon {
-  width: 46px;
-  height: 46px;
-  background: var(--black);
-  color: var(--accent);
-  border-radius: 12px;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--bg-cream-light), var(--bg-cream-dark));
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  font-size: 1.2rem;
+  transition: transform 0.35s ease, background 0.35s;
+}
+.benefit:hover .benefit-icon {
+  transform: scale(1.08) rotate(-4deg);
+  background: linear-gradient(135deg, #fff0e2, #ffd9b8);
+}
+.benefit-icon img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  display: block;
+}
+.benefit-content {
+  flex: 1;
+  min-width: 0;
 }
 .benefit h4 {
-  font-size: 1.02rem;
+  font-size: 1.05rem;
   margin-bottom: 6px;
 }
 .benefit p {
   font-size: 0.9rem;
   color: var(--gray-text);
+  line-height: 1.5;
 }
 
 /* ============================================================
@@ -3292,7 +3339,7 @@ tr.pl-min td:first-child { color: var(--black); }
   <div class="container hero-grid">
 
     <div class="hero-content">
-      <span class="hero-eyebrow status-pill"><span class="status-dot"></span>Přijímáme nové zakázky</span>
+      <span class="hero-eyebrow status-pill"><span class="status-dot"></span>Aktuálně přijímáme nové zakázky</span>
 
       <h1 class="hero-title">
         <span class="line-1">
@@ -3442,7 +3489,7 @@ tr.pl-min td:first-child { color: var(--black); }
     <div class="reveal section-center">
       <span class="section-eyebrow">Jaké kazety digitalizujeme</span>
       <h2 class="section-title">Čtyři <em>klasické formáty</em> – jedna jednotná cena.</h2>
-      <p class="section-lead">Prázdná místa, šum a TV reklamy nepočítáme.<br>Účtujeme férově dle skutečné délky záznamu</p>
+      <p class="section-lead">Účtujeme férově dle skutečné délky záznamu.<br>Prázdná místa, šum a TV reklamy nepočítáme.</p>
       <div class="cassettes-unified-price">
         <span>250 Kč / hodina</span>
       </div>
@@ -3498,7 +3545,7 @@ tr.pl-min td:first-child { color: var(--black); }
   <div class="container">
     <div class="reveal section-center">
       <span class="section-eyebrow">Rozdíl, který uvidíte</span>
-      <h2 class="section-title">Z vybledlého šumu <em>zpět k ostrému obrazu.</em></h2>
+      <h2 class="section-title">Z vybledlého šumu <em>zpět.</em></h2>
       <p class="section-lead">Profesionální TBC, redukce šumu a vyvážení barev.<br>Autentický výsledek bez zásahů AI.</p>
     </div>
 
@@ -3906,48 +3953,48 @@ tr.pl-min td:first-child { color: var(--black); }
     <div class="benefits-grid">
 
       <div class="benefit reveal">
-        <div class="benefit-icon">📍</div>
-        <div>
+        <div class="benefit-icon"><img src="Podminky/place.png" alt="" loading="lazy"></div>
+        <div class="benefit-content">
           <h4>Osobní předání v Praze</h4>
           <p>Kazety si můžeme předat osobně v provozovně Praha 4 – Krč. Nemusíte nikam nic posílat a riskovat ztrátu.</p>
         </div>
       </div>
 
       <div class="benefit reveal">
-        <div class="benefit-icon">🤝</div>
-        <div>
+        <div class="benefit-icon"><img src="Podminky/hand.png" alt="" loading="lazy"></div>
+        <div class="benefit-content">
           <h4>Bez záloh předem</h4>
           <p>Nic neplatíte dopředu. Až si výsledek osobně zkontrolujete a budete spokojeni, teprve pak zaplatíte.</p>
         </div>
       </div>
 
       <div class="benefit reveal">
-        <div class="benefit-icon">⚙️</div>
-        <div>
+        <div class="benefit-icon"><img src="Podminky/gear.png" alt="" loading="lazy"></div>
+        <div class="benefit-content">
           <h4>Profesionální technika</h4>
           <p>Pracujeme s rekordéry Panasonic NV-HS1000 a převodníky Canopus ADVC 300 s TBC – zárukou klidného a věrného obrazu.</p>
         </div>
       </div>
 
       <div class="benefit reveal">
-        <div class="benefit-icon">🎯</div>
-        <div>
+        <div class="benefit-icon"><img src="Podminky/time.png" alt="" loading="lazy"></div>
+        <div class="benefit-content">
           <h4>Účtujeme jen čistý čas</h4>
           <p>Prázdná místa, šum a televizní reklamy neplatíte. Účtujeme férově dle skutečné délky vašeho záznamu.</p>
         </div>
       </div>
 
       <div class="benefit reveal">
-        <div class="benefit-icon">💳</div>
-        <div>
+        <div class="benefit-icon"><img src="Podminky/paycard.png" alt="" loading="lazy"></div>
+        <div class="benefit-content">
           <h4>Karta, hotovost i QR</h4>
           <p>Žádné „bohužel jen v hotovosti“. Platíte tak, jak je vám pohodlné – samozřejmost platebního terminálu.</p>
         </div>
       </div>
 
       <div class="benefit reveal">
-        <div class="benefit-icon">🔒</div>
-        <div>
+        <div class="benefit-icon"><img src="Podminky/backup.PNG" alt="" loading="lazy"></div>
+        <div class="benefit-content">
           <h4>Záloha 12 měsíců zdarma</h4>
           <p>Po dobu jednoho roku vám záznam uchováváme. Pokud USB ztratíte, kdykoliv vám obsah nahrajeme znovu.</p>
         </div>
@@ -4067,21 +4114,21 @@ tr.pl-min td:first-child { color: var(--black); }
     <div class="why-grid">
       <div class="why-card reveal">
         <div class="why-card-number">01</div>
-        <div class="why-icon">⏳</div>
+        <div class="why-icon"><img src="Podminky/movie.png" alt="" loading="lazy"></div>
         <h3>Degradace pásky</h3>
         <p>Oxid železa se vlivem vlhkosti odlupuje, barvy blednou, obraz šumí. Sticky Shed Syndrome dokáže zničit záznam během jediné dekády.</p>
       </div>
 
       <div class="why-card reveal">
         <div class="why-card-number">02</div>
-        <div class="why-icon">📺</div>
+        <div class="why-icon"><img src="Podminky/player.png" alt="" loading="lazy"></div>
         <h3>Mizící technika</h3>
         <p>Výroba VHS přehrávačů skončila před lety. Funkční kamery Sony Hi8 a Mini DV jsou raritou. Bez profesionální techniky kazetu neotevřete.</p>
       </div>
 
       <div class="why-card reveal">
         <div class="why-card-number">03</div>
-        <div class="why-icon">🍄</div>
+        <div class="why-icon"><img src="Podminky/mold.png" alt="" loading="lazy"></div>
         <h3>Plíseň a vlhkost</h3>
         <p>Pokud kazeta ležela ve sklepě, může se na pásce vytvořit plíseň. Zničí nejen kazetu, ale i přehrávač, kam ji vložíte.</p>
       </div>
