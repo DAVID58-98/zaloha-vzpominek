@@ -9,6 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Záloha vzpomínek">
+<meta name="seznam-wmt" content="QxTx0oz06wwkUAWj432CzhJT2kNIo394">
 
 <!-- ============================================================ -->
 <!-- TITLE + DESCRIPTION (Google SERP)                            -->
@@ -83,6 +84,7 @@
   "description": "Profesionální digitalizace VHS, VHS-C, Hi8, Video8, Mini DV a DVD kazet na USB. Špičková technika Panasonic NV-HS1000 + Canopus ADVC 300 s TBC.",
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "Přímětická 10",
     "addressLocality": "Praha 4 – Krč",
     "addressRegion": "Hlavní město Praha",
     "postalCode": "140 00",
@@ -102,6 +104,13 @@
   "areaServed": {
     "@type": "Country",
     "name": "Česká republika"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "187",
+    "bestRating": "5",
+    "worstRating": "1"
   },
   "makesOffer": {
     "@type": "Offer",
@@ -166,7 +175,7 @@
 <!-- ============================================================ -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=VT323&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=VT323&display=swap" rel="stylesheet">
 
 <!-- Web3Forms client script (řeší hCaptcha automaticky) je načten před </body> -->
 
@@ -4269,7 +4278,7 @@ tr.pl-min td:first-child { color: var(--black); }
       <button class="slider-arrow slider-arrow-next" aria-label="Další" data-target="articlesTrack" data-dir="next">›</button>
       <div class="articles-slider" id="articlesTrack" data-autoscroll="true">
 
-      <button class="article-card" data-article="vhs">
+      <button class="article-card" id="clanek-vhs" data-article="vhs">
         <div class="article-visual">
           <img src="Clanky/vhs.png" alt="Digitalizace VHS kazet" loading="lazy">
         </div>
@@ -4280,7 +4289,7 @@ tr.pl-min td:first-child { color: var(--black); }
         </div>
       </button>
 
-      <button class="article-card" data-article="vhsc">
+      <button class="article-card" id="clanek-vhsc" data-article="vhsc">
         <div class="article-visual">
           <img src="Clanky/vhs-c.png" alt="VHS-C z rodinných kamer" loading="lazy">
         </div>
@@ -4291,7 +4300,7 @@ tr.pl-min td:first-child { color: var(--black); }
         </div>
       </button>
 
-      <button class="article-card" data-article="hi8">
+      <button class="article-card" id="clanek-hi8" data-article="hi8">
         <div class="article-visual">
           <img src="Clanky/hi8.png" alt="Hi8 a Video8 ze Sony" loading="lazy">
         </div>
@@ -4302,7 +4311,7 @@ tr.pl-min td:first-child { color: var(--black); }
         </div>
       </button>
 
-      <button class="article-card" data-article="minidv">
+      <button class="article-card" id="clanek-minidv" data-article="minidv">
         <div class="article-visual">
           <img src="Clanky/minidv.png" alt="Mini DV do PC a na USB" loading="lazy">
         </div>
@@ -4313,7 +4322,7 @@ tr.pl-min td:first-child { color: var(--black); }
         </div>
       </button>
 
-      <button class="article-card" data-article="dvd">
+      <button class="article-card" id="clanek-dvd" data-article="dvd">
         <div class="article-visual">
           <img src="Clanky/dvd.png" alt="DVD na USB do MP4" loading="lazy">
         </div>
@@ -4324,7 +4333,7 @@ tr.pl-min td:first-child { color: var(--black); }
         </div>
       </button>
 
-      <button class="article-card" data-article="darek">
+      <button class="article-card" id="clanek-darek" data-article="darek">
         <div class="article-visual">
           <img src="Clanky/darek.png" alt="VHS jako originální dárek" loading="lazy">
         </div>
@@ -4335,7 +4344,7 @@ tr.pl-min td:first-child { color: var(--black); }
         </div>
       </button>
 
-      <button class="article-card" data-article="kapacita">
+      <button class="article-card" id="clanek-kapacita" data-article="kapacita">
         <div class="article-visual">
           <img src="Clanky/usb.png" alt="Kolik se vejde na USB" loading="lazy">
         </div>
@@ -4346,7 +4355,7 @@ tr.pl-min td:first-child { color: var(--black); }
         </div>
       </button>
 
-      <button class="article-card" data-article="neznamy">
+      <button class="article-card" id="clanek-neznamy" data-article="neznamy">
         <div class="article-visual">
           <img src="Clanky/obsah-kazet.png" alt="Neznámý obsah kazety" loading="lazy">
         </div>
@@ -4357,7 +4366,7 @@ tr.pl-min td:first-child { color: var(--black); }
         </div>
       </button>
 
-      <button class="article-card" data-article="oprava">
+      <button class="article-card" id="clanek-oprava" data-article="oprava">
         <div class="article-visual">
           <img src="Clanky/oprava.png" alt="Oprava poškozených kazet" loading="lazy">
         </div>
@@ -4368,7 +4377,7 @@ tr.pl-min td:first-child { color: var(--black); }
         </div>
       </button>
 
-      <button class="article-card" data-article="levne">
+      <button class="article-card" id="clanek-levne" data-article="levne">
         <div class="article-visual">
           <img src="Clanky/grabber.png" alt="Proč nekupovat levné převodníky" loading="lazy">
         </div>
@@ -4379,7 +4388,7 @@ tr.pl-min td:first-child { color: var(--black); }
         </div>
       </button>
 
-      <button class="article-card" data-article="postou">
+      <button class="article-card" id="clanek-postou" data-article="postou">
         <div class="article-visual">
           <img src="Clanky/doprava.png" alt="Zaslání kazet poštou" loading="lazy">
         </div>
@@ -4390,7 +4399,7 @@ tr.pl-min td:first-child { color: var(--black); }
         </div>
       </button>
 
-      <button class="article-card" data-article="zivotnost">
+      <button class="article-card" id="clanek-zivotnost" data-article="zivotnost">
         <div class="article-visual">
           <img src="Clanky/zivotnost.png" alt="Životnost kazet" loading="lazy">
         </div>
@@ -6112,6 +6121,17 @@ document.querySelectorAll('[data-article]').forEach(function(el) {
     openModal(el.dataset.article);
   });
 });
+
+// Hash router pro deeplink na článek (např. ?#clanek-vhs otevře přímo modal)
+function openArticleFromHash() {
+  var hash = window.location.hash;
+  var match = hash.match(/^#clanek-(.+)$/);
+  if (match && ARTICLES[match[1]]) {
+    openModal(match[1]);
+  }
+}
+window.addEventListener('load', openArticleFromHash);
+window.addEventListener('hashchange', openArticleFromHash);
 
 
 // ============================================================
