@@ -21,8 +21,8 @@
 <!-- ============================================================ -->
 <!-- CANONICAL + LOKALIZACE                                       -->
 <!-- ============================================================ -->
-<link rel="canonical" href="https://zalohavzpominek.cz/clanky/digitalizace-vhs-kazet.html">
-<link rel="alternate" hreflang="cs-CZ" href="https://zalohavzpominek.cz/clanky/digitalizace-vhs-kazet.html">
+<link rel="canonical" href="https://zalohavzpominek.cz/Clanky/digitalizace-vhs-kazet.html">
+<link rel="alternate" hreflang="cs-CZ" href="https://zalohavzpominek.cz/Clanky/digitalizace-vhs-kazet.html">
 
 <!-- Geo signály pro lokální vyhledávání -->
 <meta name="geo.region" content="CZ-PR">
@@ -36,7 +36,7 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Záloha vzpomínek">
 <meta property="og:locale" content="cs_CZ">
-<meta property="og:url" content="https://zalohavzpominek.cz/clanky/digitalizace-vhs-kazet.html">
+<meta property="og:url" content="https://zalohavzpominek.cz/Clanky/digitalizace-vhs-kazet.html">
 <meta property="og:title" content="Digitalizace VHS kazet na USB – kompletní návod a ceník">
 <meta property="og:description" content="Proč VHS páska degraduje, jak probíhá profesionální převod a v jaké kvalitě dostanete výsledek. Praha, 250 Kč za hodinu záznamu.">
 <meta property="og:image" content="https://zalohavzpominek.cz/Clanky/vhs.png">
@@ -96,7 +96,7 @@
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://zalohavzpominek.cz/clanky/digitalizace-vhs-kazet.html"
+    "@id": "https://zalohavzpominek.cz/Clanky/digitalizace-vhs-kazet.html"
   }
 }
 </script>
@@ -122,7 +122,7 @@
       "@type": "ListItem",
       "position": 3,
       "name": "Digitalizace VHS kazet",
-      "item": "https://zalohavzpominek.cz/clanky/digitalizace-vhs-kazet.html"
+      "item": "https://zalohavzpominek.cz/Clanky/digitalizace-vhs-kazet.html"
     }
   ]
 }
@@ -259,6 +259,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   letter-spacing: -0.015em;
 }
 .header-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
   background: var(--black);
   color: var(--bg-cream);
   padding: 11px 24px;
@@ -317,21 +322,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   margin-bottom: 18px;
 }
 .article-title em { color: var(--accent); font-style: normal; }
-.article-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  font-size: 0.86rem;
-  color: var(--gray-light);
-  margin-bottom: 28px;
-}
-.article-meta span {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
 .article-cover {
-  width: 100%;
+  max-width: 620px;
+  margin: 0 0 4px;
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--gray-border);
@@ -341,8 +334,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .article-cover img {
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 8;
-  object-fit: cover;
+  display: block;
 }
 
 /* === LAYOUT TĚLA ČLÁNKU === */
@@ -354,7 +346,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   align-items: start;
 }
 @media (max-width: 920px) {
-  .article-layout { grid-template-columns: 1fr; gap: 32px; }
+  .article-layout { grid-template-columns: 1fr; gap: 28px; }
+  .article-layout .article-body { order: 2; }
+  .article-layout .article-aside { order: 1; }
 }
 
 /* === OBSAH ČLÁNKU (TEXT) === */
@@ -467,35 +461,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: block;
 }
 .toc a:hover { color: var(--accent); }
-
-.aside-cta {
-  background: var(--black);
-  color: var(--bg-cream);
-  border-radius: var(--radius-md);
-  padding: 26px 24px;
-}
-.aside-cta h3 {
-  font-size: 1.1rem;
-  color: var(--white);
-  margin-bottom: 8px;
-}
-.aside-cta p {
-  font-size: 0.88rem;
-  color: rgba(245, 239, 228, 0.75);
-  margin-bottom: 16px;
-}
-.aside-cta a {
-  display: block;
-  text-align: center;
-  background: var(--accent);
-  color: var(--white);
-  padding: 13px 20px;
-  border-radius: 100px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: background 0.2s;
-}
-.aside-cta a:hover { background: var(--accent-dark); }
 
 /* === ZÁVĚREČNÝ CTA PRUH === */
 .cta-band {
@@ -663,13 +628,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   <div class="container">
     <span class="article-eyebrow">Užitečné čtení · Digitalizace</span>
     <h1 class="article-title">Digitalizace VHS kazet – jak na <em>převod klasických videokazet</em></h1>
-    <div class="article-meta">
-      <span>📅 Publikováno 10. 2. 2026</span>
-      <span>🔄 Aktualizováno 20. 5. 2026</span>
-      <span>⏱️ Čtení 5 minut</span>
-    </div>
     <div class="article-cover">
-      <img src="/Clanky/vhs.png" alt="Profesionální digitalizace VHS kazet na USB" width="1200" height="600">
+      <img src="/Clanky/vhs.png" alt="Profesionální digitalizace VHS kazet na USB">
     </div>
   </div>
 </header>
@@ -746,12 +706,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
           <li><a href="#zaver">Nečekejte, až bude pozdě</a></li>
         </ul>
       </nav>
-
-      <div class="aside-cta">
-        <h3>Máte doma VHS kazety?</h3>
-        <p>Převedeme je na USB v profesionální kvalitě. Bez záloh předem, 250 Kč/h.</p>
-        <a href="/#kontakt">Nezávazná poptávka</a>
-      </div>
     </aside>
 
   </div>
@@ -765,8 +719,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <h2>Zachraňte své <em>vzpomínky</em> včas</h2>
     <p>Profesionální digitalizace VHS, VHS-C, Hi8 i Mini DV. Osobní předání v Praze 4 – Krč nebo zaslání poštou po celé ČR.</p>
     <div class="cta-band-buttons">
-      <a href="/#kontakt" class="btn-primary">Chci nezávaznou nabídku</a>
       <a href="/#kalkulacka" class="btn-secondary">Spočítat cenu</a>
+      <a href="/#kontakt" class="btn-primary">Chci nezávaznou nabídku</a>
     </div>
   </section>
 </div>
