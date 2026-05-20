@@ -324,6 +324,10 @@ img, svg { display: block; max-width: 100%; }
 .site-header.scrolled {
   box-shadow: var(--shadow-soft);
 }
+/* při otevřeném mobilním menu povýšit hlavičku nad ztmavený overlay */
+.site-header.nav-open {
+  z-index: 200;
+}
 
 .nav {
   display: flex;
@@ -438,8 +442,7 @@ img, svg { display: block; max-width: 100%; }
 .nav-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(13, 13, 13, 0.5);
-  backdrop-filter: blur(2px);
+  background: rgba(13, 13, 13, 0.55);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.35s ease, visibility 0.35s ease;
@@ -533,12 +536,15 @@ img, svg { display: block; max-width: 100%; }
     display: block;
     margin-top: 22px;
   }
-  .nav-mobile-cta {
-    display: block;
+  .nav-menu a.nav-mobile-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     background: var(--accent);
     color: var(--white);
-    padding: 15px 22px;
+    padding: 16px 22px;
+    border-bottom: none;
     border-radius: 100px;
     font-family: 'Unbounded', sans-serif;
     font-weight: 600;
@@ -2459,12 +2465,13 @@ tr.pl-min td:first-child { color: var(--black); }
 
 /* Skrytá skupina dalších dotazů + rozbalovací tlačítko */
 .faq-more {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.45s ease;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
 }
-.faq-more > * { overflow: hidden; min-height: 0; }
-.faq-more.open { grid-template-rows: 1fr; }
+.faq-more.open {
+  max-height: 3000px;
+}
 
 .faq-more-toggle {
   display: flex;
@@ -4593,12 +4600,14 @@ tr.pl-min td:first-child { color: var(--black); }
   var toggle = document.getElementById('navToggle');
   var menu = document.getElementById('navMenu');
   var overlay = document.getElementById('navOverlay');
+  var header = document.getElementById('siteHeader');
   if (!toggle || !menu) return;
 
   function openMenu() {
     toggle.classList.add('active');
     menu.classList.add('open');
     if (overlay) overlay.classList.add('open');
+    if (header) header.classList.add('nav-open');
     toggle.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
   }
@@ -4606,6 +4615,7 @@ tr.pl-min td:first-child { color: var(--black); }
     toggle.classList.remove('active');
     menu.classList.remove('open');
     if (overlay) overlay.classList.remove('open');
+    if (header) header.classList.remove('nav-open');
     toggle.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
   }
