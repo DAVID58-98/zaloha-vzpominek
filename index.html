@@ -393,6 +393,11 @@ img, svg { display: block; max-width: 100%; }
 }
 .nav-menu a:hover::after { width: 100%; }
 
+/* prvky určené jen pro mobilní menu – na desktopu skryté */
+.nav-mobile-head,
+.nav-link-arrow,
+.nav-mobile-cta-wrap { display: none; }
+
 .nav-cta {
   background: var(--black);
   color: var(--bg-cream);
@@ -429,27 +434,122 @@ img, svg { display: block; max-width: 100%; }
 .nav-toggle.active span:nth-child(2) { opacity: 0; }
 .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+/* ztmavené pozadí za otevřeným mobilním menu */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 13, 13, 0.5);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+  z-index: 199;
+}
+.nav-overlay.open { opacity: 1; visibility: visible; }
+
 @media (max-width: 920px) {
   .nav-menu {
     position: fixed;
     top: 0;
     right: -100%;
     height: 100vh;
-    width: min(85%, 320px);
-    background: var(--bg-cream);
+    width: min(86%, 340px);
+    background: linear-gradient(165deg, var(--bg-cream-light) 0%, var(--bg-cream-dark) 100%);
     flex-direction: column;
-    justify-content: center;
-    gap: 28px;
-    padding: 80px 32px;
-    transition: right 0.35s ease;
-    box-shadow: -10px 0 40px rgba(0,0,0,0.1);
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 28px 26px 36px;
+    transition: right 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: -16px 0 50px rgba(0,0,0,0.18);
     z-index: 200;
+    overflow-y: auto;
   }
   .nav-menu.open { right: 0; }
-  .nav-menu a { font-size: 1.15rem; }
+
+  .nav-mobile-head {
+    display: flex;
+    align-items: center;
+    padding-bottom: 18px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(13,13,13,0.10);
+  }
+  .nav-mobile-title {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .nav-menu li {
+    /* startovní stav pro staggered animaci */
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  .nav-menu.open li {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.4s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .nav-menu.open li:nth-child(1) { transition-delay: 0.06s; }
+  .nav-menu.open li:nth-child(2) { transition-delay: 0.12s; }
+  .nav-menu.open li:nth-child(3) { transition-delay: 0.17s; }
+  .nav-menu.open li:nth-child(4) { transition-delay: 0.22s; }
+  .nav-menu.open li:nth-child(5) { transition-delay: 0.27s; }
+  .nav-menu.open li:nth-child(6) { transition-delay: 0.32s; }
+  .nav-menu.open li:nth-child(7) { transition-delay: 0.37s; }
+  .nav-menu.open li:nth-child(8) { transition-delay: 0.42s; }
+
+  .nav-menu a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Unbounded', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    padding: 16px 4px;
+    border-bottom: 1px solid rgba(13,13,13,0.08);
+  }
+  .nav-menu a::after { display: none; }
+  .nav-menu a:active { color: var(--accent); }
+
+  .nav-link-arrow {
+    display: inline-block;
+    font-size: 0.95rem;
+    color: var(--accent);
+    opacity: 0.55;
+    transform: translateX(-4px);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+  .nav-menu a:hover .nav-link-arrow,
+  .nav-menu a:active .nav-link-arrow {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .nav-mobile-cta-wrap {
+    display: block;
+    margin-top: 22px;
+  }
+  .nav-mobile-cta {
+    display: block;
+    text-align: center;
+    background: var(--accent);
+    color: var(--white);
+    padding: 15px 22px;
+    border-radius: 100px;
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 10px 24px rgba(250, 77, 1, 0.28);
+  }
+  .nav-mobile-cta::after { display: none; }
+
   .nav-toggle { display: flex; z-index: 201; }
   .nav-cta {
-    /* mobilní CTA v menu schováno – sticky bar dole vyřeší */
+    /* desktopové CTA v hlavičce na mobilu schováno */
     display: none;
   }
 }
@@ -983,6 +1083,44 @@ section {
   font-weight: 700;
   color: var(--bg-cream-dark);
   line-height: 1;
+}
+
+/* Na mobilu kompaktní layout – stejně jako boxy v "Co u nás máte navíc" */
+@media (max-width: 920px) {
+  .why-card {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    column-gap: 18px;
+    align-items: start;
+    padding: 22px 22px;
+  }
+  .why-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    margin-bottom: 0;
+    grid-row: span 2;
+  }
+  .why-icon img {
+    width: 42px;
+    height: 42px;
+  }
+  .why-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+    padding-right: 44px;
+    align-self: center;
+  }
+  .why-card p {
+    grid-column: 2;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .why-card-number {
+    top: 18px;
+    right: 20px;
+    font-size: 1.7rem;
+  }
 }
 
 /* ============================================================
@@ -2319,6 +2457,45 @@ tr.pl-min td:first-child { color: var(--black); }
 }
 .faq-a p + p { margin-top: 8px; }
 
+/* Skrytá skupina dalších dotazů + rozbalovací tlačítko */
+.faq-more {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s ease;
+}
+.faq-more > * { overflow: hidden; min-height: 0; }
+.faq-more.open { grid-template-rows: 1fr; }
+
+.faq-more-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 14px;
+  padding: 14px 20px;
+  background: var(--white);
+  border: 1px solid var(--gray-border);
+  border-radius: 100px;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 500;
+  font-size: 0.92rem;
+  color: var(--black);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.faq-more-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.faq-more-arrow {
+  display: inline-block;
+  font-size: 1.15rem;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+.faq-more-toggle.open .faq-more-arrow { transform: rotate(180deg); }
+
 /* ============================================================
    16. KONTAKT
    ============================================================ */
@@ -3058,21 +3235,27 @@ tr.pl-min td:first-child { color: var(--black); }
     </a>
 
     <ul class="nav-menu" id="navMenu">
-      <li><a href="#kazety">Kazety</a></li>
-      <li><a href="#kalkulacka">Cena</a></li>
-      <li><a href="#proces">Jak to probíhá</a></li>
-      <li><a href="#clanky">Články</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
+      <li class="nav-mobile-head"><span class="nav-mobile-title">Menu</span></li>
+      <li><a href="#kazety"><span class="nav-link-text">Kazety</span><span class="nav-link-arrow" aria-hidden="true">→</span></a></li>
+      <li><a href="#kalkulacka"><span class="nav-link-text">Cena</span><span class="nav-link-arrow" aria-hidden="true">→</span></a></li>
+      <li><a href="#proces"><span class="nav-link-text">Jak to probíhá</span><span class="nav-link-arrow" aria-hidden="true">→</span></a></li>
+      <li><a href="#clanky"><span class="nav-link-text">Články</span><span class="nav-link-arrow" aria-hidden="true">→</span></a></li>
+      <li><a href="#faq"><span class="nav-link-text">FAQ</span><span class="nav-link-arrow" aria-hidden="true">→</span></a></li>
+      <li><a href="#kontakt"><span class="nav-link-text">Kontakt</span><span class="nav-link-arrow" aria-hidden="true">→</span></a></li>
+      <li class="nav-mobile-cta-wrap">
+        <a href="#kontakt" class="nav-mobile-cta">Nezávazná poptávka</a>
+      </li>
     </ul>
 
     <a href="#kontakt" class="nav-cta">Nezávazná poptávka</a>
 
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
+
+<div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
 
 
 <!-- ============================================================ -->
@@ -4046,28 +4229,7 @@ tr.pl-min td:first-child { color: var(--black); }
 
     <div class="faq-wrap reveal">
 
-      <div class="faq-item">
-        <button class="faq-q">
-          <span>Požadujete zálohu předem?</span>
-          <span class="faq-toggle-icon">+</span>
-        </button>
-        <div class="faq-a">
-          <p><strong>Ne.</strong> Za digitalizaci platíte teprve ve chvíli, kdy je práce hotová a vy si výsledek osobně zkontrolujete.</p>
-          <p>Pří osobním převzetí volíte platbu kartou, hotově nebo QR kódem. Při zaslání poštou převodem nebo dobírkou.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q">
-          <span>Jakou techniku používáte?</span>
-          <span class="faq-toggle-icon">+</span>
-        </button>
-        <div class="faq-a">
-          <p>Pro VHS používáme špičkové videorekordéry <strong>Panasonic NV-HS1000</strong> s funkcí TBC (Time Base Correction), která stabilizuje obraz.</p>
-          <p>Analogový signál digitalizujeme přes profesionální převodníky <strong>Canopus ADVC 300</strong>, rovněž s TBC. Díky tomu je obraz čistý a zvuk dokonale synchronizovaný.</p>
-        </div>
-      </div>
-
+      <!-- 3 nejčastější dotazy – zobrazené vždy -->
       <div class="faq-item">
         <button class="faq-q">
           <span>Budu platit i za prázdná místa nebo nahrávky z TV?</span>
@@ -4093,50 +4255,6 @@ tr.pl-min td:first-child { color: var(--black); }
 
       <div class="faq-item">
         <button class="faq-q">
-          <span>Můžete kazety vyzvednout / přijet pro ně?</span>
-          <span class="faq-toggle-icon">+</span>
-        </button>
-        <div class="faq-a">
-          <p>Pro osobní předání nás navštivte v provozovně <strong>Přímětická 10, Praha 4 – Krč</strong>, po předchozí domluvě.</p>
-          <p>Pokud bydlíte mimo Prahu, můžete kazety bezpečně zaslat poštou. Domluvíme se na detailech ještě před odesláním.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q">
-          <span>Co když mám kazetu poškozenou, zacuchanou nebo přetrženou?</span>
-          <span class="faq-toggle-icon">+</span>
-        </button>
-        <div class="faq-a">
-          <p>Nevyhazujte ji. <strong>Provádíme i odborné lepení přetržené pásky a čištění od plísně.</strong></p>
-          <p>Důležité varování: nikdy přetrženou pásku nelepte izolepou. Lepidlo se v mechanice videa rozteče a může zničit jak kazetu, tak přehrávač.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q">
-          <span>Je zaručeno soukromí mých nahrávek?</span>
-          <span class="faq-toggle-icon">+</span>
-        </button>
-        <div class="faq-a">
-          <p><strong>Absolutně.</strong> Obsah vašich kazet vidí pouze jedna osoba – a to jen za účelem kontroly kvality a střihu.</p>
-          <p>Žádná data nikdy neposkytujeme třetím stranám. Záložní kopii uchováváme 12 měsíců (pro případ, že byste USB ztratili), pak je nevratně smazána.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q">
-          <span>Bude zachována původní kazeta?</span>
-          <span class="faq-toggle-icon">+</span>
-        </button>
-        <div class="faq-a">
-          <p>Samozřejmě. Digitalizace je pouze proces přehrání záznamu. Vaše originální kazety se vám vrátí v původním stavu.</p>
-          <p>Díky profesionální technice je riziko jakéhokoliv poškození během procesu minimální.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q">
           <span>Jak dlouho zpracování trvá?</span>
           <span class="faq-toggle-icon">+</span>
         </button>
@@ -4146,6 +4264,82 @@ tr.pl-min td:first-child { color: var(--black); }
           <p>Pokud spěcháte, můžete si připlatit za expresní zpracování (příplatek 50 %).</p>
         </div>
       </div>
+
+      <!-- Ostatní dotazy – skryté, rozbalí se tlačítkem -->
+      <div class="faq-more" id="faqMore">
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span>Požadujete zálohu předem?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p><strong>Ne.</strong> Za digitalizaci platíte teprve ve chvíli, kdy je práce hotová a vy si výsledek osobně zkontrolujete.</p>
+            <p>Pří osobním převzetí volíte platbu kartou, hotově nebo QR kódem. Při zaslání poštou převodem nebo dobírkou.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span>Jakou techniku používáte?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Pro VHS používáme špičkové videorekordéry <strong>Panasonic NV-HS1000</strong> s funkcí TBC (Time Base Correction), která stabilizuje obraz.</p>
+            <p>Analogový signál digitalizujeme přes profesionální převodníky <strong>Canopus ADVC 300</strong>, rovněž s TBC. Díky tomu je obraz čistý a zvuk dokonale synchronizovaný.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span>Můžete kazety vyzvednout / přijet pro ně?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Pro osobní předání nás navštivte v provozovně <strong>Přímětická 10, Praha 4 – Krč</strong>, po předchozí domluvě.</p>
+            <p>Pokud bydlíte mimo Prahu, můžete kazety bezpečně zaslat poštou. Domluvíme se na detailech ještě před odesláním.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span>Co když mám kazetu poškozenou, zacuchanou nebo přetrženou?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Nevyhazujte ji. <strong>Provádíme i odborné lepení přetržené pásky a čištění od plísně.</strong></p>
+            <p>Důležité varování: nikdy přetrženou pásku nelepte izolepou. Lepidlo se v mechanice videa rozteče a může zničit jak kazetu, tak přehrávač.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span>Je zaručeno soukromí mých nahrávek?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p><strong>Absolutně.</strong> Obsah vašich kazet vidí pouze jedna osoba – a to jen za účelem kontroly kvality a střihu.</p>
+            <p>Žádná data nikdy neposkytujeme třetím stranám. Záložní kopii uchováváme 12 měsíců (pro případ, že byste USB ztratili), pak je nevratně smazána.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            <span>Bude zachována původní kazeta?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Samozřejmě. Digitalizace je pouze proces přehrání záznamu. Vaše originální kazety se vám vrátí v původním stavu.</p>
+            <p>Díky profesionální technice je riziko jakéhokoliv poškození během procesu minimální.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="faq-more-toggle" id="faqMoreToggle" aria-expanded="false" aria-controls="faqMore">
+        <span class="faq-more-label">Zobrazit další dotazy</span>
+        <span class="faq-more-arrow" aria-hidden="true">⌄</span>
+      </button>
 
     </div>
   </div>
@@ -4398,17 +4592,40 @@ tr.pl-min td:first-child { color: var(--black); }
 (function() {
   var toggle = document.getElementById('navToggle');
   var menu = document.getElementById('navMenu');
-  if (!toggle) return;
+  var overlay = document.getElementById('navOverlay');
+  if (!toggle || !menu) return;
+
+  function openMenu() {
+    toggle.classList.add('active');
+    menu.classList.add('open');
+    if (overlay) overlay.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    toggle.classList.remove('active');
+    menu.classList.remove('open');
+    if (overlay) overlay.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
   toggle.addEventListener('click', function() {
-    toggle.classList.toggle('active');
-    menu.classList.toggle('open');
+    if (menu.classList.contains('open')) closeMenu();
+    else openMenu();
   });
+
   // zavřít menu po kliknutí na odkaz
   menu.querySelectorAll('a').forEach(function(a) {
-    a.addEventListener('click', function() {
-      toggle.classList.remove('active');
-      menu.classList.remove('open');
-    });
+    a.addEventListener('click', closeMenu);
+  });
+
+  // zavřít kliknutím na ztmavené pozadí
+  if (overlay) overlay.addEventListener('click', closeMenu);
+
+  // zavřít klávesou Esc
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && menu.classList.contains('open')) closeMenu();
   });
 })();
 
@@ -4827,6 +5044,20 @@ calculate();
       if (!isOpen) item.classList.add('open');
     });
   });
+
+  // tlačítko "Zobrazit další dotazy"
+  var moreToggle = document.getElementById('faqMoreToggle');
+  var moreGroup = document.getElementById('faqMore');
+  if (moreToggle && moreGroup) {
+    moreToggle.addEventListener('click', function() {
+      var nowOpen = !moreGroup.classList.contains('open');
+      moreGroup.classList.toggle('open', nowOpen);
+      moreToggle.classList.toggle('open', nowOpen);
+      moreToggle.setAttribute('aria-expanded', nowOpen ? 'true' : 'false');
+      moreToggle.querySelector('.faq-more-label').textContent =
+        nowOpen ? 'Skrýt další dotazy' : 'Zobrazit další dotazy';
+    });
+  }
 })();
 
 
