@@ -355,6 +355,18 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-size: 1.02rem;
 }
 .article-body strong { color: var(--black); font-weight: 600; }
+.article-body a {
+  color: var(--accent-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(250, 77, 1, 0.35);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.18s, color 0.18s;
+}
+.article-body a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
 .article-body ul, .article-body ol {
   margin: 0 0 20px 0;
   padding-left: 0;
@@ -428,25 +440,59 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   background: var(--white);
   border: 1px solid var(--gray-border);
   border-radius: var(--radius-md);
-  padding: 22px 24px;
+  padding: 8px 8px 12px;
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+.toc-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-cream-light);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin-bottom: 6px;
+}
+.toc-head svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 .toc h2 {
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent-dark);
-  margin-bottom: 14px;
+  margin: 0;
 }
-.toc ul { list-style: none; }
-.toc li { margin-bottom: 9px; }
+.toc ol {
+  list-style: none;
+  counter-reset: toc;
+}
+.toc li { counter-increment: toc; }
 .toc a {
+  display: flex;
+  align-items: baseline;
+  gap: 11px;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
   font-size: 0.9rem;
   color: var(--gray-text);
-  transition: color 0.2s;
   line-height: 1.4;
-  display: block;
+  transition: background 0.18s, color 0.18s;
 }
-.toc a:hover { color: var(--accent); }
+.toc a::before {
+  content: counter(toc, decimal-leading-zero);
+  font-family: 'Unbounded', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.toc a:hover {
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+}
 
 /* === ZÁVĚREČNÝ CTA PRUH === */
 .cta-band {
@@ -626,16 +672,19 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <!-- HLAVNÍ TEXT -->
     <article class="article-body">
 
-      <p>Máte doma krabici starých VHS kazet se svatbou, dětskými narozeninami nebo dovolenými? Pak nejspíš tušíte, že se k nim už dlouho nikdo nedostal. Tento průvodce vám vysvětlí, <strong>proč se digitalizace VHS kazet nevyplatí odkládat</strong>, jak probíhá profesionální převod na USB a co od výsledku čekat.</p>
+      <p>Našli jste doma krabici plnou starých videokazet? Svatby, rodinné oslavy, první krůčky dětí, dovolené – tyto vzpomínky jsou k nezaplacení, ale na VHS kazetách bohužel nevydrží věčně. Fyzická média nevyhnutelně stárnou a kvalita záznamu klesá každým rokem. <strong>Digitalizace VHS</strong> je dnes jediný spolehlivý způsob, jak tyto cenné okamžiky zachránit pro budoucí generace.</p>
+
+      <p>V tomto průvodci od společnosti <strong><a href="https://zalohavzpominek.cz/">Záloha vzpomínek</a></strong> se podrobně podíváme na to, proč je <strong>převod VHS na USB</strong> tak důležitý, jaké hrozby vašim kazetám hrozí a jak probíhá profesionální <strong>digitalizace videokazet</strong>, která vaše vzpomínky bezpečně přenese do 21. století.</p>
 
       <h2 id="proc-degraduje">Tikající hodiny: proč vaše VHS ztrácí kvalitu</h2>
-      <p>Mnoho lidí si myslí, že pokud je kazeta bezpečně uložena ve skříni, je v bezpečí. Opak je pravdou. Magnetická páska uvnitř VHS kazety je extrémně náchylná k degradaci a čas pracuje proti vám.</p>
+      <p>Mnoho lidí si myslí, že pokud je kazeta bezpečně uložena ve skříni, je v bezpečí. Opak je pravdou. Magnetická páska uvnitř <strong>VHS kazety</strong> je extrémně náchylná k degradaci a čas pracuje proti vám.</p>
       <ul>
         <li><strong>Demagnetizace:</strong> postupem času magnetická vrstva slábne. Vede k viditelné ztrátě barev, vyblednutí obrazu, zvýšenému šumu a zhoršení zvuku.</li>
         <li><strong>Fyzické poškození:</strong> páska může zkřehnout, stát se lepkavou nebo se může objevit plíseň, pokud byly kazety skladovány ve vlhku.</li>
         <li><strong>Mechanické opotřebení:</strong> každé přehrání kazetu mírně opotřebí – paradoxně tím, že si video chcete připomenout, ho ničíte.</li>
-        <li><strong>Chybějící technika:</strong> výroba VHS přehrávačů byla dávno ukončena. Najít funkční a kvalitní přehrávač je čím dál obtížnější.</li>
+        <li><strong>Chybějící technika:</strong> jak zmiňujeme i v našich <a href="https://zalohavzpominek.cz/#faq">častých dotazech</a>, výroba VHS přehrávačů byla dávno ukončena. Najít funkční a kvalitní přehrávač je čím dál obtížnější.</li>
       </ul>
+      <p>Každý den, kdy <strong>digitalizaci videokazet</strong> odkládáte, riskujete, že o své vzpomínky přijdete navždy. Proto se ve společnosti <strong><a href="https://zalohavzpominek.cz/">Záloha vzpomínek</a></strong> zaměřujeme právě na záchranu těchto nahrávek dřív, než bude pozdě.</p>
 
       <div class="callout">
         <span class="callout-icon">⚠️</span>
@@ -643,51 +692,65 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       </div>
 
       <h2 id="jak-probiha">Jak probíhá profesionální digitalizace VHS</h2>
-      <p>Možná vás napadlo zkusit digitalizaci doma. Existují levné USB převodníky, ale jejich kvalita je často nedostatečná – výsledkem bývá roztřesený obraz, špatná synchronizace zvuku a celkově horší kvalita, než jakou kazeta reálně nabízí. Profesionální postup vypadá takto:</p>
+      <p>Možná vás napadlo zkusit <strong>digitalizaci VHS doma</strong>. Existují levné USB převodníky, ale jejich kvalita je často nedostatečná – výsledkem bývá roztřesený obraz, špatná synchronizace zvuku a celkově horší kvalita, než jakou kazeta reálně nabízí. Ve společnosti <strong><a href="https://zalohavzpominek.cz/">Záloha vzpomínek</a></strong> proto volíme profesionální přístup, který zaručuje tu nejlepší možnou kvalitu:</p>
       <ol>
-        <li><strong>Vizuální kontrola:</strong> každou kazetu nejprve zkontrolujeme. Pokud je páska přetržená nebo znečištěná, nabízíme i doplňkové služby (lepení, čištění od plísně).</li>
-        <li><strong>Špičková technika:</strong> pro samotný převod používáme výhradně profesionální videorekordéry Panasonic NV-HS1000 s technologií TBC (Time Base Correction), která digitálně stabilizuje roztřesený obraz.</li>
+        <li><strong>Vizuální kontrola:</strong> každou kazetu nejprve zkontrolujeme. Pokud je páska přetržená nebo znečištěná, nabízíme i doplňkové služby jako lepení a čištění od plísně (viz náš <a href="https://zalohavzpominek.cz/#kalkulacka">ceník</a>).</li>
+        <li><strong>Špičková technika:</strong> pro samotný <strong>převod VHS</strong> používáme výhradně profesionální videorekordéry Panasonic NV-HS1000 s technologií <strong>TBC (Time Base Correction)</strong>, která digitálně stabilizuje roztřesený obraz.</li>
         <li><strong>Převod signálu:</strong> analogový signál převádíme přes externí A/D převodník Canopus ADVC 300, rovněž s TBC – díky tomu je zvuk dokonale synchronizovaný s obrazem.</li>
         <li><strong>Základní úprava zdarma:</strong> ořízneme černé okraje, provedeme redukci šumu, normalizujeme zvuk a vyvážíme barvy.</li>
-        <li><strong>Uložení:</strong> výsledný MP4 soubor uložíme na vámi zvolené médium – nejčastěji USB flash disk.</li>
+        <li><strong>Uložení na médium:</strong> výsledný digitální soubor uložíme na vámi zvolené médium. Nejoblíbenější je <strong>VHS na USB</strong> nebo <strong>VHS na flash disk</strong>, což umožňuje snadné přehrávání na PC, noteboocích i moderních televizích.</li>
       </ol>
+      <p>Kompletní postup zpracování si můžete prohlédnout také v sekci <a href="https://zalohavzpominek.cz/#proces">Jak to probíhá</a> na našem webu.</p>
 
       <h2 id="format">V jakém formátu video dostanete</h2>
-      <p>Standardně převádíme do formátu <strong>MP4 s kodekem H.264</strong>. Je to univerzální formát, který bez problémů přehrajete prakticky na čemkoliv – na počítači, chytré televizi, mobilu i tabletu. Pokud máte specifický požadavek na jiný formát, stačí nám dát vědět předem.</p>
+      <p>Standardně převádíme do formátu <strong>MP4 s kodekem H.264</strong>. Je to univerzální formát, který bez problémů přehrajete prakticky na čemkoliv – na počítači, chytré televizi, mobilu i tabletu. Pokud máte specifický požadavek na jiný formát, stačí nám dát vědět předem přes <a href="https://zalohavzpominek.cz/#kontakt">kontaktní formulář</a>.</p>
 
       <h2 id="vyhody">Výhody digitálního formátu</h2>
+      <p>Proč vlastně podstupovat <strong>převod VHS kazet</strong>? Výhody jsou obrovské:</p>
       <ul>
-        <li><strong>Trvalá záloha:</strong> digitální soubory nestárnou ani neblednou, kvalita zůstává stejná i za desítky let.</li>
+        <li><strong>Trvalá záloha:</strong> digitální soubory nestárnou, neblednou ani neztrácí kvalitu – vaše <strong>záloha vzpomínek</strong> bude v bezpečí po generace.</li>
         <li><strong>Snadné sdílení:</strong> video pošlete rodině e-mailem nebo nahrajete na cloud.</li>
         <li><strong>Okamžitá dostupnost:</strong> přehrajete kdykoliv – počítač, mobil, Smart TV.</li>
-        <li><strong>Lepší organizace:</strong> místo krabice plné kazet máte všechny vzpomínky přehledně na jednom USB.</li>
+        <li><strong>Lepší organizace:</strong> místo krabice plné objemných kazet máte všechny vzpomínky přehledně na jednom USB.</li>
+        <li><strong>Možnost další editace:</strong> chcete si ze starých záznamů sestříhat vlastní film? S digitálními soubory je to hračka.</li>
       </ul>
 
       <h2 id="cena">Kolik digitalizace VHS stojí</h2>
-      <p>Za digitalizaci účtujeme férovou cenu <strong>250 Kč za hodinu záznamu</strong>, přičemž prázdná místa, šum ani reklamy z televize neplatíte – počítáme jen čistý čas vašich nahrávek. Minimální cena za zakázku je 300 Kč, protože každá kazeta vyžaduje stejnou péči a přípravu u techniky. U větších zakázek navíc nabízíme množstevní slevy.</p>
+      <p>Prohlédněte si náš přehledný <a href="https://zalohavzpominek.cz/#kalkulacka">ceník a kalkulačku</a> a zjistíte, že <strong>digitalizace VHS cena</strong> nemusí být vysoká. Za digitalizaci účtujeme férovou cenu <strong>250 Kč za hodinu záznamu</strong>, přičemž prázdná místa, šum ani reklamy z televize neplatíte – počítáme jen čistý čas vašich nahrávek. Minimální cena za zakázku je 300 Kč a u větších zakázek navíc nabízíme množstevní slevy.</p>
 
       <div class="callout">
         <span class="callout-icon">💡</span>
-        <p><strong>Žádné zálohy předem.</strong> Za digitalizaci platíte teprve ve chvíli, kdy je práce hotová a vy si výsledek osobně zkontrolujete. Záložní kopii vám navíc uchováváme 12 měsíců zdarma.</p>
+        <p><strong>Žádné zálohy předem.</strong> Ve společnosti <strong><a href="https://zalohavzpominek.cz/">Záloha vzpomínek</a></strong> platíte za digitalizaci teprve ve chvíli, kdy je práce hotová a vy si výsledek osobně zkontrolujete. Záložní kopii vám navíc uchováváme 12 měsíců zdarma.</p>
       </div>
 
       <h2 id="zaver">Nečekejte, až bude pozdě</h2>
-      <p>Každý rok, o který digitalizaci odložíte, znamená nevratnou ztrátu části kvality. Vzpomínky na pásce mizí tiše a nenápadně – dokud jednoho dne nezjistíte, že už je pozdě. Pokud máte doma VHS kazety, ozvěte se nám a domluvíme nezávazně termín i postup.</p>
+      <p>Už žádné odkládání. Zastavte degradaci svých jedinečných nahrávek ještě dnes. Ať už hledáte <strong>převod VHS na USB v Praze</strong> (kde nabízíme osobní předání po domluvě) nebo nám chcete kazety poslat poštou, jsme tu pro vás.</p>
+      <p>Máte specifický dotaz? Podívejte se na naše <a href="https://zalohavzpominek.cz/#faq">časté dotazy</a>, nebo nám rovnou napište přes <a href="https://zalohavzpominek.cz/#kontakt">kontaktní formulář</a>. Společnost <strong><a href="https://zalohavzpominek.cz/">Záloha vzpomínek</a></strong> vám ráda pomůže zachránit to nejcennější – vaše rodinné vzpomínky.</p>
 
     </article>
 
     <!-- BOČNÍ PANEL -->
     <aside class="article-aside">
       <nav class="toc" aria-label="Obsah článku">
-        <h2>Obsah článku</h2>
-        <ul>
+        <div class="toc-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fa4d01" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+            <line x1="8" y1="6" x2="21" y2="6"/>
+            <line x1="8" y1="12" x2="21" y2="12"/>
+            <line x1="8" y1="18" x2="21" y2="18"/>
+            <line x1="3" y1="6" x2="3.5" y2="6"/>
+            <line x1="3" y1="12" x2="3.5" y2="12"/>
+            <line x1="3" y1="18" x2="3.5" y2="18"/>
+          </svg>
+          <h2>Obsah článku</h2>
+        </div>
+        <ol>
           <li><a href="#proc-degraduje">Proč VHS ztrácí kvalitu</a></li>
           <li><a href="#jak-probiha">Jak probíhá digitalizace</a></li>
           <li><a href="#format">V jakém formátu video dostanete</a></li>
           <li><a href="#vyhody">Výhody digitálního formátu</a></li>
           <li><a href="#cena">Kolik to stojí</a></li>
           <li><a href="#zaver">Nečekejte, až bude pozdě</a></li>
-        </ul>
+        </ol>
       </nav>
     </aside>
 
