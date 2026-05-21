@@ -2068,80 +2068,130 @@ tr.pl-min td:first-child { color: var(--black); }
    12. CO ZÍSKÁTE – BENEFITY
    ============================================================ */
 
-.benefits-section { background: var(--bg-cream); }
-
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-@media (max-width: 768px) { .benefits-grid { grid-template-columns: 1fr; } }
-
-.benefit {
-  display: flex;
-  gap: 20px;
-  padding: 26px 24px;
-  background: var(--white);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--gray-border);
-  transition: all 0.3s ease;
-  align-items: flex-start;
+/* ============================================================
+   CO U NÁS MÁTE NAVÍC – moderní tmavé interaktivní dlaždice
+   ============================================================ */
+.benefits-section {
+  background: #0d0d0f;
   position: relative;
   overflow: hidden;
 }
-.benefit::before {
-  /* dekorativní oranžový gradient v rohu - viditelný při hoveru */
+/* jemná zářivá aura na pozadí sekce */
+.benefits-section::before {
   content: '';
   position: absolute;
-  top: -40px;
-  right: -40px;
-  width: 140px;
-  height: 140px;
-  background: radial-gradient(circle, rgba(250, 77, 1, 0.10), transparent 70%);
-  opacity: 0;
-  transition: opacity 0.35s;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 60%;
+  background: radial-gradient(ellipse, rgba(250, 77, 1, 0.14), transparent 70%);
   pointer-events: none;
 }
+.benefits-section .section-eyebrow { color: var(--accent); }
+.benefits-section .section-title { color: #ffffff; }
+.benefits-section .section-title em { color: var(--accent); }
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 920px) { .benefits-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .benefits-grid { grid-template-columns: 1fr; } }
+
+.benefit {
+  position: relative;
+  padding: 30px 26px 28px;
+  background: #18181c;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s, background 0.35s;
+}
+/* interaktivní glow sledující kurzor (poháněno JS proměnnými --mx/--my) */
+.benefit::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 0%), rgba(250, 77, 1, 0.18), transparent 65%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+/* horní zářivá linka */
+.benefit::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(250, 77, 1, 0.7), transparent);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
 .benefit:hover {
-  border-color: rgba(250, 77, 1, 0.35);
-  transform: translateY(-3px);
-  box-shadow: 0 14px 32px rgba(13, 13, 13, 0.06);
+  transform: translateY(-6px);
+  border-color: rgba(250, 77, 1, 0.4);
+  background: #1d1d22;
 }
 .benefit:hover::before { opacity: 1; }
+.benefit:hover::after { opacity: 1; }
 
 .benefit-icon {
-  width: 82px;
-  height: 82px;
-  background: linear-gradient(135deg, var(--bg-cream-light), var(--bg-cream-dark));
-  border-radius: 18px;
+  width: 88px;
+  height: 88px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  transition: transform 0.35s ease, background 0.35s;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
 }
-.benefit:hover .benefit-icon {
-  transform: scale(1.08) rotate(-4deg);
-  background: linear-gradient(135deg, #fff0e2, #ffd9b8);
+/* měkká záře pod průhledným obrázkem ikony */
+.benefit-icon::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(250, 77, 1, 0.28), transparent 70%);
+  filter: blur(8px);
+  opacity: 0.7;
+  transition: opacity 0.35s, transform 0.35s;
+}
+.benefit:hover .benefit-icon::before {
+  opacity: 1;
+  transform: scale(1.15);
 }
 .benefit-icon img {
-  width: 58px;
-  height: 58px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   display: block;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.5));
+}
+.benefit:hover .benefit-icon img {
+  transform: scale(1.12) rotate(-5deg);
 }
 .benefit-content {
-  flex: 1;
-  min-width: 0;
+  position: relative;
+  z-index: 1;
 }
 .benefit h4 {
-  font-size: 1.05rem;
-  margin-bottom: 6px;
+  font-size: 1.08rem;
+  margin-bottom: 8px;
+  color: #ffffff;
 }
 .benefit p {
   font-size: 0.9rem;
-  color: var(--gray-text);
-  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.62);
+  line-height: 1.6;
 }
 
 /* ============================================================
@@ -5361,6 +5411,17 @@ document.addEventListener('click', function(e) {
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') hideFormToast();
 });
+
+// Interaktivní glow dlaždic "Co u nás máte navíc" – sleduje kurzor
+(function() {
+  document.querySelectorAll('.benefit').forEach(function(card) {
+    card.addEventListener('pointermove', function(e) {
+      var r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
+      card.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
+    });
+  });
+})();
 
 
 
