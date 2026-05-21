@@ -14,7 +14,7 @@
 <!-- ============================================================ -->
 <!-- TITLE + DESCRIPTION (Google SERP)                            -->
 <!-- ============================================================ -->
-<title>Digitalizace VHS, Hi8 a Mini DV na USB | Praha – 250 Kč/h</title>
+<title>Digitalizace VHS, Hi8 a Mini DV na USB | Praha 4</title>
 <meta name="description" content="✓ Profesionální digitalizace VHS, VHS-C, Hi8, Video8, Mini DV a DVD na USB. 250 Kč/hodina záznamu. Praha 4 Krč nebo Balíkovna po celé ČR. Bez záloh předem.">
 
 <!-- ============================================================ -->
@@ -36,7 +36,7 @@
 <meta property="og:site_name" content="Záloha vzpomínek">
 <meta property="og:locale" content="cs_CZ">
 <meta property="og:url" content="https://zalohavzpominek.cz/">
-<meta property="og:title" content="Digitalizace VHS, Hi8 a Mini DV na USB | Praha – 250 Kč/h">
+<meta property="og:title" content="Digitalizace VHS, Hi8 a Mini DV na USB | Praha 4">
 <meta property="og:description" content="Profesionální digitalizace VHS, VHS-C, Hi8, Video8, Mini DV a DVD kazet na USB. 250 Kč/hodina. Bez záloh předem. Osobní předání v Praze nebo Balíkovna po celé ČR.">
 <meta property="og:image" content="https://zalohavzpominek.cz/SEO/og-image.png">
 <meta property="og:image:type" content="image/png">
@@ -2326,25 +2326,28 @@ tr.pl-min td:first-child { color: var(--black); }
 
 .article-visual {
   width: 100%;
-  aspect-ratio: 3 / 2; /* vyšší prostor pro obrázek */
+  aspect-ratio: 16 / 10;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 0;
+  padding: 20px 20px 14px;
 }
 /* lichá karta - krémové pozadí; sudá - mírně tmavší oranžový tón */
 .article-card:nth-child(odd)  .article-visual { background: linear-gradient(135deg, var(--bg-cream-light) 0%, var(--bg-cream-dark) 100%); }
 .article-card:nth-child(even) .article-visual { background: linear-gradient(135deg, #ffefe0 0%, #ffd8b8 100%); }
 
 .article-visual img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 70%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.18));
   transition: transform 0.45s ease;
 }
 .article-card:hover .article-visual img {
-  transform: scale(1.06);
+  transform: scale(1.07) rotate(-2deg);
 }
 
 /* Placeholder dokud nemáme finální fotky */
@@ -3207,6 +3210,86 @@ tr.pl-min td:first-child { color: var(--black); }
     transition-duration: 0.01ms !important;
   }
   .reveal { opacity: 1; transform: none; }
+}
+
+/* ============================================================
+   POTVRZENÍ ODESLÁNÍ FORMULÁŘE – výrazné zelené okno (toast)
+   ============================================================ */
+.form-toast-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 13, 13, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 9000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.form-toast-overlay.show { opacity: 1; visibility: visible; }
+
+.form-toast {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border-top: 6px solid #16a34a;
+  box-shadow: 0 24px 60px rgba(13, 13, 13, 0.28);
+  max-width: 420px;
+  width: 100%;
+  padding: 36px 32px 30px;
+  text-align: center;
+  transform: translateY(20px) scale(0.96);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.form-toast-overlay.show .form-toast { transform: translateY(0) scale(1); }
+
+.form-toast-check {
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: #dcfce7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-toast-check svg {
+  width: 36px;
+  height: 36px;
+  stroke: #16a34a;
+  stroke-width: 3.5;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.form-toast h3 {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 1.25rem;
+  color: var(--black);
+  margin-bottom: 10px;
+}
+.form-toast p {
+  font-size: 0.95rem;
+  color: var(--gray-text);
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+.form-toast button {
+  background: #16a34a;
+  color: var(--white);
+  border: none;
+  padding: 13px 32px;
+  border-radius: 100px;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.form-toast button:hover {
+  background: #15803d;
+  transform: translateY(-2px);
 }
 
 </style>
@@ -5231,8 +5314,8 @@ function submitForm(e) {
     .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
     .then(function (r) {
       if (r.ok && r.data && r.data.success) {
-        statusBox.textContent = '✓ Děkujeme! Vaši poptávku jsme přijali, ozveme se vám co nejdříve.';
-        statusBox.style.color = '#15803d';
+        statusBox.textContent = '';
+        showFormToast();
         form.reset();
         if (typeof hcaptcha !== 'undefined' && hcaptcha.reset) {
           try { hcaptcha.reset(); } catch (err) {}
@@ -5253,6 +5336,31 @@ function submitForm(e) {
 
   return false;
 }
+
+// Výrazné potvrzení odeslání formuláře – zelené okno
+function showFormToast() {
+  var t = document.getElementById('formToast');
+  if (!t) return;
+  t.classList.add('show');
+  document.body.style.overflow = 'hidden';
+  // automatické zavření po 6 sekundách
+  clearTimeout(window._formToastTimer);
+  window._formToastTimer = setTimeout(hideFormToast, 6000);
+}
+function hideFormToast() {
+  var t = document.getElementById('formToast');
+  if (!t) return;
+  t.classList.remove('show');
+  document.body.style.overflow = '';
+  clearTimeout(window._formToastTimer);
+}
+// zavření kliknutím na ztmavené pozadí nebo klávesou Esc
+document.addEventListener('click', function(e) {
+  if (e.target && e.target.id === 'formToast') hideFormToast();
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') hideFormToast();
+});
 
 
 
@@ -5379,6 +5487,20 @@ function zvCookieReopen() {
 
 <!-- Web3Forms client script - automaticky zajistí rendering hCaptcha widgetu -->
 <script src="https://web3forms.com/client/script.js" async defer></script>
+
+<!-- ============================================================ -->
+<!-- POTVRZENÍ ODESLÁNÍ FORMULÁŘE – výrazné zelené okno            -->
+<!-- ============================================================ -->
+<div class="form-toast-overlay" id="formToast" role="dialog" aria-live="polite" aria-modal="true">
+  <div class="form-toast">
+    <div class="form-toast-check" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    </div>
+    <h3>Děkujeme!</h3>
+    <p>Vaši poptávku jsme přijali. Ozveme se vám co nejdříve.</p>
+    <button type="button" onclick="hideFormToast()">Zavřít</button>
+  </div>
+</div>
 
 </body>
 </html>
