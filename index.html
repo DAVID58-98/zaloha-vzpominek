@@ -1051,8 +1051,8 @@ section {
   border-color: var(--accent);
 }
 .why-icon {
-  width: 110px;
-  height: 110px;
+  width: 132px;
+  height: 132px;
   background: linear-gradient(135deg, var(--bg-cream-light), var(--bg-cream-dark));
   border-radius: 26px;
   display: flex;
@@ -1066,8 +1066,8 @@ section {
   background: linear-gradient(135deg, #fff0e2, #ffd9b8);
 }
 .why-icon img {
-  width: 78px;
-  height: 78px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
   display: block;
 }
@@ -1095,21 +1095,21 @@ section {
 @media (max-width: 920px) {
   .why-card {
     display: grid;
-    grid-template-columns: 64px 1fr;
+    grid-template-columns: 78px 1fr;
     column-gap: 18px;
     align-items: start;
     padding: 22px 22px;
   }
   .why-icon {
-    width: 64px;
-    height: 64px;
+    width: 78px;
+    height: 78px;
     border-radius: 16px;
     margin-bottom: 0;
     grid-row: span 2;
   }
   .why-icon img {
-    width: 42px;
-    height: 42px;
+    width: 54px;
+    height: 54px;
   }
   .why-card h3 {
     font-size: 1.05rem;
@@ -2326,28 +2326,25 @@ tr.pl-min td:first-child { color: var(--black); }
 
 .article-visual {
   width: 100%;
-  aspect-ratio: 4 / 3; /* vyšší prostor pro obrázek */
+  aspect-ratio: 3 / 2; /* vyšší prostor pro obrázek */
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 22px 22px 16px;
+  padding: 0;
 }
 /* lichá karta - krémové pozadí; sudá - mírně tmavší oranžový tón */
 .article-card:nth-child(odd)  .article-visual { background: linear-gradient(135deg, var(--bg-cream-light) 0%, var(--bg-cream-dark) 100%); }
 .article-card:nth-child(even) .article-visual { background: linear-gradient(135deg, #ffefe0 0%, #ffd8b8 100%); }
 
 .article-visual img {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 10px 22px rgba(0,0,0,0.22));
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transition: transform 0.45s ease;
 }
 .article-card:hover .article-visual img {
-  transform: scale(1.08) rotate(-2deg);
+  transform: scale(1.06);
 }
 
 /* Placeholder dokud nemáme finální fotky */
@@ -4087,137 +4084,137 @@ tr.pl-min td:first-child { color: var(--black); }
       <button class="slider-arrow slider-arrow-next" aria-label="Další" data-target="articlesTrack" data-dir="next">›</button>
       <div class="articles-slider" id="articlesTrack" data-autoscroll="true">
 
-      <button class="article-card" id="clanek-vhs" data-article="vhs">
+      <a class="article-card" href="clanky/digitalizace-vhs-kazet.html" id="clanek-vhs">
         <div class="article-visual">
-          <img src="Clanky/vhs.png" alt="Digitalizace VHS kazet" loading="lazy">
+          <img src="clanky/foto/vhs.png" alt="Digitalizace VHS kazet" loading="lazy">
         </div>
         <div class="article-body">
           <h4>Digitalizace VHS kazet</h4>
           <p>Proč VHS ztrácí kvalitu, jak probíhá profesionální převod a v jaké kvalitě dostanete výsledek.</p>
           <span class="article-link">Otevřít článek →</span>
         </div>
-      </button>
+      </a>
 
-      <button class="article-card" id="clanek-vhsc" data-article="vhsc">
+      <a class="article-card" href="clanky/digitalizace-vhs-c-kazet.html" id="clanek-vhsc">
         <div class="article-visual">
-          <img src="Clanky/vhs-c.png" alt="VHS-C z rodinných kamer" loading="lazy">
+          <img src="clanky/foto/vhs-c.png" alt="VHS-C z rodinných kamer" loading="lazy">
         </div>
         <div class="article-body">
           <h4>VHS-C z rodinných kamer</h4>
           <p>Malé kazety z domácích kamer. Adaptér ani fungující kameru u nás nepotřebujete.</p>
           <span class="article-link">Otevřít článek →</span>
         </div>
-      </button>
+      </a>
 
-      <button class="article-card" id="clanek-hi8" data-article="hi8">
+      <a class="article-card" href="clanky/digitalizace-hi8-video8-kazet.html" id="clanek-hi8">
         <div class="article-visual">
-          <img src="Clanky/hi8.png" alt="Hi8 a Video8 ze Sony" loading="lazy">
+          <img src="clanky/foto/hi8.png" alt="Hi8 a Video8 ze Sony" loading="lazy">
         </div>
         <div class="article-body">
           <h4>Hi8 a Video8 ze Sony</h4>
           <p>Kazety z populárních „Handycam" kamer. Profesionální stanice Sony Digital8 s TBC.</p>
           <span class="article-link">Otevřít článek →</span>
         </div>
-      </button>
+      </a>
 
-      <button class="article-card" id="clanek-minidv" data-article="minidv">
+      <a class="article-card" href="clanky/digitalizace-mini-dv-kazet.html" id="clanek-minidv">
         <div class="article-visual">
-          <img src="Clanky/minidv.png" alt="Mini DV do PC a na USB" loading="lazy">
+          <img src="clanky/foto/minidv.png" alt="Mini DV do PC a na USB" loading="lazy">
         </div>
         <div class="article-body">
           <h4>Mini DV do PC a na USB</h4>
           <p>Digitální kazety přes FireWire. Přenos v poměru 1:1 bez ztráty kvality.</p>
           <span class="article-link">Otevřít článek →</span>
         </div>
-      </button>
+      </a>
 
-      <button class="article-card" id="clanek-dvd" data-article="dvd">
+      <a class="article-card" href="clanky/digitalizace-dvd.html" id="clanek-dvd">
         <div class="article-visual">
-          <img src="Clanky/dvd.png" alt="DVD na USB do MP4" loading="lazy">
+          <img src="clanky/foto/dvd.png" alt="DVD na USB do MP4" loading="lazy">
         </div>
         <div class="article-body">
           <h4>DVD na USB do MP4</h4>
           <p>Staré DVD už nejde nikde přehrát. Modernizace archivu do univerzálního MP4.</p>
           <span class="article-link">Otevřít článek →</span>
         </div>
-      </button>
+      </a>
 
-      <button class="article-card" id="clanek-darek" data-article="darek">
+      <a class="article-card" href="clanky/digitalizace-jako-darek.html" id="clanek-darek">
         <div class="article-visual">
-          <img src="Clanky/darek.png" alt="VHS jako originální dárek" loading="lazy">
+          <img src="clanky/foto/darek.png" alt="VHS jako originální dárek" loading="lazy">
         </div>
         <div class="article-body">
           <h4>VHS jako originální dárek</h4>
           <p>Nápad, který rozpláče (štěstím). Stroj času pro rodiče i prarodiče.</p>
           <span class="article-link">Otevřít článek →</span>
         </div>
-      </button>
+      </a>
 
-      <button class="article-card" id="clanek-kapacita" data-article="kapacita">
+      <a class="article-card" href="clanky/usb-disk-kapacita.html" id="clanek-kapacita">
         <div class="article-visual">
-          <img src="Clanky/usb.png" alt="Kolik se vejde na USB" loading="lazy">
+          <img src="clanky/foto/usb.png" alt="Kolik se vejde na USB" loading="lazy">
         </div>
         <div class="article-body">
           <h4>Kolik se vejde na USB</h4>
           <p>1 hodina videa = cca 1,5 GB. Praktický přehled kapacit a doporučení.</p>
           <span class="article-link">Otevřít článek →</span>
         </div>
-      </button>
+      </a>
 
-      <button class="article-card" id="clanek-neznamy" data-article="neznamy">
+      <a class="article-card" href="clanky/zjisteni-obsahu-kazet.html" id="clanek-neznamy">
         <div class="article-visual">
-          <img src="Clanky/obsah-kazet.png" alt="Neznámý obsah kazety" loading="lazy">
+          <img src="clanky/foto/obsah-kazet.png" alt="Neznámý obsah kazety" loading="lazy">
         </div>
         <div class="article-body">
           <h4>Neznámý obsah kazety</h4>
           <p>Co je na kazetě bez popisku? Jak zjistit obsah, když nemáte video.</p>
           <span class="article-link">Otevřít článek →</span>
         </div>
-      </button>
+      </a>
 
-      <button class="article-card" id="clanek-oprava" data-article="oprava">
+      <a class="article-card" href="clanky/oprava-vhs-kazet.html" id="clanek-oprava">
         <div class="article-visual">
-          <img src="Clanky/oprava.png" alt="Oprava poškozených kazet" loading="lazy">
+          <img src="clanky/foto/oprava.png" alt="Oprava poškozených kazet" loading="lazy">
         </div>
         <div class="article-body">
           <h4>Oprava poškozených kazet</h4>
           <p>Přetržená páska, plíseň, zacuchaný kotouč. Profesionální záchrana.</p>
           <span class="article-link">Otevřít článek →</span>
         </div>
-      </button>
+      </a>
 
-      <button class="article-card" id="clanek-levne" data-article="levne">
+      <a class="article-card" href="clanky/usb-prevodniky-vhs.html" id="clanek-levne">
         <div class="article-visual">
-          <img src="Clanky/grabber.png" alt="Proč nekupovat levné převodníky" loading="lazy">
+          <img src="clanky/foto/grabber.png" alt="Proč nekupovat levné převodníky" loading="lazy">
         </div>
         <div class="article-body">
           <h4>Proč nekupovat levné převodníky</h4>
           <p>Levné USB grabbery z Číny? 5 důvodů, proč se vám to nevyplatí.</p>
           <span class="article-link">Otevřít článek →</span>
         </div>
-      </button>
+      </a>
 
-      <button class="article-card" id="clanek-postou" data-article="postou">
+      <a class="article-card" href="clanky/zaslani-kazet-postou.html" id="clanek-postou">
         <div class="article-visual">
-          <img src="Clanky/doprava.png" alt="Zaslání kazet poštou" loading="lazy">
+          <img src="clanky/foto/doprava.png" alt="Zaslání kazet poštou" loading="lazy">
         </div>
         <div class="article-body">
           <h4>Zaslání kazet poštou</h4>
           <p>Bezpečný postup balení a doprava zpět zdarma nad 1.000 Kč.</p>
           <span class="article-link">Otevřít článek →</span>
         </div>
-      </button>
+      </a>
 
-      <button class="article-card" id="clanek-zivotnost" data-article="zivotnost">
+      <a class="article-card" href="clanky/zivotnost-kazet.html" id="clanek-zivotnost">
         <div class="article-visual">
-          <img src="Clanky/zivotnost.png" alt="Životnost kazet" loading="lazy">
+          <img src="clanky/foto/zivotnost.png" alt="Životnost kazet" loading="lazy">
         </div>
         <div class="article-body">
           <h4>Životnost kazet</h4>
           <p>Proč se magnetická páska rozkládá a co je Sticky Shed Syndrome.</p>
           <span class="article-link">Otevřít článek →</span>
         </div>
-      </button>
+      </a>
       </div>
     </div>
   </div>
@@ -4450,7 +4447,7 @@ tr.pl-min td:first-child { color: var(--black); }
 
         <label class="form-consent">
           <input type="checkbox" required>
-          <span>Souhlasím se zpracováním osobních údajů dle <a href="javascript:void(0)" onclick="openModal('gdpr')">Zásad ochrany osobních údajů</a>.</span>
+          <span>Souhlasím se zpracováním osobních údajů dle <a href="gdpr.html" target="_blank" rel="noopener">Zásad ochrany osobních údajů</a>.</span>
         </label>
 
         <button type="submit" class="form-submit">Odeslat poptávku</button>
@@ -4470,8 +4467,8 @@ tr.pl-min td:first-child { color: var(--black); }
     <div class="footer-bottom">
       <div class="footer-copy">© 2026 Záloha vzpomínek</div>
       <div class="footer-legal">
-        <a href="javascript:void(0)" onclick="openModal('vop')">VOP</a>
-        <a href="javascript:void(0)" onclick="openModal('gdpr')">GDPR</a>
+        <a href="vop.html" target="_blank" rel="noopener">VOP</a>
+        <a href="gdpr.html" target="_blank" rel="noopener">GDPR</a>
         <a href="javascript:void(0)" onclick="zvCookieReopen()">Cookies</a>
       </div>
     </div>
@@ -4501,23 +4498,6 @@ tr.pl-min td:first-child { color: var(--black); }
 </div>
 
 
-<!-- ============================================================ -->
-<!-- POP-UP / MODAL – BUDE ZAPLNĚN JAVASCRIPTEM                   -->
-<!-- ============================================================ -->
-<div class="modal-overlay" id="modalOverlay" onclick="closeModalOnBg(event)">
-  <div class="modal-card" id="modalCard">
-    <div class="modal-header">
-      <div class="modal-title-wrap">
-        <div class="modal-eyebrow" id="modalEyebrow">Záloha vzpomínek</div>
-        <h2 class="modal-title" id="modalTitle">Titulek</h2>
-      </div>
-      <button class="modal-close" onclick="closeModal()" aria-label="Zavřít">×</button>
-    </div>
-    <div class="modal-body" id="modalBody">
-      <!-- naplní JS -->
-    </div>
-  </div>
-</div>
 
 
 <!-- ============================================================ -->
@@ -4529,7 +4509,7 @@ tr.pl-min td:first-child { color: var(--black); }
     <h3 class="zv-cookie-title" id="zvCookieTitle">Než zmáčkneme PLAY …</h3>
     <p class="zv-cookie-text">
       Cookies, díky kterým víme, kolik kazet jsme letos zachránili. Můžete je odmítnout, funkčnost webu zůstane.
-      Detaily v <a href="#" onclick="openModal('gdpr'); return false;">Zásadách ochrany osobních údajů</a>.
+      Detaily v <a href="gdpr.html" target="_blank" rel="noopener">Zásadách ochrany osobních údajů</a>.
     </p>
     <div class="zv-cookie-buttons">
       <button class="zv-cookie-btn zv-cookie-btn-primary" onclick="zvCookieAcceptAll()">Přijmout vše</button>
@@ -5277,639 +5257,14 @@ function submitForm(e) {
 
 
 // ============================================================
-// 10. POP-UP / MODAL OKNA – ČLÁNKY, VOP, GDPR
-// ============================================================
-
-// Definice obsahu jednotlivých článků (zachované znění)
-var ARTICLES = {
-
-  // ===== VHS =====
-  vhs: {
-    eyebrow: 'Článek · 10. 2. 2026',
-    title: 'Digitalizace VHS kazet – jak na převod klasických videokazet',
-    body: `
-      <h2>🕐 Tikající hodiny: Proč vaše VHS ztrácí kvalitu?</h2>
-      <p>Mnoho lidí si myslí, že pokud je kazeta bezpečně uložena ve skříni, je v bezpečí. Opak je pravdou. Magnetická páska uvnitř VHS kazety je extrémně náchylná k degradaci.</p>
-      <ul>
-        <li><strong>Demagnetizace:</strong> postupem času magnetická vrstva slábne. Vede k viditelné ztrátě barev, vyblednutí obrazu, zvýšenému šumu a zhoršení zvuku.</li>
-        <li><strong>Fyzické poškození:</strong> páska může zkřehnout, stát se lepkavou nebo se může objevit plíseň, pokud byly kazety skladovány ve vlhku.</li>
-        <li><strong>Mechanické opotřebení:</strong> každé přehrání kazetu mírně opotřebí.</li>
-        <li><strong>Chybějící technika:</strong> výroba VHS přehrávačů byla dávno ukončena. Najít funkční přehrávač je čím dál obtížnější.</li>
-      </ul>
-
-      <h2>⚙️ Jak probíhá profesionální digitalizace VHS?</h2>
-      <p>Možná vás napadlo zkusit digitalizaci doma. Existují levné převodníky, ale jejich kvalita je často nedostatečná – výsledkem bývá roztřesený obraz, špatná synchronizace zvuku a celkově horší kvalita, než jakou kazeta reálně nabízí.</p>
-      <ul>
-        <li><strong>Vizuální kontrola:</strong> každou kazetu nejprve zkontrolujeme. Pokud je páska přetržená nebo znečištěná, nabízíme i doplňkové služby (lepení, čištění).</li>
-        <li><strong>Špičková technika:</strong> pro samotný převod používáme výhradně profesionální videopřehrávače Panasonic NV-HS1000 s technologií TBC (Time Base Correction). Ta digitálně stabilizuje roztřesený obraz.</li>
-        <li><strong>Převod signálu:</strong> analogový signál převádíme přes externí A/D převodník Canopus ADVC 300, rovněž s TBC.</li>
-        <li><strong>Základní úprava (zdarma):</strong> ořízneme černé okraje, provedeme redukci šumu, normalizujeme zvuk a vyvážíme barvy.</li>
-        <li><strong>Uložení:</strong> výsledný MP4 soubor vám uložíme na vámi zvolené médium.</li>
-      </ul>
-
-      <h2>🌟 Výhody digitálního formátu</h2>
-      <ul>
-        <li><strong>Trvalá záloha:</strong> digitální soubory nestárnou ani neblednou.</li>
-        <li><strong>Snadné sdílení:</strong> pošlete video rodině e-mailem, nahrajte na cloud.</li>
-        <li><strong>Okamžitá dostupnost:</strong> přehrajete kdykoli – PC, mobil, Smart TV.</li>
-        <li><strong>Lepší organizace:</strong> místo krabice plné kazet máte vše na jednom USB.</li>
-      </ul>
-
-      <h2>🚀 Nečekejte, až bude pozdě</h2>
-      <p>Za 60 minut záznamu účtujeme férovou cenu <strong>250 Kč</strong>, přičemž prázdná místa, šum ani reklamy neplatíte. Minimální cena za zakázku je 300 Kč.</p>
-    `
-  },
-
-  // ===== VHS-C =====
-  vhsc: {
-    eyebrow: 'Článek · VHS-C',
-    title: 'Digitalizace VHS-C kazet – malé kazety z rodinných kamer',
-    body: `
-      <h2>📼 Co je VHS-C a proč je ohroženější než VHS?</h2>
-      <p>VHS-C je zmenšená verze klasické videokazety. Páska uvnitř je sice stejná (šířka 12,7 mm), ale mechanika kazety je jemnější. Protože se tyto kazety používaly v přenosných kamerách, byly často vystaveny:</p>
-      <ul>
-        <li>otřesům a změnám teplot (natáčení venku, převážení na dovolené),</li>
-        <li>častému přehrávání a přetáčení v mechanice kamery,</li>
-        <li>dlouhodobému skladování bez ochranných obalů.</li>
-      </ul>
-
-      <h2>❓ Nemám adaptér. Můžete kazetu převést?</h2>
-      <p>Jeden z nejčastějších dotazů. Odpověď je jednoduchá: <strong>ANO</strong>. K provedení převodu VHS-C na USB nepotřebujete mít vlastní adaptér ani funkční kameru. V našem studiu disponujeme profesionálním vybavením včetně kvalitních redukcí.</p>
-      <p>Nerozlišujeme, zda nám donesete velkou VHS nebo malou VHS-C. Cena je jednotná a transparentní.</p>
-
-      <h2>🛠️ Jak probíhá digitalizace VHS-C u nás?</h2>
-      <ul>
-        <li><strong>Příprava:</strong> kazetu vložíme do profesionálního motorického adaptéru, který zajistí správné napnutí pásky.</li>
-        <li><strong>Přehrání s TBC:</strong> obraz snímáme přes videorekordér Panasonic NV-HS1000 s technologií TBC (Time Base Correction).</li>
-        <li><strong>Digitalizace přes Canopus ADVC 300:</strong> profesionální A/D převodník zajistí dokonalou synchronizaci obrazu a zvuku.</li>
-      </ul>
-
-      <h2>💡 Výhody převodu na USB</h2>
-      <ul>
-        <li><strong>Kompatibilita:</strong> video z USB přehrajete v televizi, na PC, tabletu.</li>
-        <li><strong>Bezpečnost:</strong> flash disk se nepoškrábe jako DVD.</li>
-        <li><strong>Možnost sdílení:</strong> soubor můžete snadno zkopírovat a poslat dalším členům rodiny.</li>
-      </ul>
-    `
-  },
-
-  // ===== Hi8 =====
-  hi8: {
-    eyebrow: 'Článek · Hi8 / Video8',
-    title: 'Digitalizace Hi8 a Video8 – kazety z kamer Sony Handycam',
-    body: `
-      <h2>📼 Co jsou kazety Video8 a Hi8?</h2>
-      <p>Oba formáty vypadají na první pohled stejně – malá kazeta, šířka pásky 8 mm.</p>
-      <ul>
-        <li><strong>Video8:</strong> první generace z 80. let. Lepší zvuk než VHS, ale standardní obraz.</li>
-        <li><strong>Hi8:</strong> nástupce s vyšším rozlišením a ostřejším obrazem.</li>
-      </ul>
-      <p>Problémem těchto kazet je jejich zranitelnost. Páska je tenká a náchylná k zauzlování v mechanice starých kamer. Pokud vám kamera kazetu „sežere“, můžete o záznam přijít navždy.</p>
-
-      <h2>🔌 Proč je převod Hi8 doma tak složitý?</h2>
-      <ul>
-        <li><strong>Nefunkční technika:</strong> kamery Sony trpí na vadné kondenzátory a mechanické závady.</li>
-        <li><strong>Nekompatibilita:</strong> moderní počítače nemají analogové vstupy.</li>
-        <li><strong>Nekvalitní USB převodníky:</strong> ztrácí synchronizaci zvuku, mají roztřesený obraz.</li>
-      </ul>
-
-      <h2>⚙️ Profesionální převod v našem studiu</h2>
-      <p>Pro digitalizaci kazet tohoto typu využíváme špičkové přehrávací stanice (Sony Digital8/Hi8 decks) s funkcí TBC a redukcí šumu DNR.</p>
-      <ul>
-        <li><strong>Stabilizace obrazu:</strong> TBC srovná roztřesené řádky a zajistí klidný obraz.</li>
-        <li><strong>Čistý zvuk:</strong> Video8 mělo často skvělý zvuk, převedeme ho věrně.</li>
-      </ul>
-
-      <h2>🎁 Výsledek: Video8 na USB</h2>
-      <p>Nejčastěji realizujeme převod z kazety na USB. Videa dostanete ve formátu MP4, který přehrajete všude.</p>
-    `
-  },
-
-  // ===== Mini DV =====
-  minidv: {
-    eyebrow: 'Článek · Mini DV',
-    title: 'Digitalizace Mini DV – převod do PC a na USB',
-    body: `
-      <h2>🔌 Proč nejde Mini DV převést doma?</h2>
-      <ul>
-        <li><strong>Chybějící porty:</strong> kamery Mini DV se k počítači připojovaly přes rozhraní FireWire (IEEE 1394). Moderní notebooky a stolní počítače tento port už roky nemají. USB sloužilo pouze pro fotky.</li>
-        <li><strong>Nefunkční kamery:</strong> mechanika Mini DV je velmi jemná a citlivá.</li>
-      </ul>
-
-      <h2>⏳ Hrozba „Bit Rot“: Proč kazety degradují?</h2>
-      <p>Myslíte si, že když je to digitální jedničky a nuly, záznam vydrží věčně? Omyl. Páska v Mini DV je užší a hustota dat je vyšší než u VHS. To znamená, že jakékoliv fyzické poškození pásky (vlhkost, prach, demagnetizace) má fatální následky.</p>
-      <p>Zatímco u VHS obraz jen zrní, u Mini DV dochází k tzv. <strong>kostičkování</strong> (pixelizaci), výpadkům zvuku nebo úplné ztrátě obrazu (modrá obrazovka).</p>
-
-      <h2>💾 Jak probíhá převod Mini DV u nás?</h2>
-      <p>Naším cílem je dostat data z pásky v poměru 1:1.</p>
-      <ul>
-        <li><strong>Profesionální přenos:</strong> používáme přehrávací zařízení a dedikované převodníky přes FireWire. Nedochází k žádné zbytečné kompresi.</li>
-        <li><strong>Digitální čistota:</strong> na rozdíl od VHS, kde se analog mění na digitál, u Mini DV pouze „přeléváme“ digitální data.</li>
-      </ul>
-
-      <h2>🚀 Co získáte převodem na USB?</h2>
-      <ul>
-        <li>Videa pustíte na Smart TV.</li>
-        <li>Můžete je stříhat v moderních programech.</li>
-        <li>Získáte trvalou zálohu, kterou už čas nepoškodí.</li>
-      </ul>
-    `
-  },
-
-  // ===== DVD =====
-  dvd: {
-    eyebrow: 'Článek · DVD',
-    title: 'Digitalizace DVD na USB – převod starých disků do MP4',
-    body: `
-      <h2>📉 Problémy s DVD, o kterých se dříve nemluvilo</h2>
-      <ul>
-        <li><strong>Fyzická degradace:</strong> stačí mikroskopické škrábance nebo degradace odrazové vrstvy a přehrávač disk „nezkousne“.</li>
-        <li><strong>Nekompatibilita:</strong> zkuste si dnes pustit DVD na tabletu bez externího přehrávače – složité.</li>
-        <li><strong>Formát záznamu:</strong> videa na DVD jsou ve formátu VOB, který se špatně střihá.</li>
-      </ul>
-
-      <h2>🔄 Jak probíhá převod z DVD na USB?</h2>
-      <ul>
-        <li><strong>Kontrola čitelnosti:</strong> prověříme, zda disk není poškozený a zda data jdou bezchybně načíst.</li>
-        <li><strong>Konverze do MP4:</strong> video z DVD převedeme do univerzálního formátu MP4 v nejvyšší možné kvalitě.</li>
-      </ul>
-
-      <h2>💰 Kolik stojí modernizace archivu?</h2>
-      <p>Digitalizace jednoho DVD disku stojí <strong>od 250 Kč</strong>. Je to investice do jistoty, že o svá videa už nikdy nepřijdete.</p>
-
-      <h2>🚀 Proč zvolit Zálohu vzpomínek?</h2>
-      <p>Pokud narazíte na disky s chybami v zápisu nebo na specifické struktury menu, běžné programy selhávají. K práci používáme techniku, která si poradí i s hůře čitelnými médii.</p>
-    `
-  },
-
-  // ===== Dárek =====
-  darek: {
-    eyebrow: 'Článek · Tipy a inspirace',
-    title: 'Digitalizace VHS jako originální dárek',
-    body: `
-      <h2>🎁 Dárek, který rozpláče (štěstím)</h2>
-      <p>Představte si tu atmosféru. Rozbalují se dárky, papír šustí. Váš blízký najde malou krabičku, v níž je elegantní USB flash disk. Možná bude chvíli tápat, co to je. Ale pak disk zasunete do televize. Na obrazovce se objeví zrnitý, ale živý obraz. Je rok 1995.</p>
-
-      <h2>🕵️‍♂️ Jak připravit překvapení?</h2>
-      <ul>
-        <li><strong>Efekt překvapení:</strong> pokud máte přístup ke kazetám (návštěva rodičů), nenápadně si je „vypůjčte“. Přineste nám je nebo pošlete poštou. Zajistíme profesionální převod VHS, VHS-C či Hi8 na USB.</li>
-        <li><strong>Společný projekt:</strong> oslovte sourozence nebo bratrance a vytvořte společný dárek pro rodiče. Náklady se rozdělí.</li>
-      </ul>
-
-      <h2>🕯️ Společný zážitek, který spojuje</h2>
-      <p>Celá rodina si sedne k televizi. Místo koukání do mobilů společně sdílíte vzpomínky. Vyprávějí se historky, které by jinak zůstaly zapomenuté.</p>
-
-      <h2>❤️ Nečekejte na „až potom“</h2>
-      <p>Kazety stárnou a kvalita se horší každým dnem. Nenechávejte tento dárek na dobu, kdy už pásky nebudou čitelné – nebo až tu s námi nebudou ti, kteří jsou na nich zachyceni.</p>
-    `
-  },
-
-  // ===== Kapacita =====
-  kapacita: {
-    eyebrow: 'Článek · Kapacita a archivace',
-    title: 'Kolik hodin videa se vejde na USB?',
-    body: `
-      <h2>🧮 Výpočet: 1 hodina = 1,5 GB</h2>
-      <p>Pro převod používáme moderní kodek H.264, který nabízí ideální poměr mezi kvalitou obrazu a velikostí souboru. Pro naše standardní rozlišení (odpovídající kvalitě VHS) platí jednoduché pravidlo:</p>
-      <p><strong>1 hodina záznamu zabere přibližně 1 až 1,5 GB místa.</strong></p>
-      <p>Příklad: 10 videokazet à 2 hodiny = cca 20 hodin videa = cca <strong>32 GB</strong>. Vejde se na 64 GB USB disk s rezervou.</p>
-
-      <h2>🚀 Proč doporučujeme naše USB disky?</h2>
-      <ul>
-        <li><strong>Rychlost:</strong> standard USB 3.2 – video se nenačítá, ale rovnou hraje.</li>
-        <li><strong>Záruka:</strong> 3 roky.</li>
-        <li><strong>Cena:</strong> férových 250 Kč.</li>
-      </ul>
-
-      <h2>🛡️ 12 měsíců archivace ZDARMA</h2>
-      <p>Všechny zakázky uchováváme v zabezpečeném digitálním archivu po dobu 12 měsíců od předání. Pokud o data přijdete, kdykoliv vám je zdarma nahrajeme znovu.</p>
-
-      <h2>💾 USB není trezor!</h2>
-      <p>USB Flash disk je skvělý na přenos a přehrávání, ale není vhodný pro dlouhodobou archivaci. Flash paměť může po letech bez napájení ztratit data.</p>
-      <ul>
-        <li><strong>Cloud:</strong> Google Drive, OneDrive, iCloud.</li>
-        <li><strong>HDD:</strong> kopii uložte do počítače nebo na externí disk.</li>
-        <li><strong>USB:</strong> používejte na přenos a přehrávání.</li>
-      </ul>
-    `
-  },
-
-  // ===== Neznámý =====
-  neznamy: {
-    eyebrow: 'Článek · Detektivní práce',
-    title: 'Neznámý obsah VHS – jak zjistit, co je na kazetě?',
-    body: `
-      <h2>📺 Proč si kazetu nemůžete pustit sami?</h2>
-      <ul>
-        <li><strong>Riziko zničení:</strong> staré, neservisované přístroje mají zpuchřelé řemínky a mohou vaši jedinou kazetu nenávratně „sežrat“.</li>
-        <li><strong>Technické bariéry:</strong> propojit analogový výstup (Scart/Cinch) s moderní 4K televizí je bez speciálních převodníků často nemožné.</li>
-      </ul>
-
-      <h2>🕵️‍♂️ Služba „Zjištění obsahu“: Jak to funguje?</h2>
-      <ul>
-        <li>Kazety nám předáte (osobně v Praze nebo poštou).</li>
-        <li>Šetrně je vložíme do profesionálního přístroje a zkontrolujeme na několika místech.</li>
-        <li>Pošleme vám stručný popis obsahu.</li>
-      </ul>
-
-      <h2>💰 Kolik tato služba stojí?</h2>
-      <ul>
-        <li><strong>Pokud si objednáte digitalizaci:</strong> kontrola obsahu je součástí procesu a neplatíte za ni nic navíc.</li>
-        <li><strong>Pokud digitalizaci nechcete:</strong> drobný poplatek za čas a opotřebení techniky.</li>
-      </ul>
-
-      <h2>💡 Tipy: Jak poznat obsah i bez videa?</h2>
-      <ul>
-        <li><strong>Vylomená pojistka:</strong> pokud je na hřbetě vylomený plastový čtvereček, někdo si záznam chránil. Často jde o cenné rodinné video.</li>
-        <li><strong>Délka pásky:</strong> originální filmy mají potisk. Prázdné kazety pro domácí nahrávání mají často „E-180“, „E-240“ apod.</li>
-      </ul>
-    `
-  },
-
-  // ===== Oprava =====
-  oprava: {
-    eyebrow: 'Článek · Záchrana poškozených kazet',
-    title: 'Oprava VHS kazet – lepení pásky a záchrana',
-    body: `
-      <h2>🚫 Proč kazetu nikdy nelepte izolepou?</h2>
-      <ul>
-        <li><strong>Lepidlo se roztéká:</strong> běžná lepicí páska není stavěná na tření v mechanice videa. Lepidlo se zahřeje, vyteče a nenávratně slepí další vrstvy pásky.</li>
-        <li><strong>Zničení videohlav:</strong> zbytky lepidla zanesou jemné hlavy videorekordéru. Oprava videa pak stojí víc, než nová digitalizace.</li>
-      </ul>
-
-      <h2>🛠️ Jak probíhá profesionální oprava?</h2>
-      <ul>
-        <li><strong>Demontáž:</strong> kazetu opatrně rozebereme.</li>
-        <li><strong>Vystřižení poškození:</strong> zmuchlanou část pásky s chirurgickou přesností odstraníme.</li>
-        <li><strong>Profesionální spoj:</strong> používáme speciální nelepivé pásky určené k opravám.</li>
-      </ul>
-
-      <h2>🍄 Plíseň a prach: Tichý zabiják</h2>
-      <p>Pokud na pásce vidíte bílý povlak, jde o plíseň. Takovou kazetu <strong>nikdy nevkládejte do videa</strong> – spory plísně infikují celý přístroj. V rámci doplňkových služeb nabízíme čištění kazet.</p>
-
-      <h2>📼 Cíl: Digitalizace a bezpečí</h2>
-      <p>Oprava kazety je obvykle jen prvním krokem. Jakmile je páska slepená a funkční, okamžitě ji digitalizujeme. Digitální soubor se nepřetrhne, nezmuchlá ani nezplesniví.</p>
-    `
-  },
-
-  // ===== Levné =====
-  levne: {
-    eyebrow: 'Článek · Srovnání kvality',
-    title: 'Proč nekupovat levný USB převodník na VHS?',
-    body: `
-      <h2>📉 1. Rozjetý zvuk a obraz (desynchronizace)</h2>
-      <p>Začátek videa vypadá v pořádku, ale po deseti minutách se zvuk předbíhá nebo opožďuje za obrazem. U dvouhodinového záznamu ze svatby je to nekoukatelné. Profesionální technika má hardwarovou synchronizaci, která drží zvuk s obrazem „v zámku“.</p>
-
-      <h2>📼 2. Roztřesený obraz a chybějící TBC</h2>
-      <p>Staré kazety mají přirozeně nestabilní signál. Levné převodníky neumí tyto chyby opravit. My používáme videorekordéry s funkcí TBC, která obraz digitálně „narovná“.</p>
-
-      <h2>🎨 3. Vybledlé barvy a „kostičkování“</h2>
-      <p>Levné čipy v grabberech mají nízký dynamický rozsah a používají agresivní kompresi, která v obraze vytváří nepříjemné čtverečky (artefakty). My převádíme přes profesionální AD převodníky Canopus.</p>
-
-      <h2>🛠️ 4. Past jménem ovladače a software</h2>
-      <p>Koupíte si krabičku, ale zjistíte, že přiložené CD s programem nefunguje na Windows 11. U nás tato starost odpadá.</p>
-
-      <h2>💡 Stojí ta úspora za to?</h2>
-      <p>Když započítáte cenu USB grabberu, čas strávený instalací a desítky hodin nahrávání (které se kvůli chybám opakují), zjistíte, že domácí digitalizace se nevyplatí ani finančně.</p>
-      <p><strong>Vzpomínky máte jen jedny.</strong> Pokud se páska při domácím pokusu poškodí, už ji nikdo nevrátí.</p>
-    `
-  },
-
-  // ===== Poštou =====
-  postou: {
-    eyebrow: 'Článek · Logistika',
-    title: 'Zaslání kazet poštou – bezpečný postup',
-    body: `
-      <p><strong>Doporučujeme ovšem osobní předání</strong>, pokud máte možnost. U konkurence se lidé poslání bojí – a oprávněně. Pojďte si kazety raději předat osobně v naší provozovně v Praze 4 – Krči.</p>
-
-      <h2>📦 Když se osobní předání nehodí: jak postupovat?</h2>
-      <p><strong>Nejdříve nás kontaktujte.</strong> Neposílejte kazety „naslepo“.</p>
-      <ul>
-        <li>Pobavíme se o tom, co potřebujete zdigitalizovat.</li>
-        <li>Odhadneme orientační cenu.</li>
-        <li>Zašleme vám doručovací adresu.</li>
-      </ul>
-
-      <h2>🎁 Bezpečné zabalení</h2>
-      <ul>
-        <li>Každou kazetu zabalte do bublinkové fólie nebo papíru.</li>
-        <li>Vložte do pevné krabice s výplní (noviny, polystyrenové kuličky).</li>
-        <li>Zásilku označte „KŘEHKÉ“ a doporučujeme pojistit.</li>
-      </ul>
-
-      <h2>🛡️ 4 důvody, proč je zaslání bezpečné</h2>
-      <ul>
-        <li><strong>Pojištěná doprava zpět:</strong> každá zásilka je pojištěna proti poškození.</li>
-        <li><strong>Záloha 12 měsíců:</strong> pokud USB ztratíte, kdykoliv vám obsah znovu nahrajeme.</li>
-        <li><strong>Komunikace:</strong> průběžně vás informujeme o stavu zakázky.</li>
-        <li><strong>Tisíce úspěšných zakázek</strong> z celé ČR.</li>
-      </ul>
-
-      <h2>🚚 Doprava zdarma</h2>
-      <p>Při hodnotě zakázky nad <strong>1.000 Kč</strong> máte dopravu zpět <strong>ZDARMA</strong> přes Balíkovnu.</p>
-    `
-  },
-
-  // ===== Životnost =====
-  zivotnost: {
-    eyebrow: 'Článek · Vědecky',
-    title: 'Životnost a degradace kazet – proč se páska ničí',
-    body: `
-      <h2>🥪 Co je uvnitř kazety?</h2>
-      <p>Abychom pochopili degradaci, musíme vědět, z čeho je páska. Představte si ji jako sendvič:</p>
-      <ul>
-        <li><strong>Nosná vrstva (Mylar):</strong> průhledný plast, který drží pásku pohromadě.</li>
-        <li><strong>Magnetická vrstva:</strong> oxid železa (nese obraz a zvuk).</li>
-        <li><strong>Pojivo (Binder):</strong> „lepidlo“, které drží magnetický prach na plastové pásce.</li>
-      </ul>
-      <p>A právě pojivo je Achillovou patou všech kazet (VHS, VHS-C, Hi8 i Mini DV).</p>
-
-      <h2>💧 Sticky Shed Syndrome (syndrom lepivé pásky)</h2>
-      <p>Pojivo vlivem vzdušné vlhkosti absorbuje vodu a začne se chemicky rozkládat (hydrolýza).</p>
-      <ul>
-        <li>Páska začne být na dotek lepkavá.</li>
-        <li>Při přehrávání se vrstvy oxidu odlupují.</li>
-        <li>Lepkavý nános okamžitě ucpe videohlavy přehrávače.</li>
-      </ul>
-
-      <h2>📉 Další nepřátelé vašich vzpomínek</h2>
-      <ul>
-        <li><strong>Demagnetizace:</strong> zemské magnetické pole i elektronika v domácnosti pomalu oslabují magnetický signál.</li>
-        <li><strong>Plíseň:</strong> pokud byla kazeta ve vlhku, může se vytvořit bílý povlak.</li>
-        <li><strong>Teplotní šoky:</strong> opakované zahřívání a chladnutí poškozují strukturu pásky.</li>
-      </ul>
-
-      <h2>⏳ Proč nečekat na „až bude čas“?</h2>
-      <p>Degradace není lineární. Kazeta, která šla přehrát loni, se může letos nenávratně poškodit, protože pojivo dosáhlo kritického bodu rozpadu.</p>
-
-      <h2>💾 Jediné řešení: změna nosiče</h2>
-      <p>Fyziku neobejdeme. Jediným způsobem, jak zastavit proces, je převést analogový magnetický záznam na digitální data – jedničky a nuly.</p>
-    `
-  }
-};
-
-
-// ============================================================
-// 11. VOP – plný text dle interních dokumentů
-// ============================================================
-var VOP_CONTENT = {
-  eyebrow: 'Záloha vzpomínek',
-  title: 'Všeobecné obchodní podmínky',
-  body: `
-    <p style="background:var(--white);border:1px solid var(--gray-border);padding:14px 16px;border-radius:10px;margin-bottom:24px;font-size:0.9rem;">
-      <strong>Záloha vzpomínek</strong> – digitalizace audio-vizuálních nosičů<br>
-      Provozovatel: <strong>Ivo Kleňha</strong><br>
-      IČO: 66375274 · Nejsme plátci DPH<br>
-      Sídlo: Vrchlického 12, 466 04 Jablonec nad Nisou<br>
-      Provozovna: Přímětická 10, 140 00 Praha 4 – Krč<br>
-      E-mail: <a href="mailto:info@zaloha-vzpominek.cz">info@zaloha-vzpominek.cz</a><br>
-      Telefon: <a href="tel:+420607828970">+420 607 828 970</a><br>
-      Webové stránky: <a href="https://www.zaloha-vzpominek.cz">www.zaloha-vzpominek.cz</a><br>
-      Účinnost VOP: 1. 1. 2026
-    </p>
-
-    <h2>Článek 1 – Úvodní ustanovení</h2>
-    <p>1.1 Tyto Všeobecné obchodní podmínky (dále jen „<strong>VOP</strong>“) upravují vzájemná práva a povinnosti mezi Ivo Kleňha, IČO 66375274, jako poskytovatelem služeb digitalizace audio-vizuálních nosičů (dále jen „<strong>Poskytovatel</strong>“) a fyzickými či právnickými osobami, které objednávají tyto služby (dále jen „<strong>Objednatel</strong>“).</p>
-    <p>1.2 Předmětem služeb je zejména digitalizace videokazet (VHS, VHS-C, Video8, Hi8, Digital8, miniDV apod.), zvukových kazet, DVD a dalších nosičů, jejich převod do digitální podoby a uložení na vybraném médiu nebo cloudovém úložišti.</p>
-    <p>1.3 Tyto VOP jsou nedílnou součástí každé smlouvy uzavřené mezi Poskytovatelem a Objednatelem. Odchylná ustanovení jednotlivé smlouvy mají před zněním VOP přednost.</p>
-    <p>1.4 Smluvní vztah se řídí českým právem, zejména zákonem č. 89/2012 Sb., občanským zákoníkem, a zákonem č. 634/1992 Sb., o ochraně spotřebitele.</p>
-
-    <h2>Článek 2 – Objednávka a uzavření smlouvy</h2>
-    <p>2.1 Objednávku lze provést osobně v provozovně, e-mailem, telefonicky či prostřednictvím webového formuláře.</p>
-    <p>2.2 Smlouva je uzavřena okamžikem, kdy Poskytovatel objednávku potvrdí, případně okamžikem fyzického předání nosičů k digitalizaci.</p>
-    <p>2.3 Objednatel je povinen poskytnout Poskytovateli pravdivé a úplné údaje nutné pro vyřízení zakázky (jméno, kontakt, popis nosičů, požadovaný výstup).</p>
-
-    <h2>Článek 3 – Cena a platební podmínky</h2>
-    <p>3.1 Cena za digitalizaci se odvíjí od skutečné délky záznamu. Účtuje se pouze čistý čas, prázdná místa, šum a televizní záznamy nejsou zpoplatněny.</p>
-    <p>3.2 Základní cena činí <strong>250 Kč za 1 hodinu</strong> záznamu. Pro zakázky většího rozsahu platí množstevní slevy uvedené na webových stránkách Poskytovatele.</p>
-    <p>3.3 <strong>Minimální cena za zakázku je 300 Kč</strong> bez ohledu na celkovou délku záznamu.</p>
-    <p>3.4 K ceně se připočítávají doplňkové služby (úložiště, oprava, střih, expresní zpracování) dle aktuálního ceníku.</p>
-    <p>3.5 Poskytovatel <strong>nepožaduje zálohu předem</strong>. Cena se hradí až po dokončení zakázky a její kontrole Objednatelem.</p>
-    <p>3.6 Platbu lze provést v hotovosti, platební kartou, QR kódem, bankovním převodem nebo dobírkou (při zaslání poštou).</p>
-    <p>3.7 Poskytovatel není plátcem DPH; uvedené ceny jsou konečné.</p>
-
-    <h2>Článek 4 – Dodací podmínky a lhůty</h2>
-    <p>4.1 Standardní lhůta dodání u zakázek do 5 kazet činí <strong>7 pracovních dnů</strong> od jejich převzetí. U rozsáhlejších zakázek se lhůta řídí dohodou stran a vyznačuje se v Potvrzení o převzetí.</p>
-    <p>4.2 Objednatel může požádat o <strong>expresní zpracování</strong>. Cena za expresní vyřízení je navýšena o 50 %.</p>
-    <p>4.3 Předání digitalizovaného obsahu probíhá osobně v provozovně, případně zasláním na adresu Objednatele (přes Balíkovnu nebo Českou poštu) či dálkovým přístupem do zabezpečeného cloudového úložiště.</p>
-    <p>4.4 Zaslání zpět Balíkovnou je u zakázek nad 1.000 Kč zdarma.</p>
-
-    <h2>Článek 5 – Odpovědnost a omezení odpovědnosti</h2>
-    <p>5.1 Poskytovatel postupuje při digitalizaci s odbornou péčí a používá profesionální techniku (Panasonic NV-HS1000, Canopus ADVC 300 s TBC).</p>
-    <p>5.2 Poskytovatel neodpovídá za sníženou kvalitu výsledného záznamu, pokud je tato kvalita způsobena výhradně poškozením, opotřebením, plísní, demagnetizací či jinou degradací předaného nosiče.</p>
-    <p>5.3 V případě nevratného poškození nosiče u Poskytovatele způsobeného hrubou nedbalostí činí maximální výše náhrady škody dvojnásobek ceny zaplacené za digitalizaci dané zakázky.</p>
-
-    <h2>Článek 6 – Reklamace</h2>
-    <p>6.1 Objednatel je povinen výsledek digitalizace zkontrolovat při převzetí, případně bezodkladně po obdržení.</p>
-    <p>6.2 Práva z vadného plnění může Objednatel uplatnit <strong>do 24 měsíců</strong> od převzetí výsledku. Reklamace musí být uplatněna písemně (e-mailem) s popisem vady a podle možnosti i s fotografií nebo ukázkou souboru.</p>
-    <p>6.3 Poskytovatel vyřídí reklamaci bez zbytečného odkladu, nejpozději do 30 dnů. Pokud bude reklamace uznána, provede Poskytovatel novou digitalizaci, případně přiměřenou slevu nebo vrácení peněz.</p>
-
-    <h2>Článek 7 – Odstoupení od smlouvy</h2>
-    <p>7.1 Objednatel, který je spotřebitelem, má právo odstoupit od smlouvy uzavřené distančním způsobem <strong>do 14 dnů</strong> od jejího uzavření, a to bez udání důvodu.</p>
-    <p>7.2 Odstoupení od smlouvy <strong>není možné</strong>, pokud již byly služby z větší části poskytnuty (např. byla zahájena digitalizace) – jedná se o službu poskytovanou na míru dle požadavků Objednatele.</p>
-
-    <h2>Článek 8 – Nevyzvednuté zakázky</h2>
-    <p>8.1 Objednatel je povinen si dokončenou zakázku vyzvednout do 30 dnů od oznámení o jejím dokončení.</p>
-    <p>8.2 Po uplynutí této lhůty má Poskytovatel právo účtovat <strong>skladné ve výši 20 Kč za každý započatý den</strong> uskladnění.</p>
-    <p>8.3 Pokud si Objednatel zakázku nevyzvedne ani <strong>do 45 dnů</strong> od oznámení o jejím dokončení a nereaguje na výzvy Poskytovatele, je Poskytovatel oprávněn nevyzvednuté nosiče a digitální data odpovídajícím způsobem zlikvidovat. Tím není dotčeno právo Poskytovatele na úhradu ceny zakázky.</p>
-
-    <h2>Článek 9 – Mlčenlivost</h2>
-    <p>9.1 Poskytovatel se zavazuje k mlčenlivosti o obsahu předaných nosičů. Obsah zakázky vidí pouze osoba provádějící digitalizaci, a to výhradně za účelem kontroly kvality a případného střihu.</p>
-    <p>9.2 Obsah nikdy není předáván třetím osobám s výjimkou výslovného souhlasu Objednatele nebo zákonné povinnosti.</p>
-
-    <h2>Článek 10 – Ochrana osobních údajů</h2>
-    <p>10.1 Zpracování osobních údajů Objednatele se řídí samostatným dokumentem „Zásady ochrany osobních údajů“, který je dostupný na webových stránkách Poskytovatele.</p>
-    <p>10.2 Záložní kopii digitalizovaného obsahu Poskytovatel uchovává po dobu <strong>12 měsíců</strong> od dokončení zakázky pro případ ztráty výsledného média Objednatelem. Po této době je záloha nevratně smazána.</p>
-
-    <h2>Článek 11 – Závěrečná ustanovení</h2>
-    <p>11.1 Případné spory budou strany řešit přednostně smírnou cestou. Mimosoudní řešení sporů spotřebitelů zajišťuje Česká obchodní inspekce, Štěpánská 567/15, 120 00 Praha 2, <a href="https://www.coi.cz" target="_blank" rel="noopener">www.coi.cz</a>.</p>
-    <p>11.2 Tyto VOP jsou účinné od <strong>1. 1. 2026</strong> a mohou být Poskytovatelem jednostranně měněny. Pro již uzavřené smlouvy platí znění VOP účinné v době jejich uzavření.</p>
-
-    <p style="font-size:0.85rem;color:var(--gray-light);margin-top:24px;">V Praze dne 1. 1. 2026</p>
-
-    <div class="modal-actions">
-      <a href="javascript:void(0)" onclick="window.print();" class="btn btn-secondary" style="background:var(--bg-cream);color:var(--black);">🖨️ Vytisknout</a>
-      <a href="#kontakt" onclick="closeModal()" class="btn btn-primary">Mám dotaz</a>
-    </div>
-  `
-};
-
-
-// ============================================================
-// 12. GDPR – plný text dle interních dokumentů
-// ============================================================
-var GDPR_CONTENT = {
-  eyebrow: 'Záloha vzpomínek',
-  title: 'Zásady ochrany osobních údajů',
-  body: `
-    <p style="background:var(--white);border:1px solid var(--gray-border);padding:14px 16px;border-radius:10px;margin-bottom:24px;font-size:0.9rem;">
-      <strong>Správce osobních údajů</strong><br>
-      Ivo Kleňha, IČO: 66375274 · Nejsme plátci DPH<br>
-      Sídlo: Vrchlického 12, 466 04 Jablonec nad Nisou<br>
-      Provozovna: Přímětická 10, 140 00 Praha 4 – Krč<br>
-      E-mail: <a href="mailto:info@zaloha-vzpominek.cz">info@zaloha-vzpominek.cz</a><br>
-      Telefon: <a href="tel:+420607828970">+420 607 828 970</a><br>
-      Účinnost zásad: 1. 1. 2026
-    </p>
-
-    <h2>Článek 1 – Úvodní informace</h2>
-    <p>Tyto Zásady ochrany osobních údajů popisují, jakým způsobem správce zpracovává osobní údaje fyzických osob (dále jen „<strong>Subjekt údajů</strong>“) v souvislosti s poskytováním služeb digitalizace audio-vizuálních nosičů a provozem webových stránek <a href="https://www.zaloha-vzpominek.cz">www.zaloha-vzpominek.cz</a>.</p>
-    <p>Zpracování se řídí Nařízením Evropského parlamentu a Rady (EU) 2016/679 ze dne 27. dubna 2016 o ochraně fyzických osob v souvislosti se zpracováním osobních údajů (dále jen „<strong>GDPR</strong>“) a zákonem č. 110/2019 Sb., o zpracování osobních údajů.</p>
-
-    <h2>Článek 2 – Kategorie zpracovávaných údajů</h2>
-    <ul>
-      <li><strong>Identifikační údaje:</strong> jméno, příjmení, případně IČO/DIČ u podnikajících osob.</li>
-      <li><strong>Kontaktní údaje:</strong> doručovací adresa, e-mailová adresa, telefonní číslo.</li>
-      <li><strong>Údaje o zakázce:</strong> popis nosičů, vybrané služby, lhůty, cena, platební údaje.</li>
-      <li><strong>Obsah digitalizovaných nosičů:</strong> obsahuje-li záznam zobrazení osob, jejich hlasový projev či jiné údaje, jedná se z hlediska GDPR o osobní údaje Subjektu i třetích osob (viz čl. 8).</li>
-      <li><strong>Údaje z webových stránek:</strong> IP adresa, identifikátory zařízení, údaje z cookies (viz čl. 7).</li>
-    </ul>
-
-    <h2>Článek 3 – Účely a právní základy zpracování</h2>
-    <table>
-      <thead>
-        <tr><th>Účel zpracování</th><th>Právní základ</th><th>Doba uchování</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Plnění smlouvy (vyřízení zakázky)</td><td>čl. 6 odst. 1 písm. b) GDPR</td><td>po dobu plnění + 3 roky</td></tr>
-        <tr><td>Účetnictví, daňové povinnosti</td><td>čl. 6 odst. 1 písm. c) GDPR</td><td>10 let dle zákona</td></tr>
-        <tr><td>Záložní kopie digitalizovaného obsahu</td><td>oprávněný zájem správce, čl. 6 odst. 1 písm. f) GDPR</td><td>12 měsíců</td></tr>
-        <tr><td>Marketing (newsletter, nabídky)</td><td>souhlas, čl. 6 odst. 1 písm. a) GDPR</td><td>do odvolání souhlasu</td></tr>
-        <tr><td>Analytika a měření návštěvnosti webu</td><td>souhlas (cookies)</td><td>dle nastavení cookies</td></tr>
-        <tr><td>Obrana právních nároků</td><td>oprávněný zájem správce</td><td>po dobu promlčecích lhůt</td></tr>
-      </tbody>
-    </table>
-
-    <h2>Článek 4 – Příjemci osobních údajů</h2>
-    <p>Osobní údaje mohou být v nezbytném rozsahu předány následujícím kategoriím příjemců (zpracovatelům):</p>
-    <ul>
-      <li><strong>Česká pošta, s.p.</strong> a její dceřiné společnosti (Balíkovna) – pro doručení zásilek.</li>
-      <li><strong>Posílej.cz</strong> – pro dočasné cloudové úložiště zasílaných souborů.</li>
-      <li><strong>Google LLC</strong> – pro analytiku a měření efektivity webových stránek (Google Analytics, Google Ads), pouze se souhlasem v rámci cookie banneru.</li>
-      <li><strong>Účetní a daňový poradce</strong> – pro plnění zákonných povinností.</li>
-      <li>Orgány veřejné moci v rozsahu zákonných povinností.</li>
-    </ul>
-
-    <h2>Článek 5 – Předávání do třetích zemí</h2>
-    <p>Při využití služeb Google LLC může docházet k předávání některých technických údajů do USA. Předávání probíhá na základě <strong>Data Privacy Framework (DPF)</strong>, do kterého je Google LLC zařazena. Tento rámec představuje rozhodnutí Evropské komise o přiměřené ochraně dle čl. 45 GDPR.</p>
-
-    <h2>Článek 6 – Doba uchování</h2>
-    <p>Osobní údaje uchováváme pouze po dobu nezbytnou pro účely, pro které byly shromážděny, případně po dobu vyžadovanou zákonem.</p>
-    <p><strong>Záložní kopii digitalizovaného obsahu</strong> uchováváme po dobu 12 měsíců od dokončení zakázky pro případ ztráty výsledného média. Po této době je záloha nevratně mazána.</p>
-
-    <h2>Článek 7 – Cookies</h2>
-    <p>Naše webové stránky používají cookies (malé textové soubory) pro správné fungování webu, měření návštěvnosti a měření efektivity reklamních kampaní.</p>
-    <ul>
-      <li><strong>Nezbytné cookies</strong> – nutné pro provoz stránek. Nelze je odmítnout.</li>
-      <li><strong>Analytické cookies</strong> (Google Analytics) – měří, jak uživatelé používají web. Vyžadují souhlas.</li>
-      <li><strong>Reklamní cookies</strong> (Google Ads) – měří efektivitu reklamních kampaní. Vyžadují souhlas.</li>
-    </ul>
-    <p>Souhlas s nepovinnými cookies lze kdykoliv změnit kliknutím na odkaz „Nastavení cookies“ v patičce webu.</p>
-
-    <h2>Článek 8 – Obsah nosičů a údaje třetích osob</h2>
-    <p>Záznamy předané k digitalizaci mohou obsahovat osobní údaje třetích osob (např. zobrazení rodinných příslušníků). Tyto údaje správce zpracovává výhradně za účelem plnění smlouvy s Objednatelem, neukládá je samostatně mimo zakázku ani je nepředává třetím osobám.</p>
-    <p>Objednatel prohlašuje, že je oprávněn nakládat s obsahem předaných nosičů, případně že má od dotčených osob potřebné souhlasy.</p>
-
-    <h2>Článek 9 – Zabezpečení</h2>
-    <p>Správce zavedl odpovídající technická a organizační opatření k ochraně osobních údajů, zejména:</p>
-    <ul>
-      <li>fyzické zabezpečení provozovny,</li>
-      <li>zabezpečení datových úložišť hesly a šifrováním,</li>
-      <li>omezený okruh osob s přístupem k údajům,</li>
-      <li>pravidelná aktualizace bezpečnostních systémů.</li>
-    </ul>
-
-    <h2>Článek 10 – Práva Subjektu údajů</h2>
-    <p>V souladu s GDPR má Subjekt údajů následující práva:</p>
-    <ul>
-      <li><strong>Právo na přístup</strong> (čl. 15 GDPR) – získat potvrzení, zda jsou jeho údaje zpracovávány, a kopii těchto údajů.</li>
-      <li><strong>Právo na opravu</strong> (čl. 16 GDPR) – požadovat opravu nepřesných údajů.</li>
-      <li><strong>Právo na výmaz</strong> (čl. 17 GDPR) – požadovat výmaz osobních údajů, není-li dán právní důvod pro jejich další zpracování.</li>
-      <li><strong>Právo na omezení zpracování</strong> (čl. 18 GDPR).</li>
-      <li><strong>Právo na přenositelnost</strong> (čl. 20 GDPR).</li>
-      <li><strong>Právo vznést námitku</strong> proti zpracování na základě oprávněného zájmu (čl. 21 GDPR).</li>
-      <li><strong>Právo odvolat souhlas</strong> kdykoliv, pokud je zpracování založeno na souhlasu (čl. 7 odst. 3 GDPR).</li>
-      <li><strong>Právo nebýt předmětem automatizovaného rozhodování</strong> (čl. 22 GDPR) – automatizované rozhodování správce neprovádí.</li>
-      <li><strong>Právo podat stížnost</strong> u dozorového úřadu: Úřad pro ochranu osobních údajů, Pplk. Sochora 27, 170 00 Praha 7, <a href="https://www.uoou.cz" target="_blank" rel="noopener">www.uoou.cz</a>.</li>
-    </ul>
-
-    <h2>Článek 11 – Uplatnění práv</h2>
-    <p>Svá práva může Subjekt údajů uplatnit písemně na e-mailu <a href="mailto:info@zaloha-vzpominek.cz">info@zaloha-vzpominek.cz</a> nebo poštou na adresu provozovny. Správce odpoví bez zbytečného odkladu, nejpozději do 30 dnů.</p>
-    <p>V případě pochybností o totožnosti žadatele může správce požadovat dodatečné ověření.</p>
-
-    <h2>Článek 12 – Závěrečná ustanovení</h2>
-    <p>Tyto zásady ochrany osobních údajů jsou účinné od <strong>1. 1. 2026</strong>. Správce je oprávněn zásady jednostranně měnit; aktuální znění je vždy zveřejněno na webových stránkách.</p>
-
-    <p style="font-size:0.85rem;color:var(--gray-light);margin-top:24px;">V Praze dne 1. 1. 2026</p>
-
-    <div class="modal-actions">
-      <a href="javascript:void(0)" onclick="window.print();" class="btn btn-secondary" style="background:var(--bg-cream);color:var(--black);">🖨️ Vytisknout</a>
-      <a href="#kontakt" onclick="closeModal()" class="btn btn-primary">Mám dotaz</a>
-    </div>
-  `
-};
-
-
-// ============================================================
-// 13. OTEVÍRÁNÍ POP-UP OKEN – sjednocená funkce
-// ============================================================
-function openModal(key) {
-  var data = null;
-  if (key === 'vop') data = VOP_CONTENT;
-  else if (key === 'gdpr') data = GDPR_CONTENT;
-  else if (ARTICLES[key]) data = ARTICLES[key];
-
-  if (!data) return;
-
-  document.getElementById('modalEyebrow').textContent = data.eyebrow;
-  document.getElementById('modalTitle').textContent = data.title;
-  document.getElementById('modalBody').innerHTML = data.body;
-  document.getElementById('modalBody').scrollTop = 0;
-
-  var overlay = document.getElementById('modalOverlay');
-  overlay.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeModal() {
-  document.getElementById('modalOverlay').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-function closeModalOnBg(e) {
-  if (e.target.id === 'modalOverlay') closeModal();
-}
-
-// ESC zavře modal
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    closeModal();
-    zvCookieCloseSettings();
-  }
-});
-
-// Připojení event listenerů na karty služeb a článků
-document.querySelectorAll('[data-article]').forEach(function(el) {
-  el.addEventListener('click', function() {
-    openModal(el.dataset.article);
-  });
-});
-
-// Hash router pro deeplink na článek (např. ?#clanek-vhs otevře přímo modal)
-function openArticleFromHash() {
-  var hash = window.location.hash;
-  var match = hash.match(/^#clanek-(.+)$/);
-  if (match && ARTICLES[match[1]]) {
-    openModal(match[1]);
-  }
-}
-window.addEventListener('load', openArticleFromHash);
-window.addEventListener('hashchange', openArticleFromHash);
-
-
-// ============================================================
 // 14. COOKIE BANNER – ukládá souhlas trvale (LocalStorage)
 // ============================================================
+
+// ESC zavře okno nastavení cookies
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') zvCookieCloseSettings();
+});
+
 var ZV_COOKIE_KEY = 'zv-cookie-consent';
 var ZV_COOKIE_VERSION = '1.0';
 var ZV_COOKIE_VALIDITY_DAYS = 365;

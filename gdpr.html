@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Záloha vzpomínek">
+<meta name="theme-color" content="#f5efe4">
+
+<title>Zásady ochrany osobních údajů | Záloha vzpomínek</title>
+<meta name="description" content="Zásady ochrany osobních údajů (GDPR) společnosti Záloha vzpomínek. Jak zpracováváme osobní údaje, doba uchování, práva subjektu údajů a cookies.">
+
+<link rel="canonical" href="https://zalohavzpominek.cz/gdpr.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Záloha vzpomínek">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:url" content="https://zalohavzpominek.cz/gdpr.html">
+<meta property="og:title" content="Zásady ochrany osobních údajů – Záloha vzpomínek">
+<meta property="og:description" content="Zásady ochrany osobních údajů (GDPR) společnosti Záloha vzpomínek. Jak zpracováváme osobní údaje, doba uchování, práva subjektu údajů a cookies.">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="manifest" href="/site.webmanifest">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* === RESET & PROMĚNNÉ === */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg-cream: #f5efe4;
+  --bg-cream-light: #fbf7ee;
+  --bg-cream-dark: #ebe3d2;
+  --accent: #fa4d01;
+  --accent-dark: #d34001;
+  --accent-soft: #ffe8db;
+  --black: #0d0d0d;
+  --black-soft: #1a1a1a;
+  --gray-text: #4a4a4a;
+  --gray-light: #8a8275;
+  --gray-border: #d8d0bf;
+  --white: #ffffff;
+  --green-dot: #22c55e;
+
+  --shadow-soft: 0 4px 20px rgba(13, 13, 13, 0.06);
+  --shadow-mid: 0 12px 40px rgba(13, 13, 13, 0.10);
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-cream);
+  color: var(--black);
+  line-height: 1.7;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+a { text-decoration: none; color: inherit; }
+img, svg { display: block; max-width: 100%; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+@media (max-width: 768px) { .container { padding: 0 20px; } }
+@media (max-width: 480px) { .container { padding: 0 16px; } }
+
+/* === HLAVIČKA === */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(245, 239, 228, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(13, 13, 13, 0.06);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo-icon {
+  width: 54px;
+  height: 36px;
+  flex-shrink: 0;
+}
+.logo-icon svg { width: 100%; height: 100%; }
+.logo-text {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--black);
+  line-height: 1;
+  letter-spacing: -0.015em;
+}
+.header-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+  background: var(--black);
+  color: var(--bg-cream);
+  padding: 11px 24px;
+  border-radius: 100px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.2s;
+}
+.header-cta:hover { background: var(--accent); transform: translateY(-1px); }
+@media (max-width: 540px) {
+  .logo-icon { width: 46px; height: 30px; }
+  .logo-text { font-size: 1rem; }
+  .header-cta { padding: 10px 18px; font-size: 0.82rem; }
+}
+
+/* === DROBEČKOVÁ NAVIGACE === */
+.breadcrumb {
+  padding: 22px 0 0;
+  font-size: 0.85rem;
+  color: var(--gray-light);
+}
+.breadcrumb ol {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.breadcrumb a { color: var(--gray-light); transition: color 0.2s; }
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb li[aria-current] { color: var(--black); font-weight: 500; }
+.breadcrumb .sep { opacity: 0.5; }
+
+/* === HLAVIČKA ČLÁNKU === */
+.article-hero {
+  padding: 30px 0 10px;
+}
+.article-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  font-family: 'Unbounded', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  border-radius: 100px;
+  margin-bottom: 18px;
+}
+.article-title {
+  font-size: clamp(1.7rem, 4.5vw, 2.9rem);
+  max-width: 900px;
+  margin-bottom: 18px;
+}
+.article-title em { color: var(--accent); font-style: normal; }
+
+/* === LAYOUT TĚLA ČLÁNKU === */
+.article-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 56px;
+  padding: 40px 0 70px;
+  align-items: start;
+}
+@media (max-width: 920px) {
+  .article-layout { grid-template-columns: 1fr; gap: 28px; }
+  .article-layout .article-body { order: 2; }
+  .article-layout .article-aside { order: 1; }
+}
+
+/* === OBSAH ČLÁNKU (TEXT) === */
+.article-body { max-width: 760px; }
+.article-body h2 {
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  margin: 44px 0 16px;
+  scroll-margin-top: 90px;
+}
+.article-body h2:first-child { margin-top: 0; }
+.article-body h3 {
+  font-size: 1.2rem;
+  margin: 30px 0 12px;
+}
+.article-body p {
+  margin-bottom: 16px;
+  color: var(--gray-text);
+  font-size: 1.02rem;
+}
+.article-body strong { color: var(--black); font-weight: 600; }
+.article-body a {
+  color: var(--accent-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(250, 77, 1, 0.35);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.18s, color 0.18s;
+}
+.article-body a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+.article-body ul, .article-body ol {
+  margin: 0 0 20px 0;
+  padding-left: 0;
+  list-style: none;
+}
+.article-body li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  color: var(--gray-text);
+  font-size: 1.02rem;
+}
+.article-body ul li::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 11px;
+  width: 9px;
+  height: 9px;
+  background: var(--accent);
+  border-radius: 3px;
+}
+.article-body ol { counter-reset: steps; }
+.article-body ol li { counter-increment: steps; padding-left: 38px; }
+.article-body ol li::before {
+  content: counter(steps);
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 24px;
+  height: 24px;
+  background: var(--accent);
+  color: var(--white);
+  border-radius: 50%;
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-family: 'Unbounded', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.article-body li strong { color: var(--black); }
+
+/* zvýrazněný info box */
+.callout {
+  display: flex;
+  gap: 16px;
+  background: var(--white);
+  border: 1px solid var(--gray-border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-md);
+  padding: 22px 24px;
+  margin: 28px 0;
+}
+.callout-icon { font-size: 1.5rem; line-height: 1; flex-shrink: 0; }
+.callout p { margin: 0; font-size: 0.98rem; }
+.callout strong { color: var(--black); }
+
+/* === BOČNÍ PANEL (OBSAH) === */
+.article-aside {
+  position: sticky;
+  top: 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+@media (max-width: 920px) {
+  .article-aside { position: static; }
+}
+.toc {
+  background: var(--white);
+  border: 1px solid var(--gray-border);
+  border-radius: var(--radius-md);
+  padding: 8px 8px 12px;
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+.toc-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-cream-light);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin-bottom: 6px;
+}
+.toc-head svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+.toc h2 {
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+  margin: 0;
+}
+.toc ol {
+  list-style: none;
+  counter-reset: toc;
+}
+.toc li { counter-increment: toc; }
+.toc a {
+  display: flex;
+  align-items: baseline;
+  gap: 11px;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  color: var(--gray-text);
+  line-height: 1.4;
+  transition: background 0.18s, color 0.18s;
+}
+.toc a::before {
+  content: counter(toc, decimal-leading-zero);
+  font-family: 'Unbounded', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.toc a:hover {
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+}
+
+/* === ZÁVĚREČNÝ CTA PRUH === */
+.cta-band {
+  background: var(--black);
+  color: var(--bg-cream);
+  border-radius: var(--radius-lg);
+  padding: 48px 40px;
+  text-align: center;
+  margin: 0 0 60px;
+}
+.cta-band h2 {
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.cta-band h2 em { color: var(--accent); font-style: normal; }
+.cta-band p {
+  color: rgba(245, 239, 228, 0.78);
+  max-width: 540px;
+  margin: 0 auto 24px;
+  font-size: 0.98rem;
+}
+.cta-band-buttons {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn-primary, .btn-secondary {
+  padding: 14px 30px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: transform 0.2s, background 0.2s;
+}
+.btn-primary { background: var(--accent); color: var(--white); }
+.btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); }
+.btn-secondary {
+  background: transparent;
+  color: var(--bg-cream);
+  border: 1px solid rgba(245, 239, 228, 0.3);
+}
+.btn-secondary:hover { background: rgba(245, 239, 228, 0.1); transform: translateY(-2px); }
+@media (max-width: 480px) {
+  .cta-band { padding: 36px 22px; }
+}
+
+/* === DALŠÍ ČLÁNKY === */
+.related {
+  padding: 0 0 70px;
+}
+.related h2 {
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  margin-bottom: 24px;
+}
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 760px) { .related-grid { grid-template-columns: 1fr; } }
+.related-card {
+  display: block;
+  background: var(--white);
+  border: 1px solid var(--gray-border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+.related-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-mid);
+  border-color: var(--accent);
+}
+.related-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+.related-card p {
+  font-size: 0.88rem;
+  color: var(--gray-text);
+  margin-bottom: 12px;
+}
+.related-card span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* === PATIČKA === */
+.footer {
+  background: var(--black);
+  color: var(--bg-cream);
+  padding: 30px 0;
+}
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.footer-copy { font-size: 0.85rem; color: rgba(245, 239, 228, 0.7); }
+.footer-legal { display: flex; gap: 18px; }
+.footer-legal a {
+  font-size: 0.85rem;
+  color: rgba(245, 239, 228, 0.7);
+  transition: color 0.2s;
+}
+.footer-legal a:hover { color: var(--accent); }
+@media (max-width: 600px) {
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
+
+</style>
+
+<style>
+/* === DOPLŇKOVÉ STYLY PRO PRÁVNÍ STRÁNKY === */
+.legal-layout { max-width: 860px; margin: 0 auto; padding: 40px 0 70px; }
+.legal-intro {
+  background: var(--white);
+  border: 1px solid var(--gray-border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  margin-bottom: 30px;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--gray-text);
+}
+.legal-intro strong { color: var(--black); }
+.legal-intro a { color: var(--accent-dark); font-weight: 600; }
+.legal-body h2 {
+  font-size: clamp(1.15rem, 2.6vw, 1.45rem);
+  margin: 36px 0 12px;
+  padding-top: 8px;
+}
+.legal-body h2:first-child { margin-top: 0; }
+.legal-body p {
+  margin-bottom: 12px;
+  color: var(--gray-text);
+  font-size: 0.97rem;
+  line-height: 1.7;
+}
+.legal-body strong { color: var(--black); font-weight: 600; }
+.legal-body a {
+  color: var(--accent-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(250, 77, 1, 0.35);
+  text-underline-offset: 2px;
+}
+.legal-body a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+.legal-body ul {
+  margin: 0 0 16px 0;
+  padding-left: 0;
+  list-style: none;
+}
+.legal-body li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 9px;
+  color: var(--gray-text);
+  font-size: 0.97rem;
+  line-height: 1.65;
+}
+.legal-body ul li::before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 9px;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+.legal-body li strong { color: var(--black); }
+.legal-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0 20px;
+  font-size: 0.88rem;
+}
+.legal-body table th,
+.legal-body table td {
+  border: 1px solid var(--gray-border);
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+.legal-body table th {
+  background: var(--bg-cream-light);
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--black);
+}
+.legal-body table td { color: var(--gray-text); }
+.legal-signed {
+  font-size: 0.85rem;
+  color: var(--gray-light);
+  margin-top: 24px;
+}
+.legal-print {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--gray-border);
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.legal-print a {
+  padding: 12px 24px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+.legal-print .btn-print {
+  background: var(--bg-cream-dark);
+  color: var(--black);
+  border: 1px solid var(--gray-border);
+}
+.legal-print .btn-print:hover { background: var(--gray-border); }
+.legal-print .btn-ask {
+  background: var(--accent);
+  color: var(--white);
+}
+.legal-print .btn-ask:hover { background: var(--accent-dark); }
+@media print {
+  .site-header, .breadcrumb, .legal-print, .cta-band, .footer { display: none !important; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <nav class="nav">
+      <a href="/" class="logo" aria-label="Záloha vzpomínek – úvodní stránka">
+        <span class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <mask id="logoMask">
+              <rect width="32" height="32" fill="#fff"/>
+              <circle cx="10" cy="16" r="5" fill="#000"/>
+              <circle cx="22" cy="16" r="5" fill="#000"/>
+              <rect x="14.5" y="14.7" width="3" height="2.6" fill="#000"/>
+            </mask>
+            <rect x="2" y="8" width="28" height="16" rx="1.5" fill="#fa4d01" mask="url(#logoMask)"/>
+            <circle cx="10" cy="16" r="1.5" fill="#fa4d01"/>
+            <circle cx="22" cy="16" r="1.5" fill="#fa4d01"/>
+          </svg>
+        </span>
+        <span class="logo-text">Záloha vzpomínek</span>
+      </a>
+      <a href="/#kontakt" class="header-cta">Nezávazná poptávka</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="breadcrumb" aria-label="Drobečková navigace">
+  <div class="container">
+    <ol>
+      <li><a href="/">Úvod</a></li>
+      <li class="sep" aria-hidden="true">&rsaquo;</li>
+      <li aria-current="page">Zásady ochrany osobních údajů</li>
+    </ol>
+  </div>
+</nav>
+
+<header class="article-hero">
+  <div class="container">
+    <span class="article-eyebrow">Záloha vzpomínek · Dokumenty</span>
+    <h1 class="article-title">Zásady ochrany osobních údajů</h1>
+  </div>
+</header>
+
+<div class="container">
+  <div class="legal-layout">
+    <div class="legal-body">
+
+    <p class="legal-intro">
+      <strong>Správce osobních údajů</strong><br>
+      Ivo Kleňha, IČO: 66375274 · Nejsme plátci DPH<br>
+      Sídlo: Vrchlického 12, 466 04 Jablonec nad Nisou<br>
+      Provozovna: Přímětická 10, 140 00 Praha 4 – Krč<br>
+      E-mail: <a href="mailto:info@zaloha-vzpominek.cz">info@zaloha-vzpominek.cz</a><br>
+      Telefon: <a href="tel:+420607828970">+420 607 828 970</a><br>
+      Účinnost zásad: 1. 1. 2026
+    </p>
+
+    <h2>Článek 1 – Úvodní informace</h2>
+    <p>Tyto Zásady ochrany osobních údajů popisují, jakým způsobem správce zpracovává osobní údaje fyzických osob (dále jen „<strong>Subjekt údajů</strong>“) v souvislosti s poskytováním služeb digitalizace audio-vizuálních nosičů a provozem webových stránek <a href="https://www.zaloha-vzpominek.cz">www.zaloha-vzpominek.cz</a>.</p>
+    <p>Zpracování se řídí Nařízením Evropského parlamentu a Rady (EU) 2016/679 ze dne 27. dubna 2016 o ochraně fyzických osob v souvislosti se zpracováním osobních údajů (dále jen „<strong>GDPR</strong>“) a zákonem č. 110/2019 Sb., o zpracování osobních údajů.</p>
+
+    <h2>Článek 2 – Kategorie zpracovávaných údajů</h2>
+    <ul>
+      <li><strong>Identifikační údaje:</strong> jméno, příjmení, případně IČO/DIČ u podnikajících osob.</li>
+      <li><strong>Kontaktní údaje:</strong> doručovací adresa, e-mailová adresa, telefonní číslo.</li>
+      <li><strong>Údaje o zakázce:</strong> popis nosičů, vybrané služby, lhůty, cena, platební údaje.</li>
+      <li><strong>Obsah digitalizovaných nosičů:</strong> obsahuje-li záznam zobrazení osob, jejich hlasový projev či jiné údaje, jedná se z hlediska GDPR o osobní údaje Subjektu i třetích osob (viz čl. 8).</li>
+      <li><strong>Údaje z webových stránek:</strong> IP adresa, identifikátory zařízení, údaje z cookies (viz čl. 7).</li>
+    </ul>
+
+    <h2>Článek 3 – Účely a právní základy zpracování</h2>
+    <table>
+      <thead>
+        <tr><th>Účel zpracování</th><th>Právní základ</th><th>Doba uchování</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Plnění smlouvy (vyřízení zakázky)</td><td>čl. 6 odst. 1 písm. b) GDPR</td><td>po dobu plnění + 3 roky</td></tr>
+        <tr><td>Účetnictví, daňové povinnosti</td><td>čl. 6 odst. 1 písm. c) GDPR</td><td>10 let dle zákona</td></tr>
+        <tr><td>Záložní kopie digitalizovaného obsahu</td><td>oprávněný zájem správce, čl. 6 odst. 1 písm. f) GDPR</td><td>12 měsíců</td></tr>
+        <tr><td>Marketing (newsletter, nabídky)</td><td>souhlas, čl. 6 odst. 1 písm. a) GDPR</td><td>do odvolání souhlasu</td></tr>
+        <tr><td>Analytika a měření návštěvnosti webu</td><td>souhlas (cookies)</td><td>dle nastavení cookies</td></tr>
+        <tr><td>Obrana právních nároků</td><td>oprávněný zájem správce</td><td>po dobu promlčecích lhůt</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Článek 4 – Příjemci osobních údajů</h2>
+    <p>Osobní údaje mohou být v nezbytném rozsahu předány následujícím kategoriím příjemců (zpracovatelům):</p>
+    <ul>
+      <li><strong>Česká pošta, s.p.</strong> a její dceřiné společnosti (Balíkovna) – pro doručení zásilek.</li>
+      <li><strong>Posílej.cz</strong> – pro dočasné cloudové úložiště zasílaných souborů.</li>
+      <li><strong>Google LLC</strong> – pro analytiku a měření efektivity webových stránek (Google Analytics, Google Ads), pouze se souhlasem v rámci cookie banneru.</li>
+      <li><strong>Účetní a daňový poradce</strong> – pro plnění zákonných povinností.</li>
+      <li>Orgány veřejné moci v rozsahu zákonných povinností.</li>
+    </ul>
+
+    <h2>Článek 5 – Předávání do třetích zemí</h2>
+    <p>Při využití služeb Google LLC může docházet k předávání některých technických údajů do USA. Předávání probíhá na základě <strong>Data Privacy Framework (DPF)</strong>, do kterého je Google LLC zařazena. Tento rámec představuje rozhodnutí Evropské komise o přiměřené ochraně dle čl. 45 GDPR.</p>
+
+    <h2>Článek 6 – Doba uchování</h2>
+    <p>Osobní údaje uchováváme pouze po dobu nezbytnou pro účely, pro které byly shromážděny, případně po dobu vyžadovanou zákonem.</p>
+    <p><strong>Záložní kopii digitalizovaného obsahu</strong> uchováváme po dobu 12 měsíců od dokončení zakázky pro případ ztráty výsledného média. Po této době je záloha nevratně mazána.</p>
+
+    <h2>Článek 7 – Cookies</h2>
+    <p>Naše webové stránky používají cookies (malé textové soubory) pro správné fungování webu, měření návštěvnosti a měření efektivity reklamních kampaní.</p>
+    <ul>
+      <li><strong>Nezbytné cookies</strong> – nutné pro provoz stránek. Nelze je odmítnout.</li>
+      <li><strong>Analytické cookies</strong> (Google Analytics) – měří, jak uživatelé používají web. Vyžadují souhlas.</li>
+      <li><strong>Reklamní cookies</strong> (Google Ads) – měří efektivitu reklamních kampaní. Vyžadují souhlas.</li>
+    </ul>
+    <p>Souhlas s nepovinnými cookies lze kdykoliv změnit kliknutím na odkaz „Nastavení cookies“ v patičce webu.</p>
+
+    <h2>Článek 8 – Obsah nosičů a údaje třetích osob</h2>
+    <p>Záznamy předané k digitalizaci mohou obsahovat osobní údaje třetích osob (např. zobrazení rodinných příslušníků). Tyto údaje správce zpracovává výhradně za účelem plnění smlouvy s Objednatelem, neukládá je samostatně mimo zakázku ani je nepředává třetím osobám.</p>
+    <p>Objednatel prohlašuje, že je oprávněn nakládat s obsahem předaných nosičů, případně že má od dotčených osob potřebné souhlasy.</p>
+
+    <h2>Článek 9 – Zabezpečení</h2>
+    <p>Správce zavedl odpovídající technická a organizační opatření k ochraně osobních údajů, zejména:</p>
+    <ul>
+      <li>fyzické zabezpečení provozovny,</li>
+      <li>zabezpečení datových úložišť hesly a šifrováním,</li>
+      <li>omezený okruh osob s přístupem k údajům,</li>
+      <li>pravidelná aktualizace bezpečnostních systémů.</li>
+    </ul>
+
+    <h2>Článek 10 – Práva Subjektu údajů</h2>
+    <p>V souladu s GDPR má Subjekt údajů následující práva:</p>
+    <ul>
+      <li><strong>Právo na přístup</strong> (čl. 15 GDPR) – získat potvrzení, zda jsou jeho údaje zpracovávány, a kopii těchto údajů.</li>
+      <li><strong>Právo na opravu</strong> (čl. 16 GDPR) – požadovat opravu nepřesných údajů.</li>
+      <li><strong>Právo na výmaz</strong> (čl. 17 GDPR) – požadovat výmaz osobních údajů, není-li dán právní důvod pro jejich další zpracování.</li>
+      <li><strong>Právo na omezení zpracování</strong> (čl. 18 GDPR).</li>
+      <li><strong>Právo na přenositelnost</strong> (čl. 20 GDPR).</li>
+      <li><strong>Právo vznést námitku</strong> proti zpracování na základě oprávněného zájmu (čl. 21 GDPR).</li>
+      <li><strong>Právo odvolat souhlas</strong> kdykoliv, pokud je zpracování založeno na souhlasu (čl. 7 odst. 3 GDPR).</li>
+      <li><strong>Právo nebýt předmětem automatizovaného rozhodování</strong> (čl. 22 GDPR) – automatizované rozhodování správce neprovádí.</li>
+      <li><strong>Právo podat stížnost</strong> u dozorového úřadu: Úřad pro ochranu osobních údajů, Pplk. Sochora 27, 170 00 Praha 7, <a href="https://www.uoou.cz" target="_blank" rel="noopener">www.uoou.cz</a>.</li>
+    </ul>
+
+    <h2>Článek 11 – Uplatnění práv</h2>
+    <p>Svá práva může Subjekt údajů uplatnit písemně na e-mailu <a href="mailto:info@zaloha-vzpominek.cz">info@zaloha-vzpominek.cz</a> nebo poštou na adresu provozovny. Správce odpoví bez zbytečného odkladu, nejpozději do 30 dnů.</p>
+    <p>V případě pochybností o totožnosti žadatele může správce požadovat dodatečné ověření.</p>
+
+    <h2>Článek 12 – Závěrečná ustanovení</h2>
+    <p>Tyto zásady ochrany osobních údajů jsou účinné od <strong>1. 1. 2026</strong>. Správce je oprávněn zásady jednostranně měnit; aktuální znění je vždy zveřejněno na webových stránkách.</p>
+
+    <p class="legal-signed">V Praze dne 1. 1. 2026</p>
+      <div class="legal-print">
+        <a href="javascript:window.print()" class="btn-print">Vytisknout stránku</a>
+        <a href="/#kontakt" class="btn-ask">Mám dotaz</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 Záloha vzpomínek</div>
+      <div class="footer-legal">
+        <a href="/">Úvodní stránka</a>
+        <a href="/vop.html">VOP</a>
+        <a href="/gdpr.html">GDPR</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
