@@ -3,6 +3,27 @@
 <head>
 
 <!-- ============================================================ -->
+<!-- GOOGLE TAG (gtag.js) – GA4 měření                            -->
+<!-- ============================================================ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NCYHD175QW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  // Consent Mode v2 – výchozí stav DENY (souhlas řeší cookie lišta níže)
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+
+  gtag('js', new Date());
+  gtag('config', 'G-NCYHD175QW');
+</script>
+
+<!-- ============================================================ -->
 <!-- ZÁKLADNÍ META                                                -->
 <!-- ============================================================ -->
 <meta charset="UTF-8">
@@ -1024,8 +1045,15 @@ section {
    ============================================================ */
 
 .why-section {
-  background: var(--bg-cream-light);
+  background: var(--black);
+  color: var(--bg-cream);
 }
+/* Tmavá varianta nadpisů sekce (stejně jako u "Postup od A do Z") */
+.why-section .section-eyebrow { color: var(--accent); }
+.why-section .section-eyebrow::before { background: var(--accent); }
+.why-section .section-title { color: var(--white); }
+.why-section .section-title em { color: var(--accent); }
+.why-section .section-lead { color: rgba(245, 239, 228, 0.7); }
 
 .why-grid {
   display: grid;
@@ -1037,23 +1065,25 @@ section {
 }
 
 .why-card {
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.04);
   padding: 36px 30px;
   border-radius: var(--radius-lg);
-  border: 1px solid var(--gray-border);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s;
   position: relative;
   overflow: hidden;
 }
 .why-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-mid);
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
   border-color: var(--accent);
 }
 .why-icon {
   width: 132px;
   height: 132px;
-  background: linear-gradient(135deg, var(--bg-cream-light), var(--bg-cream-dark));
+  background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 26px;
   display: flex;
   align-items: center;
@@ -1063,7 +1093,7 @@ section {
 }
 .why-card:hover .why-icon {
   transform: scale(1.06) rotate(-3deg);
-  background: linear-gradient(135deg, #fff0e2, #ffd9b8);
+  background: linear-gradient(135deg, rgba(250,77,1,0.18), rgba(250,77,1,0.06));
 }
 .why-icon img {
   width: 100px;
@@ -1075,10 +1105,11 @@ section {
   font-size: 1.2rem;
   margin-bottom: 12px;
   letter-spacing: -0.01em;
+  color: var(--white);
 }
 .why-card p {
   font-size: 0.95rem;
-  color: var(--gray-text);
+  color: rgba(245, 239, 228, 0.75);
 }
 .why-card-number {
   position: absolute;
@@ -1087,7 +1118,7 @@ section {
   font-family: 'Unbounded', sans-serif;
   font-size: 2.6rem;
   font-weight: 700;
-  color: var(--bg-cream-dark);
+  color: rgba(255, 255, 255, 0.07);
   line-height: 1;
 }
 
@@ -1126,6 +1157,7 @@ section {
     top: 18px;
     right: 20px;
     font-size: 1.7rem;
+    color: rgba(255, 255, 255, 0.08);
   }
 }
 
@@ -3010,9 +3042,45 @@ tr.pl-min td:first-child { color: var(--black); }
   background: #fdfbf6;
   border-radius: 14px;
   padding: 24px;
+  padding-top: 52px;
+  margin-top: 42px;
   box-shadow: 0 20px 60px rgba(44, 36, 22, 0.18), 0 1px 2px rgba(44, 36, 22, 0.08);
   position: relative;
   border: 1px solid var(--gray-border);
+}
+/* Vyčnívající "odznak" s obrázkem cookie – nepravidelné vybočení nahoře uprostřed */
+.zv-cookie-badge {
+  position: absolute;
+  top: -42px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 84px;
+  height: 84px;
+  background: #fdfbf6;
+  border: 1px solid var(--gray-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(44, 36, 22, 0.14);
+  animation: zv-cookie-badge-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s both;
+}
+.zv-cookie-badge img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  display: block;
+  animation: zv-cookie-badge-wobble 4s ease-in-out 1s infinite;
+}
+@keyframes zv-cookie-badge-pop {
+  from { transform: translateX(-50%) scale(0.4); opacity: 0; }
+  to   { transform: translateX(-50%) scale(1);   opacity: 1; }
+}
+@keyframes zv-cookie-badge-wobble {
+  0%, 92%, 100% { transform: rotate(0deg); }
+  94% { transform: rotate(-9deg); }
+  96% { transform: rotate(7deg); }
+  98% { transform: rotate(-4deg); }
 }
 .zv-cookie-close {
   position: absolute;
@@ -3186,7 +3254,7 @@ tr.pl-min td:first-child { color: var(--black); }
 
 @media (max-width: 480px) {
   .zv-cookie-overlay { bottom: 12px; left: 12px; right: 12px; }
-  .zv-cookie-card { width: 100%; padding: 20px; }
+  .zv-cookie-card { width: 100%; padding: 20px; padding-top: 48px; }
 }
 
 /* ============================================================
@@ -3738,7 +3806,7 @@ tr.pl-min td:first-child { color: var(--black); }
                 <div class="opt" data-storage="cloud" onclick="selectStorage(this)">
                   <div class="opt-check"></div>
                   <div class="opt-label">
-                    <strong>Cloud (Posílej.cz)</strong>
+                    <strong>Cloud úložiště</strong>
                     <small>chráněno heslem, dostupné 21 dní</small>
                   </div>
                   <div class="opt-price">50 Kč</div>
@@ -4588,6 +4656,9 @@ tr.pl-min td:first-child { color: var(--black); }
 <!-- ============================================================ -->
 <div class="zv-cookie-overlay" id="zvCookieBanner" role="dialog" aria-labelledby="zvCookieTitle">
   <div class="zv-cookie-card">
+    <div class="zv-cookie-badge">
+      <img src="cookie.png" alt="" loading="lazy">
+    </div>
     <button class="zv-cookie-close" onclick="zvCookieAcceptNecessary()" aria-label="Zavřít">×</button>
     <h3 class="zv-cookie-title" id="zvCookieTitle">Než zmáčkneme PLAY …</h3>
     <p class="zv-cookie-text">
@@ -5459,27 +5530,18 @@ function zvCookieReopen() {
   zvCookieOpenSettings();
 }
 
-// Inicializace – default DENY, pak ukázat nebo skrýt banner dle uloženého souhlasu
+// Inicializace – banner se zobrazí 5 s po načtení (pokud chybí uložený souhlas)
 (function() {
-  // Default consent mode (DENY)
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){ dataLayer.push(arguments); }
-  window.gtag = gtag;
-  gtag('consent', 'default', {
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'analytics_storage': 'denied',
-    'wait_for_update': 500
-  });
+  // gtag i consent default jsou už nastaveny v <head> v Google tagu
 
   var stored = zvCookieGetStored();
   if (stored && stored.consent) {
     zvCookieApply(stored.consent);
   } else {
     setTimeout(function() {
-      document.getElementById('zvCookieBanner').classList.add('zv-active');
-    }, 400);
+      var banner = document.getElementById('zvCookieBanner');
+      if (banner) banner.classList.add('zv-active');
+    }, 5000);
   }
 })();
 
