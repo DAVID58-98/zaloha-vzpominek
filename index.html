@@ -3635,9 +3635,8 @@ tr.pl-min td:first-child { color: var(--black); }
         <!-- PŘED – video s vypáleným VHS efektem (žádné CSS filtry) -->
         <div class="compare-img compare-before">
           <video class="compare-video compare-video-before"
-                 data-src="Video/svatba-before.mp4"
-                 poster="Video/frame-before.png"
-                 muted loop playsinline preload="none"
+                 src="Video/svatba-before.mp4"
+                 autoplay muted loop playsinline preload="metadata"
                  disablepictureinpicture
                  aria-hidden="true"></video>
           <div class="compare-hud">
@@ -3651,9 +3650,8 @@ tr.pl-min td:first-child { color: var(--black); }
         <div class="compare-after-clip" id="compareAfterClip">
           <div class="compare-img compare-after">
             <video class="compare-video compare-video-after"
-                   data-src="Video/svatba-after.mp4"
-                   poster="Video/frame-after.png"
-                   muted loop playsinline preload="none"
+                   src="Video/svatba-after.mp4"
+                   autoplay muted loop playsinline preload="metadata"
                    disablepictureinpicture
                    aria-hidden="true"></video>
           </div>
@@ -5251,49 +5249,23 @@ calculate();
   var videoBefore = slider.querySelector('.compare-video-before');
   var videoAfter  = slider.querySelector('.compare-video-after');
   if (videoBefore && videoAfter) {
-    // Synchronizace bez sekání:
-    // Místo neustálého přepisování currentTime (to nutilo dekodér
-    // skákat na keyframe a video se sekalo) srovnáme čas jen v klíčových
-    // okamžicích – při startu a při každém zacyklení (loop).
-    var syncOnce = function() {
-      if (Math.abs(videoBefore.currentTime - videoAfter.currentTime) > 0.25) {
+    // Vyrovnat čas: kdykoliv se PO video posune, dorovnat PŘED
+    videoAfter.addEventListener('timeupdate', function() {
+      if (Math.abs(videoBefore.currentTime - videoAfter.currentTime) > 0.15) {
         videoBefore.currentTime = videoAfter.currentTime;
       }
-    };
-    // Loop u <video> vyvolá 'seeked' na začátku – tam dorovnáme
-    videoAfter.addEventListener('seeked', syncOnce);
-    videoAfter.addEventListener('play', syncOnce);
-    // Pokus o přehrání (iOS někdy autoplay vyžaduje user interaction; muted+playsinline většinou stačí)
+    });
+    // Pokus o autoplay (iOS někdy autoplay vyžaduje user interaction; muted+playsinline většinou stačí)
     var tryPlay = function() {
       var pBefore = videoBefore.play();
       var pAfter = videoAfter.play();
       if (pBefore && pBefore.catch) pBefore.catch(function(){});
       if (pAfter && pAfter.catch) pAfter.catch(function(){});
     };
-    // Lazy-load: videa se stáhnou a rozjedou až když slider doroluje do viewportu
-    var videosLoaded = false;
-    var loadVideos = function() {
-      if (videosLoaded) return;
-      videosLoaded = true;
-      videoBefore.src = videoBefore.getAttribute('data-src');
-      videoAfter.src = videoAfter.getAttribute('data-src');
-      tryPlay();
-      // Pokud autoplay zablokován, spustit při prvním scroll/touch
-      document.addEventListener('scroll', tryPlay, { once: true, passive: true });
-      document.addEventListener('touchstart', tryPlay, { once: true, passive: true });
-    };
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function(entries) {
-        if (entries[0].isIntersecting) {
-          loadVideos();
-          io.disconnect();
-        }
-      }, { rootMargin: '200px' });
-      io.observe(slider);
-    } else {
-      // Starší prohlížeče bez IntersectionObserver – načíst rovnou
-      loadVideos();
-    }
+    tryPlay();
+    // Pokud autoplay zablokován, spustit při prvním scroll/touch
+    document.addEventListener('scroll', tryPlay, { once: true, passive: true });
+    document.addEventListener('touchstart', tryPlay, { once: true, passive: true });
   }
 })();
 
