@@ -3635,8 +3635,8 @@ tr.pl-min td:first-child { color: var(--black); }
         <!-- PŘED – video s vypáleným VHS efektem (žádné CSS filtry) -->
         <div class="compare-img compare-before">
           <video class="compare-video compare-video-before"
-                 src="Video/svatba-before.mp4"
-                 autoplay muted loop playsinline preload="metadata"
+                 data-src="Video/svatba-before.mp4"
+                 muted loop playsinline preload="none"
                  disablepictureinpicture
                  aria-hidden="true"></video>
           <div class="compare-hud">
@@ -3650,8 +3650,8 @@ tr.pl-min td:first-child { color: var(--black); }
         <div class="compare-after-clip" id="compareAfterClip">
           <div class="compare-img compare-after">
             <video class="compare-video compare-video-after"
-                   src="Video/svatba-after.mp4"
-                   autoplay muted loop playsinline preload="metadata"
+                   data-src="Video/svatba-after.mp4"
+                   muted loop playsinline preload="none"
                    disablepictureinpicture
                    aria-hidden="true"></video>
           </div>
@@ -5255,17 +5255,37 @@ calculate();
         videoBefore.currentTime = videoAfter.currentTime;
       }
     });
-    // Pokus o autoplay (iOS někdy autoplay vyžaduje user interaction; muted+playsinline většinou stačí)
+    // Pokus o přehrání (iOS někdy autoplay vyžaduje user interaction; muted+playsinline většinou stačí)
     var tryPlay = function() {
       var pBefore = videoBefore.play();
       var pAfter = videoAfter.play();
       if (pBefore && pBefore.catch) pBefore.catch(function(){});
       if (pAfter && pAfter.catch) pAfter.catch(function(){});
     };
-    tryPlay();
-    // Pokud autoplay zablokován, spustit při prvním scroll/touch
-    document.addEventListener('scroll', tryPlay, { once: true, passive: true });
-    document.addEventListener('touchstart', tryPlay, { once: true, passive: true });
+    // Lazy-load: videa se stáhnou a rozjedou až když slider doroluje do viewportu
+    var videosLoaded = false;
+    var loadVideos = function() {
+      if (videosLoaded) return;
+      videosLoaded = true;
+      videoBefore.src = videoBefore.getAttribute('data-src');
+      videoAfter.src = videoAfter.getAttribute('data-src');
+      tryPlay();
+      // Pokud autoplay zablokován, spustit při prvním scroll/touch
+      document.addEventListener('scroll', tryPlay, { once: true, passive: true });
+      document.addEventListener('touchstart', tryPlay, { once: true, passive: true });
+    };
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) {
+          loadVideos();
+          io.disconnect();
+        }
+      }, { rootMargin: '200px' });
+      io.observe(slider);
+    } else {
+      // Starší prohlížeče bez IntersectionObserver – načíst rovnou
+      loadVideos();
+    }
   }
 })();
 
