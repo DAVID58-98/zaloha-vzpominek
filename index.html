@@ -5386,6 +5386,12 @@ function submitForm(e) {
     .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
     .then(function (r) {
       if (r.ok && r.data && r.data.success) {
+        // Google Ads konverze – odeslání poptávky (web3forms vrátil success)
+        if (typeof gtag === 'function') {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-11403543035/P7DGCOGps7QcEPuD0b0q'
+          });
+        }
         statusBox.textContent = '';
         showFormToast();
         form.reset();
