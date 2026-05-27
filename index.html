@@ -5552,6 +5552,17 @@ function zvCookieReopen() {
   }
 })();
 
+// Google Ads konverze – klik na telefonní číslo (jakýkoli tel: odkaz na stránce)
+document.addEventListener('click', function (e) {
+  var link = e.target.closest('a[href^="tel:"]');
+  if (!link) return;
+  if (typeof gtag === 'function') {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-11403543035/Plv4COyptLQcEPuD0b0q'
+    });
+  }
+});
+
 </script>
 
 <!-- Web3Forms client script - automaticky zajistí rendering hCaptcha widgetu -->
