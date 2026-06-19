@@ -1180,7 +1180,11 @@ section {
   .cassettes-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
 }
 @media (max-width: 480px) {
-  .cassettes-grid { grid-template-columns: 1fr; gap: 20px; }
+  .cassettes-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .cassette-card { padding: 12px 8px 16px; }
+  .cassette-img-wrap { height: 120px; margin-bottom: 14px; }
+  .cassette-card h3 { font-size: 1.05rem; margin-bottom: 6px; }
+  .cassette-card p { font-size: 0.82rem; line-height: 1.45; }
 }
 
 .cassette-card {
