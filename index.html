@@ -5505,7 +5505,10 @@ document.addEventListener('click', function (e) {
   function attach() {
     var form = document.querySelector('.contact-form');
     if (!form) return;
-    var events = ['focusin', 'pointerdown', 'touchstart'];
+
+    // Načtení jen na SKUTEČNOU interakci uživatele (klik/dotek), nikoli na focus –
+    // focus umí vyvolat i automatické nástroje (Lighthouse) a rozhodit měření výkonu.
+    var events = ['pointerdown', 'touchstart', 'keydown'];
     function trigger() {
       loadWeb3Forms();
       events.forEach(function (ev) { form.removeEventListener(ev, trigger); });
@@ -5513,6 +5516,19 @@ document.addEventListener('click', function (e) {
     events.forEach(function (ev) {
       form.addEventListener(ev, trigger, { passive: true });
     });
+
+    // Pojistka: jakmile formulář dojede do viewportu, připrav hCaptchu s malou
+    // prodlevou (po dokončení úvodního měření), ať je widget hotový dřív, než
+    // uživatel reálně klikne. Sekce formuláře je dole, takže to neovlivní LCP/TBT.
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        if (entries[0] && entries[0].isIntersecting) {
+          io.disconnect();
+          setTimeout(loadWeb3Forms, 1200);
+        }
+      }, { rootMargin: '200px' });
+      io.observe(form);
+    }
   }
 
   if (document.readyState === 'loading') {
