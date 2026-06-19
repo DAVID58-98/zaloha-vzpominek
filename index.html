@@ -1537,7 +1537,7 @@ section {
   line-height: 1;
   margin-bottom: 14px;
 }
-.process-step h4 {
+.process-step h3 {
   font-size: 1.1rem;
   color: var(--white);
   margin-bottom: 10px;
@@ -2167,7 +2167,7 @@ tr.pl-min td:first-child { color: var(--black); }
   flex: 1;
   min-width: 0;
 }
-.benefit h4 {
+.benefit h3 {
   font-size: 1.05rem;
   margin-bottom: 6px;
 }
@@ -2338,7 +2338,7 @@ tr.pl-min td:first-child { color: var(--black); }
   color: var(--black); /* button defaultně dědí systémovou modrou na iOS - explicitně přepsat */
   font-family: inherit;
 }
-.article-card h4 { color: var(--black); } /* pro jistotu i na h4 */
+.article-card h3 { color: var(--black); } /* nadpisy článků */
 /* Alternující barvy pro zpestření - každá lichá bílá, každá sudá lehce do oranžova */
 .article-card:nth-child(odd)  { background: var(--white); }
 .article-card:nth-child(even) {
@@ -2401,7 +2401,7 @@ tr.pl-min td:first-child { color: var(--black); }
   flex-direction: column;
   flex-grow: 1;
 }
-.article-card h4 {
+.article-card h3 {
   font-size: 1.02rem;
   margin-bottom: 8px;
   line-height: 1.3;
@@ -2802,69 +2802,13 @@ tr.pl-min td:first-child { color: var(--black); }
   50%      { transform: translateX(-50%) translateY(-8px); }
 }
 @media (max-width: 540px) {
-  .back-to-top { bottom: 86px; width: 48px; height: 48px; font-size: 1.4rem; }
+  .back-to-top { bottom: 20px; width: 48px; height: 48px; font-size: 1.4rem; }
 }
 
 /* ============================================================
-   18. STICKY CTA – DOLNÍ LIŠTA
+   18. (Dolní sticky CTA lišta odstraněna)
    ============================================================ */
 
-.sticky-cta {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 90;
-  display: flex;
-  gap: 10px;
-  opacity: 0;
-  transform: translateY(20px);
-  pointer-events: none;
-  transition: opacity 0.35s, transform 0.35s;
-}
-.sticky-cta.visible {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-.sticky-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 22px;
-  border-radius: 100px;
-  font-weight: 600;
-  font-size: 0.92rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
-  transition: all 0.2s;
-}
-.sticky-btn-primary {
-  background: var(--accent);
-  color: var(--white);
-}
-.sticky-btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 32px rgba(250, 77, 1, 0.4);
-}
-.sticky-btn-phone {
-  background: var(--white);
-  color: var(--black);
-  border: 1px solid var(--gray-border);
-}
-.sticky-btn-phone:hover {
-  background: var(--black);
-  color: var(--white);
-}
-@media (max-width: 540px) {
-  .sticky-cta {
-    bottom: 14px;
-    left: 14px;
-    right: 14px;
-    justify-content: stretch;
-  }
-  .sticky-btn { flex: 1; justify-content: center; padding: 12px 16px; font-size: 0.88rem; }
-  .sticky-btn-phone span:not(.sticky-btn-icon) { display: none; }
-  .sticky-btn-phone { flex: 0; padding: 12px 14px; }
-}
 
 /* ============================================================
    19. POP-UP / MODAL OKNA
@@ -3582,7 +3526,7 @@ tr.pl-min td:first-child { color: var(--black); }
       <!-- VHS -->
       <div class="cassette-card reveal">
         <div class="cassette-img-wrap">
-          <img src="Kazety/VHS.png" alt="VHS kazeta" loading="lazy">
+          <img src="Kazety/VHS.webp" alt="VHS kazeta" loading="lazy">
         </div>
         <h3>VHS</h3>
         <p>Klasické rodinné videokazety z videopřehrávačů.</p>
@@ -3591,7 +3535,7 @@ tr.pl-min td:first-child { color: var(--black); }
       <!-- VHS-C -->
       <div class="cassette-card reveal">
         <div class="cassette-img-wrap">
-          <img src="Kazety/VHS-C.png" alt="VHS-C kazeta" loading="lazy">
+          <img src="Kazety/VHS-C.webp" alt="VHS-C kazeta" loading="lazy">
         </div>
         <h3>VHS-C</h3>
         <p>Malé kazety z rodinných videokamer.</p>
@@ -3600,7 +3544,7 @@ tr.pl-min td:first-child { color: var(--black); }
       <!-- Hi8 / Video8 -->
       <div class="cassette-card reveal">
         <div class="cassette-img-wrap">
-          <img src="Kazety/Hi8.png" alt="Hi8 / Video8 kazeta" loading="lazy">
+          <img src="Kazety/Hi8.webp" alt="Hi8 / Video8 kazeta" loading="lazy">
         </div>
         <h3>Hi8 / Video8</h3>
         <p>8mm kazety z kamer Sony Handycam.</p>
@@ -3609,7 +3553,7 @@ tr.pl-min td:first-child { color: var(--black); }
       <!-- Mini DV -->
       <div class="cassette-card reveal">
         <div class="cassette-img-wrap">
-          <img src="Kazety/Mini%20DV.png" alt="Mini DV kazeta" loading="lazy">
+          <img src="Kazety/MiniDV.webp" alt="Mini DV kazeta" loading="lazy">
         </div>
         <h3>Mini DV</h3>
         <p>Digitální kazety z přelomu milénia.</p>
@@ -3704,13 +3648,13 @@ tr.pl-min td:first-child { color: var(--black); }
                 <div class="tape-row">
                   <div class="tape-row-left">
                     <div class="tape-thumb" data-label="VHS">
-                      <img src="Kazety/VHS.png" alt="VHS" loading="lazy">
+                      <img src="Kazety/VHS.webp" alt="VHS" loading="lazy">
                     </div>
                     <div class="tape-row-label">VHS<small>klasické velké kazety</small></div>
                   </div>
                   <div class="counter">
                     <button type="button" onclick="adjustTape('vhs', -1)">−</button>
-                    <input type="number" id="tape-vhs" value="0" min="0" max="99" onchange="calculate()">
+                    <input type="number" id="tape-vhs" value="0" min="0" max="99" onchange="calculate()" aria-label="Počet kazet VHS">
                     <button type="button" onclick="adjustTape('vhs', 1)">+</button>
                   </div>
                 </div>
@@ -3718,13 +3662,13 @@ tr.pl-min td:first-child { color: var(--black); }
                 <div class="tape-row">
                   <div class="tape-row-left">
                     <div class="tape-thumb" data-label="VHS-C">
-                      <img src="Kazety/VHS-C.png" alt="VHS-C" loading="lazy">
+                      <img src="Kazety/VHS-C.webp" alt="VHS-C" loading="lazy">
                     </div>
                     <div class="tape-row-label">VHS-C<small>malé kazety z kamer</small></div>
                   </div>
                   <div class="counter">
                     <button type="button" onclick="adjustTape('vhsc', -1)">−</button>
-                    <input type="number" id="tape-vhsc" value="0" min="0" max="99" onchange="calculate()">
+                    <input type="number" id="tape-vhsc" value="0" min="0" max="99" onchange="calculate()" aria-label="Počet kazet VHS-C">
                     <button type="button" onclick="adjustTape('vhsc', 1)">+</button>
                   </div>
                 </div>
@@ -3732,13 +3676,13 @@ tr.pl-min td:first-child { color: var(--black); }
                 <div class="tape-row">
                   <div class="tape-row-left">
                     <div class="tape-thumb" data-label="Hi8">
-                      <img src="Kazety/Hi8.png" alt="Hi8 / Video8" loading="lazy">
+                      <img src="Kazety/Hi8.webp" alt="Hi8 / Video8" loading="lazy">
                     </div>
                     <div class="tape-row-label">Hi8 / Video8<small>kazety Sony Handycam</small></div>
                   </div>
                   <div class="counter">
                     <button type="button" onclick="adjustTape('hi8', -1)">−</button>
-                    <input type="number" id="tape-hi8" value="0" min="0" max="99" onchange="calculate()">
+                    <input type="number" id="tape-hi8" value="0" min="0" max="99" onchange="calculate()" aria-label="Počet kazet Hi8 / Video8">
                     <button type="button" onclick="adjustTape('hi8', 1)">+</button>
                   </div>
                 </div>
@@ -3746,13 +3690,13 @@ tr.pl-min td:first-child { color: var(--black); }
                 <div class="tape-row">
                   <div class="tape-row-left">
                     <div class="tape-thumb" data-label="Mini DV">
-                      <img src="Kazety/Mini%20DV.png" alt="Mini DV" loading="lazy">
+                      <img src="Kazety/MiniDV.webp" alt="Mini DV" loading="lazy">
                     </div>
                     <div class="tape-row-label">Mini DV<small>digitální kazetky</small></div>
                   </div>
                   <div class="counter">
                     <button type="button" onclick="adjustTape('minidv', -1)">−</button>
-                    <input type="number" id="tape-minidv" value="0" min="0" max="99" onchange="calculate()">
+                    <input type="number" id="tape-minidv" value="0" min="0" max="99" onchange="calculate()" aria-label="Počet kazet Mini DV">
                     <button type="button" onclick="adjustTape('minidv', 1)">+</button>
                   </div>
                 </div>
@@ -3770,7 +3714,7 @@ tr.pl-min td:first-child { color: var(--black); }
                 </div>
                 <div class="counter">
                   <button type="button" onclick="adjustDur(-10)">−</button>
-                  <input type="number" id="dur" value="60" min="5" max="300" onchange="calculate()">
+                  <input type="number" id="dur" value="60" min="5" max="300" onchange="calculate()" aria-label="Průměrná délka jedné kazety v minutách">
                   <button type="button" onclick="adjustDur(10)">+</button>
                 </div>
               </div>
@@ -3920,7 +3864,7 @@ tr.pl-min td:first-child { color: var(--black); }
             <div class="pl-category pl-cat-base">
               <div class="pl-cat-head">
                 <span class="pl-cat-num">1</span>
-                <h4 class="pl-cat-title">Základní služby</h4>
+                <h3 class="pl-cat-title">Základní služby</h3>
               </div>
               <table class="pricelist">
                 <tbody>
@@ -3941,7 +3885,7 @@ tr.pl-min td:first-child { color: var(--black); }
             <div class="pl-category pl-cat-extras">
               <div class="pl-cat-head">
                 <span class="pl-cat-num">2</span>
-                <h4 class="pl-cat-title">Doplňkové služby</h4>
+                <h3 class="pl-cat-title">Doplňkové služby</h3>
               </div>
               <table class="pricelist">
                 <tbody>
@@ -3957,7 +3901,7 @@ tr.pl-min td:first-child { color: var(--black); }
             <div class="pl-category pl-cat-discounts">
               <div class="pl-cat-head">
                 <span class="pl-cat-num">3</span>
-                <h4 class="pl-cat-title">Množstevní slevy</h4>
+                <h3 class="pl-cat-title">Množstevní slevy</h3>
               </div>
               <table class="pricelist">
                 <tbody>
@@ -3996,25 +3940,25 @@ tr.pl-min td:first-child { color: var(--black); }
     <div class="process-grid">
       <div class="process-step reveal">
         <div class="process-num">01</div>
-        <h4>Ozvete se nám</h4>
+        <h3>Ozvete se nám</h3>
         <p>Zavolejte nebo napište. Domluvíme se na rozsahu, formátu výstupu a sdělíme orientační cenu i termín.</p>
       </div>
 
       <div class="process-step reveal">
         <div class="process-num">02</div>
-        <h4>Předáme si kazety</h4>
+        <h3>Předáme si kazety</h3>
         <p>Ideálně osobně v Praze 4. Nic neposíláte do neznáma. Vystavíme Potvrzení o převzetí.</p>
       </div>
 
       <div class="process-step reveal">
         <div class="process-num">03</div>
-        <h4>Digitalizujeme</h4>
+        <h3>Digitalizujeme</h3>
         <p>Profesionální technika – Panasonic NV-HS1000 + Canopus ADVC 300 s TBC. Drobné úpravy obrazu a zvuku jsou v ceně.</p>
       </div>
 
       <div class="process-step reveal">
         <div class="process-num">04</div>
-        <h4>Kontrola a platba</h4>
+        <h3>Kontrola a platba</h3>
         <p>Vracíme Vám originální kazety ke kontrole výsledku. Zaplatíte kartou, hotově nebo QR. V případě nespokojenosti vracíme peníze.</p>
       </div>
     </div>
@@ -4037,7 +3981,7 @@ tr.pl-min td:first-child { color: var(--black); }
       <div class="benefit reveal">
         <div class="benefit-icon"><img src="Podminky/place.png" alt="" loading="lazy"></div>
         <div class="benefit-content">
-          <h4>Osobní předání v Praze</h4>
+          <h3>Osobní předání v Praze</h3>
           <p>Kazety si předáme osobně na Praha 4. Nemusíte nikam nic posílat a riskovat ztrátu.</p>
         </div>
       </div>
@@ -4045,7 +3989,7 @@ tr.pl-min td:first-child { color: var(--black); }
       <div class="benefit reveal">
         <div class="benefit-icon"><img src="Podminky/hand.png" alt="" loading="lazy"></div>
         <div class="benefit-content">
-          <h4>Bez záloh předem</h4>
+          <h3>Bez záloh předem</h3>
           <p>Nic neplatíte dopředu. Až si výsledek zkontrolujete, teprve pak zaplatíte.</p>
         </div>
       </div>
@@ -4053,7 +3997,7 @@ tr.pl-min td:first-child { color: var(--black); }
       <div class="benefit reveal">
         <div class="benefit-icon"><img src="Podminky/gear.png" alt="" loading="lazy"></div>
         <div class="benefit-content">
-          <h4>Profesionální technika</h4>
+          <h3>Profesionální technika</h3>
           <p>Pracujeme se špičkovými rekordéry Panasonic a převodníky Canopus s TBC – záruka věrného obrazu.</p>
         </div>
       </div>
@@ -4061,7 +4005,7 @@ tr.pl-min td:first-child { color: var(--black); }
       <div class="benefit reveal">
         <div class="benefit-icon"><img src="Podminky/time.png" alt="" loading="lazy"></div>
         <div class="benefit-content">
-          <h4>Účtujeme jen čistý čas</h4>
+          <h3>Účtujeme jen čistý čas</h3>
           <p>Prázdná místa, šum či reklamy neplatíte. Účtujeme férově dle skutečné délky vašeho záznamu.</p>
         </div>
       </div>
@@ -4069,7 +4013,7 @@ tr.pl-min td:first-child { color: var(--black); }
       <div class="benefit reveal">
         <div class="benefit-icon"><img src="Podminky/paycard.png" alt="" loading="lazy"></div>
         <div class="benefit-content">
-          <h4>Karta, hotovost i QR</h4>
+          <h3>Karta, hotovost i QR</h3>
           <p>Platíte tak, jak vám to vyhovuje. Platební terminál je u nás samozřejmostí.</p>
         </div>
       </div>
@@ -4077,7 +4021,7 @@ tr.pl-min td:first-child { color: var(--black); }
       <div class="benefit reveal">
         <div class="benefit-icon"><img src="Podminky/backup.PNG" alt="" loading="lazy"></div>
         <div class="benefit-content">
-          <h4>Záloha 12 měsíců zdarma</h4>
+          <h3>Záloha 12 měsíců zdarma</h3>
           <p>Po dobu jednoho roku záznam uchováváme. Pokud USB ztratíte, kdykoliv vám obsah nahrajeme znovu.</p>
         </div>
       </div>
@@ -4241,7 +4185,7 @@ tr.pl-min td:first-child { color: var(--black); }
           <img src="clanky/foto/vhs.png" alt="Digitalizace VHS kazet" loading="lazy">
         </div>
         <div class="article-body">
-          <h4>Digitalizace VHS kazet</h4>
+          <h3>Digitalizace VHS kazet</h3>
           <p>Proč VHS ztrácí kvalitu, jak probíhá profesionální převod a v jaké kvalitě dostanete výsledek.</p>
           <span class="article-link">Otevřít článek →</span>
         </div>
@@ -4252,7 +4196,7 @@ tr.pl-min td:first-child { color: var(--black); }
           <img src="clanky/foto/vhs-c.png" alt="VHS-C z rodinných kamer" loading="lazy">
         </div>
         <div class="article-body">
-          <h4>VHS-C z rodinných kamer</h4>
+          <h3>VHS-C z rodinných kamer</h3>
           <p>Malé kazety z domácích kamer. Adaptér ani fungující kameru u nás nepotřebujete.</p>
           <span class="article-link">Otevřít článek →</span>
         </div>
@@ -4263,7 +4207,7 @@ tr.pl-min td:first-child { color: var(--black); }
           <img src="clanky/foto/hi8.png" alt="Hi8 a Video8 ze Sony" loading="lazy">
         </div>
         <div class="article-body">
-          <h4>Hi8 a Video8 ze Sony</h4>
+          <h3>Hi8 a Video8 ze Sony</h3>
           <p>Kazety z populárních „Handycam" kamer. Profesionální stanice Sony Digital8 s TBC.</p>
           <span class="article-link">Otevřít článek →</span>
         </div>
@@ -4274,7 +4218,7 @@ tr.pl-min td:first-child { color: var(--black); }
           <img src="clanky/foto/minidv.png" alt="Mini DV do PC a na USB" loading="lazy">
         </div>
         <div class="article-body">
-          <h4>Mini DV do PC a na USB</h4>
+          <h3>Mini DV do PC a na USB</h3>
           <p>Digitální kazety přes FireWire. Přenos v poměru 1:1 bez ztráty kvality.</p>
           <span class="article-link">Otevřít článek →</span>
         </div>
@@ -4285,7 +4229,7 @@ tr.pl-min td:first-child { color: var(--black); }
           <img src="clanky/foto/dvd.png" alt="DVD na USB do MP4" loading="lazy">
         </div>
         <div class="article-body">
-          <h4>DVD na USB do MP4</h4>
+          <h3>DVD na USB do MP4</h3>
           <p>Staré DVD už nejde nikde přehrát. Modernizace archivu do univerzálního MP4.</p>
           <span class="article-link">Otevřít článek →</span>
         </div>
@@ -4296,7 +4240,7 @@ tr.pl-min td:first-child { color: var(--black); }
           <img src="clanky/foto/darek.png" alt="VHS jako originální dárek" loading="lazy">
         </div>
         <div class="article-body">
-          <h4>VHS jako originální dárek</h4>
+          <h3>VHS jako originální dárek</h3>
           <p>Nápad, který rozpláče (štěstím). Stroj času pro rodiče i prarodiče.</p>
           <span class="article-link">Otevřít článek →</span>
         </div>
@@ -4307,7 +4251,7 @@ tr.pl-min td:first-child { color: var(--black); }
           <img src="clanky/foto/usb.png" alt="Kolik se vejde na USB" loading="lazy">
         </div>
         <div class="article-body">
-          <h4>Kolik se vejde na USB</h4>
+          <h3>Kolik se vejde na USB</h3>
           <p>1 hodina videa = cca 1,5 GB. Praktický přehled kapacit a doporučení.</p>
           <span class="article-link">Otevřít článek →</span>
         </div>
@@ -4318,7 +4262,7 @@ tr.pl-min td:first-child { color: var(--black); }
           <img src="clanky/foto/obsah-kazet.png" alt="Neznámý obsah kazety" loading="lazy">
         </div>
         <div class="article-body">
-          <h4>Neznámý obsah kazety</h4>
+          <h3>Neznámý obsah kazety</h3>
           <p>Co je na kazetě bez popisku? Jak zjistit obsah, když nemáte video.</p>
           <span class="article-link">Otevřít článek →</span>
         </div>
@@ -4329,7 +4273,7 @@ tr.pl-min td:first-child { color: var(--black); }
           <img src="clanky/foto/oprava.png" alt="Oprava poškozených kazet" loading="lazy">
         </div>
         <div class="article-body">
-          <h4>Oprava poškozených kazet</h4>
+          <h3>Oprava poškozených kazet</h3>
           <p>Přetržená páska, plíseň, zacuchaný kotouč. Profesionální záchrana.</p>
           <span class="article-link">Otevřít článek →</span>
         </div>
@@ -4340,7 +4284,7 @@ tr.pl-min td:first-child { color: var(--black); }
           <img src="clanky/foto/grabber.png" alt="Proč nekupovat levné převodníky" loading="lazy">
         </div>
         <div class="article-body">
-          <h4>Proč nekupovat levné převodníky</h4>
+          <h3>Proč nekupovat levné převodníky</h3>
           <p>Levné USB grabbery z Číny? 5 důvodů, proč se vám to nevyplatí.</p>
           <span class="article-link">Otevřít článek →</span>
         </div>
@@ -4351,7 +4295,7 @@ tr.pl-min td:first-child { color: var(--black); }
           <img src="clanky/foto/doprava.png" alt="Zaslání kazet poštou" loading="lazy">
         </div>
         <div class="article-body">
-          <h4>Zaslání kazet poštou</h4>
+          <h3>Zaslání kazet poštou</h3>
           <p>Bezpečný postup balení a doprava zpět zdarma nad 1.000 Kč.</p>
           <span class="article-link">Otevřít článek →</span>
         </div>
@@ -4362,7 +4306,7 @@ tr.pl-min td:first-child { color: var(--black); }
           <img src="clanky/foto/zivotnost.png" alt="Životnost kazet" loading="lazy">
         </div>
         <div class="article-body">
-          <h4>Životnost kazet</h4>
+          <h3>Životnost kazet</h3>
           <p>Proč se magnetická páska rozkládá a co je Sticky Shed Syndrome.</p>
           <span class="article-link">Otevřít článek →</span>
         </div>
@@ -4636,23 +4580,6 @@ tr.pl-min td:first-child { color: var(--black); }
 
 
 <!-- ============================================================ -->
-<!-- STICKY CTA – DOLNÍ LIŠTA                                     -->
-<!-- ============================================================ -->
-<div class="sticky-cta" id="stickyCta">
-  <a href="tel:+420607828970" class="sticky-btn sticky-btn-phone">
-    <span class="sticky-btn-icon">📞</span>
-    <span>Zavolat</span>
-  </a>
-  <a href="#kontakt" class="sticky-btn sticky-btn-primary">
-    <span class="sticky-btn-icon">✉️</span>
-    Poptat
-  </a>
-</div>
-
-
-
-
-<!-- ============================================================ -->
 <!-- COOKIE BANNER                                                -->
 <!-- ============================================================ -->
 <div class="zv-cookie-overlay" id="zvCookieBanner" role="dialog" aria-labelledby="zvCookieTitle">
@@ -4780,8 +4707,7 @@ tr.pl-min td:first-child { color: var(--black); }
 // ============================================================
 (function() {
   var header = document.getElementById('siteHeader');
-  var stickyCta = document.getElementById('stickyCta');
-  var lastY = 0;
+  if (!header) return;
 
   window.addEventListener('scroll', function() {
     var y = window.scrollY;
@@ -4789,18 +4715,6 @@ tr.pl-min td:first-child { color: var(--black); }
     // stín pod hlavičkou po scrollu
     if (y > 10) header.classList.add('scrolled');
     else header.classList.remove('scrolled');
-
-    // sticky CTA – ukáže se po určitém scrollu, schová u patičky
-    var doc = document.documentElement;
-    var atBottom = (window.innerHeight + y) > (doc.scrollHeight - 200);
-
-    if (y > 500 && !atBottom) {
-      stickyCta.classList.add('visible');
-    } else {
-      stickyCta.classList.remove('visible');
-    }
-
-    lastY = y;
   }, { passive: true });
 })();
 
@@ -5333,7 +5247,11 @@ calculate();
   var btn = document.getElementById('backToTop');
   if (!btn) return;
   window.addEventListener('scroll', function() {
-    if (window.scrollY > 600) btn.classList.add('visible');
+    var y = window.scrollY;
+    var doc = document.documentElement;
+    // zobrazí se až poblíž konce stránky (posledních ~150 px)
+    var atBottom = (window.innerHeight + y) >= (doc.scrollHeight - 150);
+    if (atBottom) btn.classList.add('visible');
     else btn.classList.remove('visible');
   }, { passive: true });
   btn.addEventListener('click', function() {
@@ -5565,8 +5483,41 @@ document.addEventListener('click', function (e) {
 
 </script>
 
-<!-- Web3Forms client script - automaticky zajistí rendering hCaptcha widgetu -->
-<script src="https://web3forms.com/client/script.js" async defer></script>
+<!-- Web3Forms client script - načte se LÍNĚ až po první interakci s formulářem,
+     aby těžká hCaptcha knihovna nezpomalovala prvotní načtení stránky -->
+<script>
+(function () {
+  var loaded = false;
+  function loadWeb3Forms() {
+    if (loaded) return;
+    loaded = true;
+    var s = document.createElement('script');
+    s.src = 'https://web3forms.com/client/script.js';
+    s.async = true;
+    s.defer = true;
+    document.body.appendChild(s);
+  }
+
+  function attach() {
+    var form = document.querySelector('.contact-form');
+    if (!form) return;
+    var events = ['focusin', 'pointerdown', 'touchstart'];
+    function trigger() {
+      loadWeb3Forms();
+      events.forEach(function (ev) { form.removeEventListener(ev, trigger); });
+    }
+    events.forEach(function (ev) {
+      form.addEventListener(ev, trigger, { passive: true });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', attach);
+  } else {
+    attach();
+  }
+})();
+</script>
 
 <!-- ============================================================ -->
 <!-- POTVRZENÍ ODESLÁNÍ FORMULÁŘE – výrazné zelené okno            -->
