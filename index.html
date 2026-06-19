@@ -194,10 +194,19 @@
 
 <!-- ============================================================ -->
 <!-- GOOGLE FONTS – Unbounded (nadpisy) + Poppins (texty)         -->
+<!-- Načítají se NEBLOKUJÍCÍM způsobem (media=print → onload),     -->
+<!-- aby nezdržovaly první vykreslení textu. Fallback písmo se     -->
+<!-- zobrazí okamžitě a fonty se "dolijí" po stažení (display=swap)-->
 <!-- ============================================================ -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+      media="print" onload="this.media='all'">
+<noscript>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap">
+</noscript>
 
 <!-- Web3Forms client script (řeší hCaptcha automaticky) je načten před </body> -->
 
@@ -1381,7 +1390,7 @@ section {
   position: absolute;
   top: 28px;
   left: 32px;
-  font-family: 'VT323', monospace;
+  font-family: 'Courier New', ui-monospace, monospace;
   color: #fff;
   font-size: 1.4rem;
   z-index: 7;
@@ -1406,7 +1415,7 @@ section {
   position: absolute;
   top: 28px;          /* změněno: z bottom na top - pravý horní roh */
   right: 32px;
-  font-family: 'VT323', monospace;
+  font-family: 'Courier New', ui-monospace, monospace;
   color: #fff;
   font-size: 1.25rem;
   z-index: 7;
