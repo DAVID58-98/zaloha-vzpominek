@@ -95,51 +95,111 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Záloha vzpomínek",
-  "image": "https://zalohavzpominek.cz/SEO/google.png",
-  "logo": "https://zalohavzpominek.cz/Favicon/favicon-512.png",
-  "url": "https://zalohavzpominek.cz/",
-  "telephone": "+420607828970",
-  "email": "info@zaloha-vzpominek.cz",
-  "priceRange": "250 Kč/hodina",
-  "description": "Profesionální digitalizace VHS, VHS-C, Hi8, Video8, Mini DV a DVD kazet na USB. Špičková technika Panasonic NV-HS1000 + Canopus ADVC 300 s TBC.",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Přímětická 10",
-    "addressLocality": "Praha 4 – Krč",
-    "addressRegion": "Hlavní město Praha",
-    "postalCode": "140 00",
-    "addressCountry": "CZ"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 50.047415,
-    "longitude": 14.446453
-  },
-  "openingHoursSpecification": [{
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-    "opens": "08:00",
-    "closes": "16:30"
-  }],
-  "areaServed": {
-    "@type": "Country",
-    "name": "Česká republika"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "187",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  "makesOffer": {
-    "@type": "Offer",
-    "price": "250",
-    "priceCurrency": "CZK",
-    "description": "250 Kč za hodinu záznamu, minimální zakázka 300 Kč, slevy od 6 hodin."
-  }
+  "@graph": [
+    {
+      "@type": ["ProfessionalService", "LocalBusiness"],
+      "@id": "https://zalohavzpominek.cz/#business",
+      "name": "Záloha vzpomínek",
+      "image": "https://zalohavzpominek.cz/SEO/google.png",
+      "logo": "https://zalohavzpominek.cz/Favicon/favicon-512.png",
+      "url": "https://zalohavzpominek.cz/",
+      "telephone": "+420607828970",
+      "email": "info@zaloha-vzpominek.cz",
+      "priceRange": "250 Kč/hodina záznamu",
+      "currenciesAccepted": "CZK",
+      "paymentAccepted": "Platební karta, hotovost, QR platba, bankovní převod, dobírka",
+      "description": "Profesionální digitalizace VHS, VHS-C, Hi8, Video8, Mini DV a DVD kazet na USB. Špičková technika Panasonic NV-HS1000 + Canopus ADVC 300 s TBC.",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "IČO",
+        "value": "66375274"
+      },
+      "vatID": "Neplátce DPH",
+      "address": {
+        "@type": "PostalAddress",
+        "name": "Provozovna – osobní předání kazet",
+        "streetAddress": "Přímětická 10",
+        "addressLocality": "Praha 4 – Krč",
+        "addressRegion": "Hlavní město Praha",
+        "postalCode": "140 00",
+        "addressCountry": "CZ"
+      },
+      "location": {
+        "@type": "Place",
+        "name": "Provozovna Přímětická 10",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Přímětická 10",
+          "addressLocality": "Praha 4 – Krč",
+          "postalCode": "140 00",
+          "addressCountry": "CZ"
+        }
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 50.047415,
+        "longitude": 14.446453
+      },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00",
+        "closes": "16:30"
+      }],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Česká republika"
+      },
+      "knowsLanguage": ["cs"],
+      "serviceType": "Digitalizace videokazet a audiovizuálních nosičů",
+      "makesOffer": {
+        "@type": "Offer",
+        "name": "Digitalizace videokazety",
+        "priceCurrency": "CZK",
+        "price": "250",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "priceCurrency": "CZK",
+          "price": "250",
+          "unitCode": "HUR",
+          "unitText": "hodina skutečného záznamu",
+          "valueAddedTaxIncluded": true,
+          "description": "250 Kč za hodinu záznamu, minimální zakázka 300 Kč, slevy od 6 hodin. Ceník platný od 1. 1. 2026."
+        },
+        "availability": "https://schema.org/InStock",
+        "url": "https://zalohavzpominek.cz/#kalkulacka"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Ceník – platný od 1. 1. 2026",
+        "itemListElement": [
+          { "@type": "Offer", "name": "Digitalizace 60 minut záznamu", "price": "250", "priceCurrency": "CZK" },
+          { "@type": "Offer", "name": "Minimální cena za zakázku", "price": "300", "priceCurrency": "CZK" },
+          { "@type": "Offer", "name": "Základní úprava záznamu (ořez, redukce šumu, normalizace zvuku, vyvážení barev)", "price": "0", "priceCurrency": "CZK" },
+          { "@type": "Offer", "name": "Uložení na vlastní USB disk", "price": "0", "priceCurrency": "CZK" },
+          { "@type": "Offer", "name": "Nový USB disk Kingston 64 GB, USB 3.2", "price": "250", "priceCurrency": "CZK" },
+          { "@type": "Offer", "name": "Uložení do cloudu", "price": "50", "priceCurrency": "CZK" },
+          { "@type": "Offer", "name": "Uložení na DVD (1 ks)", "price": "50", "priceCurrency": "CZK" },
+          { "@type": "Offer", "name": "Digitalizace DVD disku (1 ks)", "price": "250", "priceCurrency": "CZK" },
+          { "@type": "Offer", "name": "Oprava, lepení a čištění kazety (1 ks)", "price": "300", "priceCurrency": "CZK" },
+          { "@type": "Offer", "name": "Střih záznamu na přání (1 hodina)", "price": "250", "priceCurrency": "CZK" },
+          { "@type": "Offer", "name": "Odeslání kazet zpět Balíkovnou (od zakázky 1 000 Kč zdarma, pojištěno do 50 000 Kč)", "price": "69", "priceCurrency": "CZK" },
+          { "@type": "Offer", "name": "Množstevní sazba 6–10 hodin záznamu", "price": "240", "priceCurrency": "CZK" },
+          { "@type": "Offer", "name": "Množstevní sazba 11–15 hodin záznamu", "price": "220", "priceCurrency": "CZK" },
+          { "@type": "Offer", "name": "Množstevní sazba 16–20 hodin záznamu", "price": "210", "priceCurrency": "CZK" },
+          { "@type": "Offer", "name": "Množstevní sazba 21 a více hodin záznamu", "price": "199", "priceCurrency": "CZK" }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://zalohavzpominek.cz/#website",
+      "url": "https://zalohavzpominek.cz/",
+      "name": "Záloha vzpomínek",
+      "inLanguage": "cs",
+      "publisher": { "@id": "https://zalohavzpominek.cz/#business" }
+    }
+  ]
 }
 </script>
 
@@ -153,7 +213,7 @@
       "name": "Kolik stojí digitalizace VHS kazety?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Jednotná cena 250 Kč za hodinu záznamu, bez ohledu na typ kazety. Minimální zakázka je 300 Kč. Od 6 hodin záznamu poskytujeme slevu 5 %, od 11 hodin 10 % a od 21 hodin 20 %."
+        "text": "Jednotná cena 250 Kč za hodinu záznamu, bez ohledu na typ kazety. Minimální zakázka je 300 Kč. Množstevní sazby: 6–10 hodin 240 Kč/h, 11–15 hodin 220 Kč/h, 16–20 hodin 210 Kč/h, 21 a více hodin 199 Kč/h."
       }
     },
     {
@@ -185,7 +245,7 @@
       "name": "Jak dlouho digitalizace trvá?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Digitalizace probíhá v reálném čase – hodina záznamu = hodina digitalizace. Běžná zakázka je hotová do 5 pracovních dnů."
+        "text": "Digitalizace probíhá v reálném čase – hodina záznamu = hodina digitalizace. U zakázek do 5 kazet je zakázka obvykle hotová do 7 pracovních dnů."
       }
     }
   ]
@@ -971,6 +1031,11 @@ img, svg { display: block; max-width: 100%; }
   line-height: 1;
   font-variant-numeric: tabular-nums;
   margin-bottom: 10px;
+}
+.reviews-origin {
+  margin-top: 12px;
+  font-size: 0.84rem;
+  color: var(--gray-light);
 }
 .stat-label {
   font-size: 0.85rem;
@@ -3504,15 +3569,15 @@ tr.pl-min td:first-child { color: var(--black); }
   <div class="container">
     <div class="stats-grid">
       <div class="stat">
-        <div class="stat-number" data-target="4287" id="statKazet">0</div>
+        <div class="stat-number" data-target="4287" id="statKazet">4 287</div>
         <div class="stat-label">Digitalizovaných kazet</div>
       </div>
       <div class="stat">
-        <div class="stat-number" data-target="6840" id="statHodin">0</div>
+        <div class="stat-number" data-target="6840" id="statHodin">6 840</div>
         <div class="stat-label">Hodin záznamu</div>
       </div>
       <div class="stat">
-        <div class="stat-number" data-target="15" id="statLet">0</div>
+        <div class="stat-number" data-target="15" id="statLet">15</div>
         <div class="stat-label">Let zkušeností</div>
       </div>
     </div>
@@ -4052,6 +4117,7 @@ tr.pl-min td:first-child { color: var(--black); }
     <div class="reveal">
       <span class="section-eyebrow">Co říkají zákazníci</span>
       <h2 class="section-title">Tisíce zachráněných vzpomínek. <em>Spousta dojetí.</em></h2>
+      <p class="reviews-origin">Reference zaslané zákazníky e-mailem po převzetí zakázky.</p>
     </div>
 
     <div class="reviews-slider-wrap reveal">
@@ -4483,7 +4549,7 @@ tr.pl-min td:first-child { color: var(--black); }
             <div class="contact-info-text">
               <small>Telefon</small>
               <strong><a href="tel:+420607828970">+420 607 828 970</a></strong>
-              <p style="font-size:0.82rem;color:rgba(245,239,228,0.6);margin-top:4px;">Denně 8:00 – 16:30</p>
+              <p style="font-size:0.82rem;color:rgba(245,239,228,0.6);margin-top:4px;">Po–pá 8:00 – 16:30</p>
             </div>
           </div>
 
