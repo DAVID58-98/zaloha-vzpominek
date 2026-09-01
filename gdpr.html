@@ -12,6 +12,9 @@
 <meta name="description" content="Zásady ochrany osobních údajů (GDPR) společnosti Záloha vzpomínek. Jak zpracováváme osobní údaje, doba uchování, práva subjektu údajů a cookies.">
 
 <link rel="canonical" href="https://zalohavzpominek.cz/gdpr.html">
+<link rel="alternate" hreflang="cs" href="https://zalohavzpominek.cz/gdpr.html">
+<link rel="alternate" hreflang="en" href="https://zalohavzpominek.cz/en/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://zalohavzpominek.cz/gdpr.html">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Záloha vzpomínek">
@@ -469,6 +472,32 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .footer-bottom { flex-direction: column; text-align: center; }
 }
 
+
+/* === PŘEPÍNAČ JAZYKŮ === */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--gray-border);
+  border-radius: 100px;
+  background: rgba(255,255,255,0.45);
+  flex-shrink: 0;
+}
+.lang-switch a {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--gray-light);
+  padding: 5px 9px;
+  border-radius: 100px;
+  line-height: 1;
+  transition: background 0.2s, color 0.2s;
+}
+.lang-switch a:hover { color: var(--accent); }
+.lang-switch a.active { background: var(--accent); color: var(--white); }
+
+.nav > .lang-switch { margin-left: auto; margin-right: 14px; }
 </style>
 
 <style>
@@ -611,6 +640,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         </span>
         <span class="logo-text">Záloha vzpomínek</span>
       </a>
+      <span class="lang-switch" role="group" aria-label="Jazyk / Language"><a href="/gdpr.html" hreflang="cs" title="Čeština" class="active" aria-current="true">CS</a><a href="/en/privacy.html" hreflang="en" title="English">EN</a></span>
       <a href="/#kontakt" class="header-cta">Nezávazná poptávka</a>
     </nav>
   </div>

@@ -13,6 +13,9 @@
 <meta name="keywords" content="VHS bez videa, zjištění obsahu kazety, nepopsané kazety, jak přehrát VHS, VHS přehrávač, kontrola kazet, co je na kazetě, přehrání starých kazet, digitalizace VHS">
 
 <link rel="canonical" href="https://zalohavzpominek.cz/clanky/zjisteni-obsahu-kazet.html">
+<link rel="alternate" hreflang="cs" href="https://zalohavzpominek.cz/clanky/zjisteni-obsahu-kazet.html">
+<link rel="alternate" hreflang="en" href="https://zalohavzpominek.cz/en/articles/unlabelled-tapes.html">
+<link rel="alternate" hreflang="x-default" href="https://zalohavzpominek.cz/clanky/zjisteni-obsahu-kazet.html">
 <link rel="alternate" hreflang="cs-CZ" href="https://zalohavzpominek.cz/clanky/zjisteni-obsahu-kazet.html">
 
 <meta name="geo.region" content="CZ-PR">
@@ -563,6 +566,32 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .footer-bottom { flex-direction: column; text-align: center; }
 }
 
+
+/* === PŘEPÍNAČ JAZYKŮ === */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--gray-border);
+  border-radius: 100px;
+  background: rgba(255,255,255,0.45);
+  flex-shrink: 0;
+}
+.lang-switch a {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--gray-light);
+  padding: 5px 9px;
+  border-radius: 100px;
+  line-height: 1;
+  transition: background 0.2s, color 0.2s;
+}
+.lang-switch a:hover { color: var(--accent); }
+.lang-switch a.active { background: var(--accent); color: var(--white); }
+
+.nav > .lang-switch { margin-left: auto; margin-right: 14px; }
 </style>
 </head>
 
@@ -587,6 +616,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         </span>
         <span class="logo-text">Záloha vzpomínek</span>
       </a>
+      <span class="lang-switch" role="group" aria-label="Jazyk / Language"><a href="/clanky/zjisteni-obsahu-kazet.html" hreflang="cs" title="Čeština" class="active" aria-current="true">CS</a><a href="/en/articles/unlabelled-tapes.html" hreflang="en" title="English">EN</a></span>
       <a href="/#kontakt" class="header-cta">Nezávazná poptávka</a>
     </nav>
   </div>
