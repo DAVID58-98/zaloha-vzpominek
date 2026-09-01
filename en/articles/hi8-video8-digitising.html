@@ -16,7 +16,7 @@
 <!-- ============================================================ -->
 <title>Hi8 and Video8 to USB | Transferring Sony Camcorder Tapes – Prague</title>
 <meta name="description" content="Got Video8 or Hi8 8mm cassettes at home? Professional digitising and transfer of Hi8 to a PC and to USB at the highest quality. Prague 4 – Krč or by post across Czechia.">
-<meta name="keywords" content="digitalizace Hi8, převod Hi8 do PC, Video8 na USB, převod Hi8, digitalizace videokazet, kazety Sony 8mm, Hi8 na USB, převod kazet z kamery, digitalizace 8mm kazet">
+<meta name="keywords" content="Hi8 digitising, Hi8 to PC, Video8 to USB, Hi8 transfer, video tape digitising, Sony 8mm cassettes">
 
 <!-- ============================================================ -->
 <!-- CANONICAL + LOKALIZACE                                       -->
@@ -625,27 +625,45 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .lang-switch {
   display: inline-flex;
   align-items: center;
-  gap: 2px;
+  gap: 3px;
   padding: 3px;
-  border: 1px solid var(--gray-border);
-  border-radius: 100px;
-  background: rgba(255,255,255,0.45);
+  border: 1px solid rgba(13, 13, 13, 0.10);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
   flex-shrink: 0;
 }
 .lang-switch a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 27px;
+  padding: 0 4px;
+  font-family: 'Poppins', sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--gray-light);
-  padding: 5px 9px;
-  border-radius: 100px;
+  letter-spacing: 0.06em;
   line-height: 1;
-  transition: background 0.2s, color 0.2s;
+  color: var(--gray-light);
+  border-radius: 999px;
+  transition: background 0.18s ease, color 0.18s ease;
 }
-.lang-switch a:hover { color: var(--accent); }
-.lang-switch a.active { background: var(--accent); color: var(--white); }
+.lang-switch a::after { display: none !important; }
+.lang-switch a:hover { color: var(--black); background: rgba(13, 13, 13, 0.05); }
+.lang-switch a.active,
+.lang-switch a.active:hover {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 1px 3px rgba(13, 13, 13, 0.18);
+}
+/* Přepínač v hlavičce NESMÍ mít margin-left:auto — u justify-content:space-between
+   pohltí volné místo a přitiskne menu k logu. */
+.nav > .lang-switch { margin-left: 0; margin-right: 0; }
+@media (max-width: 920px) { .nav > .lang-switch { display: none; } }
+.nav-mobile-lang { display: none; padding: 14px 0 4px; }
+@media (max-width: 920px) { .nav-mobile-lang { display: block; } }
+@media (min-width: 921px) { .nav-mobile-lang { display: none; } }
 
-.nav > .lang-switch { margin-left: auto; margin-right: 14px; }
 </style>
 </head>
 
@@ -657,7 +675,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <header class="site-header">
   <div class="container">
     <nav class="nav">
-      <a href="/en/" class="logo" aria-label="Záloha vzpomínek – úvodní stránka">
+      <a href="/en/" class="logo" aria-label="Záloha vzpomínek – home page">
         <span class="logo-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
             <mask id="logoMask">
@@ -673,8 +691,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         </span>
         <span class="logo-text">Záloha vzpomínek</span>
       </a>
-      <span class="lang-switch" role="group" aria-label="Jazyk / Language"><a href="/en/articles/hi8-video8-digitising.html" hreflang="cs" title="Čeština">CS</a><a href="/en/articles/hi8-video8-digitising.html" hreflang="en" title="English" class="active" aria-current="true">EN</a></span>
-      <a href="/#kontakt" class="header-cta">Get a free quote</a>
+      <span class="lang-switch" role="group" aria-label="Jazyk / Language"><a href="/clanky/digitalizace-hi8-video8-kazet.html" hreflang="cs" title="Čeština">CS</a><a href="/en/articles/hi8-video8-digitising.html" hreflang="en" title="English" class="active" aria-current="true">EN</a></span>
+      <a href="/en/#kontakt" class="header-cta">Get a free quote</a>
     </nav>
   </div>
 </header>
@@ -687,7 +705,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <ol>
       <li><a href="/en/">Home</a></li>
       <li class="sep" aria-hidden="true">›</li>
-      <li><a href="/#clanky">Articles</a></li>
+      <li><a href="/en/#clanky">Articles</a></li>
       <li class="sep" aria-hidden="true">›</li>
       <li aria-current="page">Digitising Hi8 and Video8 tapes</li>
     </ol>
@@ -715,7 +733,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
       <p>If in the 1990s you wanted to film family holidays in better quality with a more compact camcorder, you probably reached for something made by Sony. The <strong>Video8</strong> format and its improved successor <strong>Hi8</strong> were enormously popular. These small <strong>8mm cassettes</strong> often hold the most important moments of a life in surprisingly good quality.</p>
 
-      <p>Today, though, there is a problem. The Handycam camcorders have given out, the batteries are dead, and connecting an old analogue camera to a new smart TV is next to impossible. <strong>Digitising Hi8</strong> and Video8 tapes is therefore the only way to free these memories from magnetic tape and store them safely. At <strong><a href="https://zalohavzpominek.cz/">Záloha vzpomínek</a></strong> these formats are one of our specialities.</p>
+      <p>Today, though, there is a problem. The Handycam camcorders have given out, the batteries are dead, and connecting an old analogue camera to a new smart TV is next to impossible. <strong>Digitising Hi8</strong> and Video8 tapes is therefore the only way to free these memories from magnetic tape and store them safely. At <strong><a href="/en/">Záloha vzpomínek</a></strong> these formats are one of our specialities.</p>
 
       <h2 id="co-jsou">What Video8 and Hi8 cassettes are</h2>
       <p>At first glance the two formats look identical – a small cassette with 8 mm tape:</p>
@@ -737,10 +755,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         <li><strong>Incompatibility:</strong> modern computers have no analogue inputs to connect a camcorder to.</li>
         <li><strong>Poor USB capture devices:</strong> cheap grabbers bought online often cannot keep sound and picture in sync, which leaves the video stuttering.</li>
       </ol>
-      <p>Leave the <strong>Hi8 to PC transfer</strong> to us – we have equipment that handles it. The whole process is described in the <a href="https://zalohavzpominek.cz/#proces">How it works</a>.</p>
+      <p>Leave the <strong>Hi8 to PC transfer</strong> to us – we have equipment that handles it. The whole process is described in the <a href="/en/#proces">How it works</a>.</p>
 
       <h2 id="jak-probiha">A professional transfer in our studio</h2>
-      <p>Footage from Video8 and Hi8 camcorders is often shaky, because it was shot handheld. That is why the equipment matters so much. For <strong>digitising tapes</strong> of this type we use <strong><a href="https://zalohavzpominek.cz/">Záloha vzpomínek</a></strong> top-end Sony Digital8/Hi8 playback decks with <strong>TBC</strong> and DNR noise reduction:</p>
+      <p>Footage from Video8 and Hi8 camcorders is often shaky, because it was shot handheld. That is why the equipment matters so much. For <strong>digitising tapes</strong> of this type we use <strong><a href="/en/">Záloha vzpomínek</a></strong> top-end Sony Digital8/Hi8 playback decks with <strong>TBC</strong> and DNR noise reduction:</p>
       <ul>
         <li><strong>Picture stabilisation:</strong> TBC straightens out unsteady lines and delivers a settled picture.</li>
         <li><strong>Clean sound:</strong> Video8 often had excellent sound, and we transfer it faithfully and without hum.</li>
@@ -748,16 +766,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       </ul>
 
       <h2 id="cena">What rescuing the 8mm formats costs</h2>
-      <p>We make no distinction between Video8, Hi8 and Digital8 – the price is the same and it is fair. Current prices are in our <a href="https://zalohavzpominek.cz/#kalkulacka">price list and calculator</a>. You pay only for genuine footage; blank sections and static are not charged.</p>
+      <p>We make no distinction between Video8, Hi8 and Digital8 – the price is the same and it is fair. Current prices are in our <a href="/en/#kalkulacka">price list and calculator</a>. You pay only for genuine footage; blank sections and static are not charged.</p>
 
       <div class="callout">
         <span class="callout-icon">💡</span>
-        <p><strong>No deposit up front.</strong> At <strong><a href="https://zalohavzpominek.cz/">Záloha vzpomínek</a></strong> you pay for the digitising only once the work is done and you have checked the result yourself. On top of that we keep a backup copy free of charge for 12 months.</p>
+        <p><strong>No deposit up front.</strong> At <strong><a href="/en/">Záloha vzpomínek</a></strong> you pay for the digitising only once the work is done and you have checked the result yourself. On top of that we keep a backup copy free of charge for 12 months.</p>
       </div>
 
       <h2 id="vysledek">The result: Video8 and Hi8 on USB</h2>
       <p>Most often we do a <strong>tape to USB transfer</strong> – it is practical and works everywhere. You get your videos in <strong>MP4</strong>format, which plays anywhere. Picture the delight when you put Christmas 1998 on the television at a family gathering, in digital quality.</p>
-      <p>Not sure which format you have at home? No matter. Send us a photo through the <a href="https://zalohavzpominek.cz/#kontakt">contact form</a> or have a look at our <a href="https://zalohavzpominek.cz/#faq">frequently asked questions</a>. <strong><a href="https://zalohavzpominek.cz/">Záloha vzpomínek</a></strong> handles every common format.</p>
+      <p>Not sure which format you have at home? No matter. Send us a photo through the <a href="/en/#kontakt">contact form</a> or have a look at our <a href="/en/#faq">frequently asked questions</a>. <strong><a href="/en/">Záloha vzpomínek</a></strong> handles every common format.</p>
 
     </article>
 
@@ -796,8 +814,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <h2>Rescue your <em>memories</em> in time</h2>
     <p>Professional digitising of Hi8, Video8, VHS, VHS-C and Mini DV. Handover in person in Prague 4 – Krč or by post from anywhere in Czechia.</p>
     <div class="cta-band-buttons">
-      <a href="/#kalkulacka" class="btn-secondary">Calculate the price</a>
-      <a href="/#kontakt" class="btn-primary">Request a free quote</a>
+      <a href="/en/#kalkulacka" class="btn-secondary">Calculate the price</a>
+      <a href="/en/#kontakt" class="btn-primary">Request a free quote</a>
     </div>
   </section>
 </div>
@@ -841,8 +859,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <div class="footer-copy">&copy; 2026 Záloha vzpomínek</div>
       <div class="footer-legal">
         <a href="/en/">Home page</a>
-        <a href="/#faq">FAQ</a>
-        <a href="/#kontakt">Contact</a>
+        <a href="/en/#faq">FAQ</a>
+        <a href="/en/#kontakt">Contact</a>
       </div>
     </div>
   </div>

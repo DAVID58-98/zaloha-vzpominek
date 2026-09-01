@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#f5efe4">
 
 <title>General Terms and Conditions | Záloha vzpomínek</title>
-<meta name="description" content="Všeobecné obchodní podmínky služeb digitalizace audio-vizuálních nosičů společnosti Záloha vzpomínek. Ceny, dodací lhůty, reklamace a odstoupení od smlouvy.">
+<meta name="description" content="General Terms and Conditions for the audiovisual media digitising services of Záloha vzpomínek. Prices, turnaround, complaints and withdrawal from the contract.">
 
 <link rel="canonical" href="https://zalohavzpominek.cz/en/terms.html">
 <link rel="alternate" hreflang="cs" href="https://zalohavzpominek.cz/vop.html">
@@ -20,8 +20,8 @@
 <meta property="og:site_name" content="Záloha vzpomínek">
 <meta property="og:locale" content="cs_CZ">
 <meta property="og:url" content="https://zalohavzpominek.cz/vop.html">
-<meta property="og:title" content="Všeobecné obchodní podmínky – Záloha vzpomínek">
-<meta property="og:description" content="Všeobecné obchodní podmínky služeb digitalizace audio-vizuálních nosičů společnosti Záloha vzpomínek. Ceny, dodací lhůty, reklamace a odstoupení od smlouvy.">
+<meta property="og:title" content="General Terms and Conditions – Záloha vzpomínek">
+<meta property="og:description" content="General Terms and Conditions for the audiovisual media digitising services of Záloha vzpomínek. Prices, turnaround, complaints and withdrawal from the contract.">
 
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="manifest" href="/site.webmanifest">
@@ -477,27 +477,45 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .lang-switch {
   display: inline-flex;
   align-items: center;
-  gap: 2px;
+  gap: 3px;
   padding: 3px;
-  border: 1px solid var(--gray-border);
-  border-radius: 100px;
-  background: rgba(255,255,255,0.45);
+  border: 1px solid rgba(13, 13, 13, 0.10);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
   flex-shrink: 0;
 }
 .lang-switch a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 27px;
+  padding: 0 4px;
+  font-family: 'Poppins', sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--gray-light);
-  padding: 5px 9px;
-  border-radius: 100px;
+  letter-spacing: 0.06em;
   line-height: 1;
-  transition: background 0.2s, color 0.2s;
+  color: var(--gray-light);
+  border-radius: 999px;
+  transition: background 0.18s ease, color 0.18s ease;
 }
-.lang-switch a:hover { color: var(--accent); }
-.lang-switch a.active { background: var(--accent); color: var(--white); }
+.lang-switch a::after { display: none !important; }
+.lang-switch a:hover { color: var(--black); background: rgba(13, 13, 13, 0.05); }
+.lang-switch a.active,
+.lang-switch a.active:hover {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 1px 3px rgba(13, 13, 13, 0.18);
+}
+/* Přepínač v hlavičce NESMÍ mít margin-left:auto — u justify-content:space-between
+   pohltí volné místo a přitiskne menu k logu. */
+.nav > .lang-switch { margin-left: 0; margin-right: 0; }
+@media (max-width: 920px) { .nav > .lang-switch { display: none; } }
+.nav-mobile-lang { display: none; padding: 14px 0 4px; }
+@media (max-width: 920px) { .nav-mobile-lang { display: block; } }
+@media (min-width: 921px) { .nav-mobile-lang { display: none; } }
 
-.nav > .lang-switch { margin-left: auto; margin-right: 14px; }
 </style>
 
 <style>
@@ -624,7 +642,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <header class="site-header">
   <div class="container">
     <nav class="nav">
-      <a href="/" class="logo" aria-label="Záloha vzpomínek – úvodní stránka">
+      <a href="/en/" class="logo" aria-label="Záloha vzpomínek – home page">
         <span class="logo-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
             <mask id="logoMask">
@@ -646,10 +664,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   </div>
 </header>
 
-<nav class="breadcrumb" aria-label="Drobečková navigace">
+<nav class="breadcrumb" aria-label="Breadcrumb">
   <div class="container">
     <ol>
-      <li><a href="/">Home</a></li>
+      <li><a href="/en/">Home</a></li>
       <li class="sep" aria-hidden="true">&rsaquo;</li>
       <li aria-current="page">General Terms and Conditions</li>
     </ol>
@@ -675,7 +693,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       Premises (handover of media in person): Přímětická 10, 140 00 Prague 4 – Krč<br>
       Email: <a href="mailto:info@zaloha-vzpominek.cz">info@zaloha-vzpominek.cz</a><br>
       Phone: <a href="tel:+420607828970">+420 607 828 970</a><br>
-      Website: <a href="https://zalohavzpominek.cz">zalohavzpominek.cz</a><br>
+      Website: <a href="/en/">zalohavzpominek.cz</a><br>
       These Terms take effect on 1 January 2026
     </p>
 
@@ -734,14 +752,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
     <h2>Article 11 – Final provisions</h2>
     <p>11.1 The parties will seek to resolve any disputes amicably in the first instance. Out-of-court resolution of consumer disputes is handled by the Czech Trade Inspection Authority, Štěpánská 567/15, 120 00 Prague 2, <a href="https://www.coi.cz" target="_blank" rel="noopener">www.coi.cz</a>.</p>
-    <p>11.3 These Terms are a translation of the Czech original. <strong>In the event of any discrepancy between the Czech and the English version, the Czech version prevails.</strong> The binding Czech wording is available at <a href="/vop.html">zalohavzpominek.cz/vop.html</a>.</p>
+    <p>11.3 These Terms are a translation of the Czech original. <strong>In the event of any discrepancy between the Czech and the English version, the Czech version prevails.</strong> The binding Czech wording is available at <a href="/en/terms.html">zalohavzpominek.cz/vop.html</a>.</p>
 
       <p>11.2 These Terms take effect on <strong>1 January 2026</strong> and may be amended unilaterally by the Provider. Contracts already concluded are governed by the version of the Terms in force at the time they were concluded.</p>
 
     <p class="legal-signed">Prague, 1 January 2026</p>
       <div class="legal-print">
         <a href="javascript:window.print()" class="btn-print">Print this page</a>
-        <a href="/#kontakt" class="btn-ask">I have a question</a>
+        <a href="/en/#kontakt" class="btn-ask">I have a question</a>
       </div>
     </div>
   </div>
@@ -753,8 +771,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <div class="footer-copy">&copy; 2026 Záloha vzpomínek</div>
       <div class="footer-legal">
         <a href="/en/">Home page</a>
-        <a href="/vop.html">Terms</a>
-        <a href="/gdpr.html">Privacy</a>
+        <a href="/en/terms.html">Terms</a>
+        <a href="/en/privacy.html">Privacy</a>
       </div>
     </div>
   </div>

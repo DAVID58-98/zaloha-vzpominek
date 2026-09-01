@@ -16,7 +16,7 @@
 <!-- ============================================================ -->
 <title>Mini DV to USB | Transferring Camcorder Tapes to a PC – Prague</title>
 <meta name="description" content="Old Mini DV tapes and a camcorder that will not connect to your PC? Professional digitising and transfer of Mini DV to USB with no loss of quality. Prague 4 – Krč or by post.">
-<meta name="keywords" content="digitalizace Mini DV, převod Mini DV do PC, Mini DV na USB, převod kazet z kamery, Mini DV kazeta převod, digitalizace kazet, FireWire převod videa, digitalizace videokazet Praha">
+<meta name="keywords" content="Mini DV digitising, Mini DV to PC, Mini DV to USB, camcorder tape transfer, FireWire capture, Mini DV cassette">
 
 <!-- ============================================================ -->
 <!-- CANONICAL + LOKALIZACE                                       -->
@@ -624,27 +624,45 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .lang-switch {
   display: inline-flex;
   align-items: center;
-  gap: 2px;
+  gap: 3px;
   padding: 3px;
-  border: 1px solid var(--gray-border);
-  border-radius: 100px;
-  background: rgba(255,255,255,0.45);
+  border: 1px solid rgba(13, 13, 13, 0.10);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
   flex-shrink: 0;
 }
 .lang-switch a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 27px;
+  padding: 0 4px;
+  font-family: 'Poppins', sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--gray-light);
-  padding: 5px 9px;
-  border-radius: 100px;
+  letter-spacing: 0.06em;
   line-height: 1;
-  transition: background 0.2s, color 0.2s;
+  color: var(--gray-light);
+  border-radius: 999px;
+  transition: background 0.18s ease, color 0.18s ease;
 }
-.lang-switch a:hover { color: var(--accent); }
-.lang-switch a.active { background: var(--accent); color: var(--white); }
+.lang-switch a::after { display: none !important; }
+.lang-switch a:hover { color: var(--black); background: rgba(13, 13, 13, 0.05); }
+.lang-switch a.active,
+.lang-switch a.active:hover {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 1px 3px rgba(13, 13, 13, 0.18);
+}
+/* Přepínač v hlavičce NESMÍ mít margin-left:auto — u justify-content:space-between
+   pohltí volné místo a přitiskne menu k logu. */
+.nav > .lang-switch { margin-left: 0; margin-right: 0; }
+@media (max-width: 920px) { .nav > .lang-switch { display: none; } }
+.nav-mobile-lang { display: none; padding: 14px 0 4px; }
+@media (max-width: 920px) { .nav-mobile-lang { display: block; } }
+@media (min-width: 921px) { .nav-mobile-lang { display: none; } }
 
-.nav > .lang-switch { margin-left: auto; margin-right: 14px; }
 </style>
 </head>
 
@@ -656,7 +674,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <header class="site-header">
   <div class="container">
     <nav class="nav">
-      <a href="/en/" class="logo" aria-label="Záloha vzpomínek – úvodní stránka">
+      <a href="/en/" class="logo" aria-label="Záloha vzpomínek – home page">
         <span class="logo-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
             <mask id="logoMask">
@@ -672,8 +690,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         </span>
         <span class="logo-text">Záloha vzpomínek</span>
       </a>
-      <span class="lang-switch" role="group" aria-label="Jazyk / Language"><a href="/en/articles/mini-dv-digitising.html" hreflang="cs" title="Čeština">CS</a><a href="/en/articles/mini-dv-digitising.html" hreflang="en" title="English" class="active" aria-current="true">EN</a></span>
-      <a href="/#kontakt" class="header-cta">Get a free quote</a>
+      <span class="lang-switch" role="group" aria-label="Jazyk / Language"><a href="/clanky/digitalizace-mini-dv-kazet.html" hreflang="cs" title="Čeština">CS</a><a href="/en/articles/mini-dv-digitising.html" hreflang="en" title="English" class="active" aria-current="true">EN</a></span>
+      <a href="/en/#kontakt" class="header-cta">Get a free quote</a>
     </nav>
   </div>
 </header>
@@ -686,7 +704,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <ol>
       <li><a href="/en/">Home</a></li>
       <li class="sep" aria-hidden="true">›</li>
-      <li><a href="/#clanky">Articles</a></li>
+      <li><a href="/en/#clanky">Articles</a></li>
       <li class="sep" aria-hidden="true">›</li>
       <li aria-current="page">Digitising Mini DV tapes</li>
     </ol>
@@ -714,7 +732,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
       <p>Remember the turn of the millennium? The era of bulky VHS camcorders ended and compact cameras taking <strong>Mini DV</strong>cassettes took over. They brought a huge jump in picture quality. Although the recording on these tapes is digital, it is still written onto magnetic tape – and that is the problem. For an ordinary user these memories are now all but unreachable.</p>
 
-      <p>If you have <strong>Mini DV tapes</strong> in a drawer and a camcorder that no longer works, or you have been trying in vain to connect old hardware to a new Windows machine, you are not alone. <strong>Digitising Mini DV</strong> is technically harder than it looks, but at <strong><a href="https://zalohavzpominek.cz/">Záloha vzpomínek</a></strong> we have the answer.</p>
+      <p>If you have <strong>Mini DV tapes</strong> in a drawer and a camcorder that no longer works, or you have been trying in vain to connect old hardware to a new Windows machine, you are not alone. <strong>Digitising Mini DV</strong> is technically harder than it looks, but at <strong><a href="/en/">Záloha vzpomínek</a></strong> we have the answer.</p>
 
       <h2 id="proc-nejde-doma">Why Mini DV cannot be transferred at home</h2>
       <p>The most common reason customers come to us asking for a <strong>Mini DV to PC transfer</strong>is technical incompatibility:</p>
@@ -723,11 +741,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         <li><strong>Camcorders that no longer work:</strong> the Mini DV mechanism is delicate and prone to failure. Heads clog and the tape transport jams.</li>
         <li><strong>Drivers:</strong> even if you find an old computer, Windows 10 and 11 often will not recognise an old camcorder.</li>
       </ol>
-      <p>Rather than wrestling with old hardware, leave <strong>tape digitising</strong> to specialists – how we do it is described in the <a href="https://zalohavzpominek.cz/#proces">How it works</a>.</p>
+      <p>Rather than wrestling with old hardware, leave <strong>tape digitising</strong> to specialists – how we do it is described in the <a href="/en/#proces">How it works</a>.</p>
 
       <h2 id="bit-rot">The threat of bit rot: why these tapes degrade</h2>
       <p>Assume that because it is digital ones and zeros the recording lasts for ever? Not so. The tape in a <strong>Mini DV cassette</strong> is far narrower and the data density is higher than on VHS. That means any physical damage to the tape – damp, dust, demagnetisation – has serious consequences.</p>
-      <p>Where VHS merely gets grainy, Mini DV breaks into blocks, drops audio or loses the picture altogether. <strong>Digitising video tapes</strong> of this type is therefore needed before the data disappears from the tape entirely. There is more on tape ageing in the <a href="https://zalohavzpominek.cz/#proc">Why not to put it off</a>.</p>
+      <p>Where VHS merely gets grainy, Mini DV breaks into blocks, drops audio or loses the picture altogether. <strong>Digitising video tapes</strong> of this type is therefore needed before the data disappears from the tape entirely. There is more on tape ageing in the <a href="/en/#proc">Why not to put it off</a>.</p>
 
       <div class="callout">
         <span class="callout-icon">⚠️</span>
@@ -735,7 +753,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       </div>
 
       <h2 id="jak-probiha">How we transfer Mini DV</h2>
-      <p>Our aim is to get the data off the tape <strong>1:1</strong> – at exactly the quality it was shot at. At <strong><a href="https://zalohavzpominek.cz/">Záloha vzpomínek</a></strong> your tapes go through this process:</p>
+      <p>Our aim is to get the data off the tape <strong>1:1</strong> – at exactly the quality it was shot at. At <strong><a href="/en/">Záloha vzpomínek</a></strong> your tapes go through this process:</p>
       <ul>
         <li><strong>Professional transfer:</strong> we use quality playback equipment and dedicated interfaces communicating over <strong>FireWire</strong>. That means no needless compression of the picture during capture.</li>
         <li><strong>Digital cleanliness:</strong> unlike a <strong>VHS transfer</strong>, where analogue becomes digital, with Mini DV we simply pour the existing digital data into a file – usually <strong>MP4</strong> for easy playback.</li>
@@ -743,11 +761,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       </ul>
 
       <h2 id="cena">What rescuing digital video costs</h2>
-      <p>The price for <strong>Mini DV digitising</strong> is the same as for the other formats – clear and fair. See our <a href="https://zalohavzpominek.cz/#kalkulacka">price list and calculator</a> for current prices. You pay only for what is actually recorded on the tape, and saving to your own drive and basic treatment of the footage are included free.</p>
+      <p>The price for <strong>Mini DV digitising</strong> is the same as for the other formats – clear and fair. See our <a href="/en/#kalkulacka">price list and calculator</a> for current prices. You pay only for what is actually recorded on the tape, and saving to your own drive and basic treatment of the footage are included free.</p>
 
       <div class="callout">
         <span class="callout-icon">💡</span>
-        <p><strong>No deposit up front.</strong> At <strong><a href="https://zalohavzpominek.cz/">Záloha vzpomínek</a></strong> you pay for the digitising only once the work is done and you have checked the result yourself. On top of that we keep a backup copy free of charge for 12 months.</p>
+        <p><strong>No deposit up front.</strong> At <strong><a href="/en/">Záloha vzpomínek</a></strong> you pay for the digitising only once the work is done and you have checked the result yourself. On top of that we keep a backup copy free of charge for 12 months.</p>
       </div>
 
       <h2 id="co-ziskate">What you get from a Mini DV to USB transfer</h2>
@@ -757,7 +775,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         <li>You can edit them in modern software.</li>
         <li>You get a permanent backup that time cannot damage.</li>
       </ul>
-      <p>Not sure about the format or how to pack it? Have a look at our <a href="https://zalohavzpominek.cz/#faq">frequently asked questions</a>, or simply write to us through the <a href="https://zalohavzpominek.cz/#kontakt">contact form</a>. <strong><a href="https://zalohavzpominek.cz/">Záloha vzpomínek</a></strong> will gladly help you rescue your digital video before it breaks up into digital noise.</p>
+      <p>Not sure about the format or how to pack it? Have a look at our <a href="/en/#faq">frequently asked questions</a>, or simply write to us through the <a href="/en/#kontakt">contact form</a>. <strong><a href="/en/">Záloha vzpomínek</a></strong> will gladly help you rescue your digital video before it breaks up into digital noise.</p>
 
     </article>
 
@@ -796,8 +814,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <h2>Rescue your <em>memories</em> in time</h2>
     <p>Professional digitising of Mini DV, VHS, VHS-C and Hi8. Handover in person in Prague 4 – Krč or by post from anywhere in Czechia.</p>
     <div class="cta-band-buttons">
-      <a href="/#kalkulacka" class="btn-secondary">Calculate the price</a>
-      <a href="/#kontakt" class="btn-primary">Request a free quote</a>
+      <a href="/en/#kalkulacka" class="btn-secondary">Calculate the price</a>
+      <a href="/en/#kontakt" class="btn-primary">Request a free quote</a>
     </div>
   </section>
 </div>
@@ -822,7 +840,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         <span>Read the article →</span>
       </a>
 
-      <a href="/#clanek-hi8" class="related-card">
+      <a href="/en/#clanek-hi8" class="related-card">
         <h3>Hi8 and Video8 from Sony</h3>
         <p>Tapes from the popular Handycam camcorders. A professional Sony Digital8 deck with TBC.</p>
         <span>Read the article →</span>
@@ -841,8 +859,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <div class="footer-copy">© 2026 Záloha vzpomínek</div>
       <div class="footer-legal">
         <a href="/en/">Home page</a>
-        <a href="/#faq">FAQ</a>
-        <a href="/#kontakt">Contact</a>
+        <a href="/en/#faq">FAQ</a>
+        <a href="/en/#kontakt">Contact</a>
       </div>
     </div>
   </div>

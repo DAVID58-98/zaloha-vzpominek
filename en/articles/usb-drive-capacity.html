@@ -16,7 +16,7 @@
 <!-- ============================================================ -->
 <title>How Many Hours of Video Fit on a USB Drive?</title>
 <meta name="description" content="What size flash drive do you need for digitised VHS? One hour of footage takes about 1.5 GB. Advice on USB capacity, NTFS and exFAT formatting, and 12 months of free backup.">
-<meta name="keywords" content="kapacita USB pro video, velikost MP4 videa, kolik GB má hodina videa, archivace videa, digitalizace VHS záloha, formátování NTFS exFAT, USB flash disk video, záloha vzpomínek">
+<meta name="keywords" content="USB capacity for video, MP4 file size, how many GB per hour of video, video archiving, digitising storage">
 
 <!-- ============================================================ -->
 <!-- CANONICAL + LOKALIZACE                                       -->
@@ -46,7 +46,7 @@
 <meta property="og:image:alt" content="USB flash drive capacity for digitised video">
 <meta property="article:published_time" content="2026-02-05">
 <meta property="article:modified_time" content="2026-05-21">
-<meta property="article:section" content="Rádce">
+<meta property="article:section" content="Advice">
 <meta property="article:tag" content="USB">
 <meta property="article:tag" content="archivace videa">
 
@@ -623,27 +623,45 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .lang-switch {
   display: inline-flex;
   align-items: center;
-  gap: 2px;
+  gap: 3px;
   padding: 3px;
-  border: 1px solid var(--gray-border);
-  border-radius: 100px;
-  background: rgba(255,255,255,0.45);
+  border: 1px solid rgba(13, 13, 13, 0.10);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
   flex-shrink: 0;
 }
 .lang-switch a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 27px;
+  padding: 0 4px;
+  font-family: 'Poppins', sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--gray-light);
-  padding: 5px 9px;
-  border-radius: 100px;
+  letter-spacing: 0.06em;
   line-height: 1;
-  transition: background 0.2s, color 0.2s;
+  color: var(--gray-light);
+  border-radius: 999px;
+  transition: background 0.18s ease, color 0.18s ease;
 }
-.lang-switch a:hover { color: var(--accent); }
-.lang-switch a.active { background: var(--accent); color: var(--white); }
+.lang-switch a::after { display: none !important; }
+.lang-switch a:hover { color: var(--black); background: rgba(13, 13, 13, 0.05); }
+.lang-switch a.active,
+.lang-switch a.active:hover {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 1px 3px rgba(13, 13, 13, 0.18);
+}
+/* Přepínač v hlavičce NESMÍ mít margin-left:auto — u justify-content:space-between
+   pohltí volné místo a přitiskne menu k logu. */
+.nav > .lang-switch { margin-left: 0; margin-right: 0; }
+@media (max-width: 920px) { .nav > .lang-switch { display: none; } }
+.nav-mobile-lang { display: none; padding: 14px 0 4px; }
+@media (max-width: 920px) { .nav-mobile-lang { display: block; } }
+@media (min-width: 921px) { .nav-mobile-lang { display: none; } }
 
-.nav > .lang-switch { margin-left: auto; margin-right: 14px; }
 </style>
 </head>
 
@@ -653,7 +671,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <header class="site-header">
   <div class="container">
     <nav class="nav">
-      <a href="/en/" class="logo" aria-label="Záloha vzpomínek – úvodní stránka">
+      <a href="/en/" class="logo" aria-label="Záloha vzpomínek – home page">
         <span class="logo-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
             <mask id="logoMask">
@@ -669,8 +687,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         </span>
         <span class="logo-text">Záloha vzpomínek</span>
       </a>
-      <span class="lang-switch" role="group" aria-label="Jazyk / Language"><a href="/en/articles/usb-drive-capacity.html" hreflang="cs" title="Čeština">CS</a><a href="/en/articles/usb-drive-capacity.html" hreflang="en" title="English" class="active" aria-current="true">EN</a></span>
-      <a href="/#kontakt" class="header-cta">Get a free quote</a>
+      <span class="lang-switch" role="group" aria-label="Jazyk / Language"><a href="/clanky/usb-disk-kapacita.html" hreflang="cs" title="Čeština">CS</a><a href="/en/articles/usb-drive-capacity.html" hreflang="en" title="English" class="active" aria-current="true">EN</a></span>
+      <a href="/en/#kontakt" class="header-cta">Get a free quote</a>
     </nav>
   </div>
 </header>
@@ -681,7 +699,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <ol>
       <li><a href="/en/">Home</a></li>
       <li class="sep" aria-hidden="true">&rsaquo;</li>
-      <li><a href="/#clanky">Articles</a></li>
+      <li><a href="/en/#clanky">Articles</a></li>
       <li class="sep" aria-hidden="true">&rsaquo;</li>
       <li aria-current="page">USB drive capacity</li>
     </ol>
@@ -704,7 +722,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
       <p>When customers hand over a box full of tapes, they often ask: „Will my old 8 GB flash drive do, or should I buy a new one?“ It is a fair question. With tapes we counted in minutes (E-180, E-240); in the digital world we count in gigabytes.</p>
 
-      <p>At <strong><a href="https://zalohavzpominek.cz/">Záloha vzpomínek</a></strong> we believe in being straightforward, so here is a simple guide to working out how much space your digital memories need and how to keep them safe.</p>
+      <p>At <strong><a href="/en/">Záloha vzpomínek</a></strong> we believe in being straightforward, so here is a simple guide to working out how much space your digital memories need and how to keep them safe.</p>
 
       <h2 id="vypocet">The maths: 1 hour = 1.5 GB</h2>
       <p>For the transfer we use the modern <strong>H.264</strong>codec, which strikes the right balance between excellent picture quality and a sensible file size. At the standard resolution matching VHS quality (720&times;576) there is a simple rule: <strong>one hour of footage takes roughly 1 to 1.5 GB</strong>.</p>
@@ -724,7 +742,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <ul>
         <li><strong>Speed:</strong> USB 3.2 makes reading and writing fast – the video does not buffer, it simply plays.</li>
         <li><strong>Warranty:</strong> these drives come with a 3-year warranty.</li>
-        <li><strong>A fair price:</strong> we sell them for 250 CZK. Current prices are in the <a href="https://zalohavzpominek.cz/#kalkulacka">price list and calculator</a>.</li>
+        <li><strong>A fair price:</strong> we sell them for 250 CZK. Current prices are in the <a href="/en/#kalkulacka">price list and calculator</a>.</li>
       </ul>
       <p>So there is nothing for you to buy or arrange in advance – you get the whole thing ready-made.</p>
 
@@ -750,7 +768,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         <li><strong>The advantage of NTFS:</strong> it handles files of any size and every television and Windows PC can read it.</li>
         <li><strong>The drawback:</strong> Apple devices (MacBook, iPad) can struggle to read NTFS.</li>
       </ul>
-      <p>If you use Apple devices exclusively, tell us in advance through the <a href="https://zalohavzpominek.cz/#kontakt">contact form</a> and we will prepare the drive as exFAT, which works with everything. Further questions are answered in our <a href="https://zalohavzpominek.cz/#faq">frequently asked questions</a>. <strong><a href="https://zalohavzpominek.cz/">Záloha vzpomínek</a></strong> will gladly advise on the best way to store your memories.</p>
+      <p>If you use Apple devices exclusively, tell us in advance through the <a href="/en/#kontakt">contact form</a> and we will prepare the drive as exFAT, which works with everything. Further questions are answered in our <a href="/en/#faq">frequently asked questions</a>. <strong><a href="/en/">Záloha vzpomínek</a></strong> will gladly advise on the best way to store your memories.</p>
 
     </article>
 
@@ -786,8 +804,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <h2>Rescue your <em>memories</em> in time</h2>
     <p>Professional digitising of VHS, VHS-C, Hi8, Mini DV and DVD. Handover in person in Prague 4 – Krč or by post from anywhere in Czechia.</p>
     <div class="cta-band-buttons">
-      <a href="/#kalkulacka" class="btn-secondary">Calculate the price</a>
-      <a href="/#kontakt" class="btn-primary">Request a free quote</a>
+      <a href="/en/#kalkulacka" class="btn-secondary">Calculate the price</a>
+      <a href="/en/#kontakt" class="btn-primary">Request a free quote</a>
     </div>
   </section>
 </div>
@@ -823,8 +841,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <div class="footer-copy">&copy; 2026 Záloha vzpomínek</div>
       <div class="footer-legal">
         <a href="/en/">Home page</a>
-        <a href="/#faq">FAQ</a>
-        <a href="/#kontakt">Contact</a>
+        <a href="/en/#faq">FAQ</a>
+        <a href="/en/#kontakt">Contact</a>
       </div>
     </div>
   </div>

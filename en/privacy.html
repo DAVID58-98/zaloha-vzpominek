@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#f5efe4">
 
 <title>Privacy Policy | Záloha vzpomínek</title>
-<meta name="description" content="Zásady ochrany osobních údajů (GDPR) společnosti Záloha vzpomínek. Jak zpracováváme osobní údaje, doba uchování, práva subjektu údajů a cookies.">
+<meta name="description" content="Privacy Policy (GDPR) of Záloha vzpomínek. How we process personal data, retention periods, data subject rights and cookies.">
 
 <link rel="canonical" href="https://zalohavzpominek.cz/en/privacy.html">
 <link rel="alternate" hreflang="cs" href="https://zalohavzpominek.cz/gdpr.html">
@@ -20,8 +20,8 @@
 <meta property="og:site_name" content="Záloha vzpomínek">
 <meta property="og:locale" content="cs_CZ">
 <meta property="og:url" content="https://zalohavzpominek.cz/gdpr.html">
-<meta property="og:title" content="Zásady ochrany osobních údajů – Záloha vzpomínek">
-<meta property="og:description" content="Zásady ochrany osobních údajů (GDPR) společnosti Záloha vzpomínek. Jak zpracováváme osobní údaje, doba uchování, práva subjektu údajů a cookies.">
+<meta property="og:title" content="Privacy Policy – Záloha vzpomínek">
+<meta property="og:description" content="Privacy Policy (GDPR) of Záloha vzpomínek. How we process personal data, retention periods, data subject rights and cookies.">
 
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="manifest" href="/site.webmanifest">
@@ -477,27 +477,45 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .lang-switch {
   display: inline-flex;
   align-items: center;
-  gap: 2px;
+  gap: 3px;
   padding: 3px;
-  border: 1px solid var(--gray-border);
-  border-radius: 100px;
-  background: rgba(255,255,255,0.45);
+  border: 1px solid rgba(13, 13, 13, 0.10);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
   flex-shrink: 0;
 }
 .lang-switch a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 27px;
+  padding: 0 4px;
+  font-family: 'Poppins', sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--gray-light);
-  padding: 5px 9px;
-  border-radius: 100px;
+  letter-spacing: 0.06em;
   line-height: 1;
-  transition: background 0.2s, color 0.2s;
+  color: var(--gray-light);
+  border-radius: 999px;
+  transition: background 0.18s ease, color 0.18s ease;
 }
-.lang-switch a:hover { color: var(--accent); }
-.lang-switch a.active { background: var(--accent); color: var(--white); }
+.lang-switch a::after { display: none !important; }
+.lang-switch a:hover { color: var(--black); background: rgba(13, 13, 13, 0.05); }
+.lang-switch a.active,
+.lang-switch a.active:hover {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 1px 3px rgba(13, 13, 13, 0.18);
+}
+/* Přepínač v hlavičce NESMÍ mít margin-left:auto — u justify-content:space-between
+   pohltí volné místo a přitiskne menu k logu. */
+.nav > .lang-switch { margin-left: 0; margin-right: 0; }
+@media (max-width: 920px) { .nav > .lang-switch { display: none; } }
+.nav-mobile-lang { display: none; padding: 14px 0 4px; }
+@media (max-width: 920px) { .nav-mobile-lang { display: block; } }
+@media (min-width: 921px) { .nav-mobile-lang { display: none; } }
 
-.nav > .lang-switch { margin-left: auto; margin-right: 14px; }
 </style>
 
 <style>
@@ -624,7 +642,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <header class="site-header">
   <div class="container">
     <nav class="nav">
-      <a href="/" class="logo" aria-label="Záloha vzpomínek – úvodní stránka">
+      <a href="/en/" class="logo" aria-label="Záloha vzpomínek – home page">
         <span class="logo-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
             <mask id="logoMask">
@@ -646,10 +664,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   </div>
 </header>
 
-<nav class="breadcrumb" aria-label="Drobečková navigace">
+<nav class="breadcrumb" aria-label="Breadcrumb">
   <div class="container">
     <ol>
-      <li><a href="/">Home</a></li>
+      <li><a href="/en/">Home</a></li>
       <li class="sep" aria-hidden="true">&rsaquo;</li>
       <li aria-current="page">Privacy Policy</li>
     </ol>
@@ -678,7 +696,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     </p>
 
     <h2>Article 1 – Introduction</h2>
-    <p>This Privacy Policy describes how the controller processes the personal data of natural persons (the „<strong>Data Subject</strong>“) in connection with providing audiovisual media digitising services and operating the website <a href="https://zalohavzpominek.cz">zalohavzpominek.cz</a>.</p>
+    <p>This Privacy Policy describes how the controller processes the personal data of natural persons (the „<strong>Data Subject</strong>“) in connection with providing audiovisual media digitising services and operating the website <a href="/en/">zalohavzpominek.cz</a>.</p>
     <p>Processing is governed by Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data (the „<strong>GDPR</strong>“) and by Act No. 110/2019 Coll., on Personal Data Processing.</p>
 
     <h2>Article 2 – Categories of data processed</h2>
@@ -763,14 +781,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <p>Where there is doubt about the identity of the applicant, the controller may request additional verification.</p>
 
     <h2>Article 12 – Final provisions</h2>
-    <p>This Privacy Policy is a translation of the Czech original. <strong>In the event of any discrepancy between the Czech and the English version, the Czech version prevails.</strong> The binding Czech wording is available at <a href="/gdpr.html">zalohavzpominek.cz/gdpr.html</a>.</p>
+    <p>This Privacy Policy is a translation of the Czech original. <strong>In the event of any discrepancy between the Czech and the English version, the Czech version prevails.</strong> The binding Czech wording is available at <a href="/en/privacy.html">zalohavzpominek.cz/gdpr.html</a>.</p>
 
       <p>This Privacy Policy takes effect on <strong>1 January 2026</strong>. The controller may amend the policy unilaterally; the current version is always published on the website.</p>
 
     <p class="legal-signed">Prague, 1 January 2026</p>
       <div class="legal-print">
         <a href="javascript:window.print()" class="btn-print">Print this page</a>
-        <a href="/#kontakt" class="btn-ask">I have a question</a>
+        <a href="/en/#kontakt" class="btn-ask">I have a question</a>
       </div>
     </div>
   </div>
@@ -782,8 +800,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <div class="footer-copy">&copy; 2026 Záloha vzpomínek</div>
       <div class="footer-legal">
         <a href="/en/">Home page</a>
-        <a href="/vop.html">Terms</a>
-        <a href="/gdpr.html">GDPR</a>
+        <a href="/en/terms.html">Terms</a>
+        <a href="/en/privacy.html">GDPR</a>
       </div>
     </div>
   </div>

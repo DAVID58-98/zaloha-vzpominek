@@ -10,7 +10,7 @@
 
 <title>Why Not to Buy a Cheap USB VHS Capture Device | Záloha vzpomínek</title>
 <meta name="description" content="Thinking of buying a USB grabber to digitise VHS? Why cheap capture devices fail, why the sound drifts out of sync and why a professional transfer is the better choice.">
-<meta name="keywords" content="USB grabber VHS, převod VHS do PC doma, EasyCap recenze, levná digitalizace VHS, VHS to DVD převodník, TBC korekce, proč se rozchází zvuk u videa, kvalitní digitalizace kazet">
+<meta name="keywords" content="USB grabber VHS, VHS to PC at home, EasyCap review, cheap VHS digitising, VHS to DVD capture device">
 
 <link rel="canonical" href="https://zalohavzpominek.cz/en/articles/cheap-usb-capture-devices.html">
 <link rel="alternate" hreflang="cs" href="https://zalohavzpominek.cz/clanky/usb-prevodniky-vhs.html">
@@ -33,7 +33,7 @@
 <meta property="og:image:alt" content="A cheap USB grabber for digitising VHS">
 <meta property="article:published_time" content="2026-02-03">
 <meta property="article:modified_time" content="2026-05-21">
-<meta property="article:section" content="Rádce">
+<meta property="article:section" content="Advice">
 <meta property="article:tag" content="USB grabber">
 <meta property="article:tag" content="VHS digitising">
 <meta property="article:tag" content="TBC">
@@ -596,27 +596,45 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .lang-switch {
   display: inline-flex;
   align-items: center;
-  gap: 2px;
+  gap: 3px;
   padding: 3px;
-  border: 1px solid var(--gray-border);
-  border-radius: 100px;
-  background: rgba(255,255,255,0.45);
+  border: 1px solid rgba(13, 13, 13, 0.10);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
   flex-shrink: 0;
 }
 .lang-switch a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 27px;
+  padding: 0 4px;
+  font-family: 'Poppins', sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--gray-light);
-  padding: 5px 9px;
-  border-radius: 100px;
+  letter-spacing: 0.06em;
   line-height: 1;
-  transition: background 0.2s, color 0.2s;
+  color: var(--gray-light);
+  border-radius: 999px;
+  transition: background 0.18s ease, color 0.18s ease;
 }
-.lang-switch a:hover { color: var(--accent); }
-.lang-switch a.active { background: var(--accent); color: var(--white); }
+.lang-switch a::after { display: none !important; }
+.lang-switch a:hover { color: var(--black); background: rgba(13, 13, 13, 0.05); }
+.lang-switch a.active,
+.lang-switch a.active:hover {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 1px 3px rgba(13, 13, 13, 0.18);
+}
+/* Přepínač v hlavičce NESMÍ mít margin-left:auto — u justify-content:space-between
+   pohltí volné místo a přitiskne menu k logu. */
+.nav > .lang-switch { margin-left: 0; margin-right: 0; }
+@media (max-width: 920px) { .nav > .lang-switch { display: none; } }
+.nav-mobile-lang { display: none; padding: 14px 0 4px; }
+@media (max-width: 920px) { .nav-mobile-lang { display: block; } }
+@media (min-width: 921px) { .nav-mobile-lang { display: none; } }
 
-.nav > .lang-switch { margin-left: auto; margin-right: 14px; }
 </style>
 </head>
 
@@ -625,7 +643,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <header class="site-header">
   <div class="container">
     <nav class="nav">
-      <a href="/en/" class="logo" aria-label="Záloha vzpomínek – úvodní stránka">
+      <a href="/en/" class="logo" aria-label="Záloha vzpomínek – home page">
         <span class="logo-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
             <mask id="logoMask">
@@ -641,8 +659,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         </span>
         <span class="logo-text">Záloha vzpomínek</span>
       </a>
-      <span class="lang-switch" role="group" aria-label="Jazyk / Language"><a href="/en/articles/cheap-usb-capture-devices.html" hreflang="cs" title="Čeština">CS</a><a href="/en/articles/cheap-usb-capture-devices.html" hreflang="en" title="English" class="active" aria-current="true">EN</a></span>
-      <a href="/#kontakt" class="header-cta">Get a free quote</a>
+      <span class="lang-switch" role="group" aria-label="Jazyk / Language"><a href="/clanky/usb-prevodniky-vhs.html" hreflang="cs" title="Čeština">CS</a><a href="/en/articles/cheap-usb-capture-devices.html" hreflang="en" title="English" class="active" aria-current="true">EN</a></span>
+      <a href="/en/#kontakt" class="header-cta">Get a free quote</a>
     </nav>
   </div>
 </header>
@@ -652,7 +670,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <ol>
       <li><a href="/en/">Home</a></li>
       <li class="sep" aria-hidden="true">&rsaquo;</li>
-      <li><a href="/#clanky">Articles</a></li>
+      <li><a href="/en/#clanky">Articles</a></li>
       <li class="sep" aria-hidden="true">&rsaquo;</li>
       <li aria-current="page">USB VHS capture devices</li>
     </ol>
@@ -673,7 +691,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
       <p>You have probably seen them in a catalogue or on a marketplace site. A small plastic box marked „EasyCap“ or „VHS to DVD“ promising <strong>VHS transfer to a PC</strong> for a few hundred crowns. It looks tempting: „I'll do it at home and save money.“</p>
 
-      <p>The reality, unfortunately, is that these cheap <strong>USB grabbers</strong> are the single most common reason people end up coming to <strong><a href="https://zalohavzpominek.cz/">Záloha vzpomínek</a></strong> anyway – only by then they have lost a great deal of time and patience. So why does the output from these cheap devices look so poor?</p>
+      <p>The reality, unfortunately, is that these cheap <strong>USB grabbers</strong> are the single most common reason people end up coming to <strong><a href="/en/">Záloha vzpomínek</a></strong> anyway – only by then they have lost a great deal of time and patience. So why does the output from these cheap devices look so poor?</p>
 
       <h2 id="zvuk">1. Sound drifting out of sync with the picture</h2>
       <p>The biggest failing of cheap capture devices. The start of the video looks fine, but ten minutes in you notice the sound running ahead of or behind the picture. The longer the video, the worse the drift. On a two-hour wedding recording it becomes unwatchable.</p>
@@ -694,7 +712,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
       <h2 id="ovladace">4. The driver and software trap</h2>
       <p>You buy the box and then find the bundled software CD does not work on Windows 10 or 11. You go hunting for drivers online, install dubious software and your computer starts stuttering.</p>
-      <p>With us that worry disappears. The price (see the <a href="https://zalohavzpominek.cz/#kalkulacka">price list and calculator</a>) covers not only top picture quality but the peace of mind that the equipment is our problem, not yours.</p>
+      <p>With us that worry disappears. The price (see the <a href="/en/#kalkulacka">price list and calculator</a>) covers not only top picture quality but the peace of mind that the equipment is our problem, not yours.</p>
 
       <div class="callout">
         <span class="callout-icon">&#9888;&#65039;</span>
@@ -703,7 +721,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
       <h2 id="uspora">Is the saving worth it?</h2>
       <p>Once you add up the cost of the <strong>USB grabber</strong>, the time spent installing it, the dozens of hours of recording (which then have to be redone because of errors) and the electricity, you find that home <strong>VHS digitising</strong> does not pay off financially, let alone in quality.</p>
-      <p>At <strong><a href="https://zalohavzpominek.cz/">Záloha vzpomínek</a></strong> we use equipment worth tens of thousands of crowns so that your family videos look good even on a modern 4K television. Tried it at home and been disappointed? Have a look at our <a href="https://zalohavzpominek.cz/#faq">frequently asked questions</a> or write to us through the <a href="https://zalohavzpominek.cz/#kontakt">contact form</a> – you will see the difference.</p>
+      <p>At <strong><a href="/en/">Záloha vzpomínek</a></strong> we use equipment worth tens of thousands of crowns so that your family videos look good even on a modern 4K television. Tried it at home and been disappointed? Have a look at our <a href="/en/#faq">frequently asked questions</a> or write to us through the <a href="/en/#kontakt">contact form</a> – you will see the difference.</p>
 
     </article>
 
@@ -738,8 +756,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <h2>Rescue your <em>memories</em> in time</h2>
     <p>Professional digitising of VHS, VHS-C, Hi8 and Mini DV on top-end equipment. Handover in person in Prague 4 – Krč or by post from anywhere in Czechia.</p>
     <div class="cta-band-buttons">
-      <a href="/#kalkulacka" class="btn-secondary">Calculate the price</a>
-      <a href="/#kontakt" class="btn-primary">Request a free quote</a>
+      <a href="/en/#kalkulacka" class="btn-secondary">Calculate the price</a>
+      <a href="/en/#kontakt" class="btn-primary">Request a free quote</a>
     </div>
   </section>
 </div>
@@ -773,8 +791,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <div class="footer-copy">&copy; 2026 Záloha vzpomínek</div>
       <div class="footer-legal">
         <a href="/en/">Home page</a>
-        <a href="/#faq">FAQ</a>
-        <a href="/#kontakt">Contact</a>
+        <a href="/en/#faq">FAQ</a>
+        <a href="/en/#kontakt">Contact</a>
       </div>
     </div>
   </div>

@@ -10,7 +10,7 @@
 
 <title>VHS Tape Repair | Splicing Snapped Tape and Rescue – Prague</title>
 <meta name="description" content="Has the tape snapped inside your cassette? Do not throw it away. We do professional VHS repair, tape splicing and mould cleaning. Rescuing memories before digitising.">
-<meta name="keywords" content="oprava VHS kazety, lepení pásky VHS, přetržená páska, záchrana videokazety, čištění VHS, plíseň na kazetě, zaseknutá kazeta, digitalizace poškozených kazet, oprava kazet Praha">
+<meta name="keywords" content="VHS cassette repair, VHS tape splicing, snapped tape, rescuing a video tape, VHS cleaning, mould on tape">
 
 <link rel="canonical" href="https://zalohavzpominek.cz/en/articles/vhs-tape-repair.html">
 <link rel="alternate" hreflang="cs" href="https://zalohavzpominek.cz/clanky/oprava-vhs-kazet.html">
@@ -35,7 +35,7 @@
 <meta property="article:modified_time" content="2026-05-21">
 <meta property="article:section" content="Servis">
 <meta property="article:tag" content="oprava VHS">
-<meta property="article:tag" content="lepení pásky">
+<meta property="article:tag" content="tape splicing">
 <meta property="article:tag" content="digitalizace">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -596,27 +596,45 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .lang-switch {
   display: inline-flex;
   align-items: center;
-  gap: 2px;
+  gap: 3px;
   padding: 3px;
-  border: 1px solid var(--gray-border);
-  border-radius: 100px;
-  background: rgba(255,255,255,0.45);
+  border: 1px solid rgba(13, 13, 13, 0.10);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
   flex-shrink: 0;
 }
 .lang-switch a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 27px;
+  padding: 0 4px;
+  font-family: 'Poppins', sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--gray-light);
-  padding: 5px 9px;
-  border-radius: 100px;
+  letter-spacing: 0.06em;
   line-height: 1;
-  transition: background 0.2s, color 0.2s;
+  color: var(--gray-light);
+  border-radius: 999px;
+  transition: background 0.18s ease, color 0.18s ease;
 }
-.lang-switch a:hover { color: var(--accent); }
-.lang-switch a.active { background: var(--accent); color: var(--white); }
+.lang-switch a::after { display: none !important; }
+.lang-switch a:hover { color: var(--black); background: rgba(13, 13, 13, 0.05); }
+.lang-switch a.active,
+.lang-switch a.active:hover {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 1px 3px rgba(13, 13, 13, 0.18);
+}
+/* Přepínač v hlavičce NESMÍ mít margin-left:auto — u justify-content:space-between
+   pohltí volné místo a přitiskne menu k logu. */
+.nav > .lang-switch { margin-left: 0; margin-right: 0; }
+@media (max-width: 920px) { .nav > .lang-switch { display: none; } }
+.nav-mobile-lang { display: none; padding: 14px 0 4px; }
+@media (max-width: 920px) { .nav-mobile-lang { display: block; } }
+@media (min-width: 921px) { .nav-mobile-lang { display: none; } }
 
-.nav > .lang-switch { margin-left: auto; margin-right: 14px; }
 </style>
 </head>
 
@@ -625,7 +643,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <header class="site-header">
   <div class="container">
     <nav class="nav">
-      <a href="/en/" class="logo" aria-label="Záloha vzpomínek – úvodní stránka">
+      <a href="/en/" class="logo" aria-label="Záloha vzpomínek – home page">
         <span class="logo-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
             <mask id="logoMask">
@@ -641,8 +659,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         </span>
         <span class="logo-text">Záloha vzpomínek</span>
       </a>
-      <span class="lang-switch" role="group" aria-label="Jazyk / Language"><a href="/en/articles/vhs-tape-repair.html" hreflang="cs" title="Čeština">CS</a><a href="/en/articles/vhs-tape-repair.html" hreflang="en" title="English" class="active" aria-current="true">EN</a></span>
-      <a href="/#kontakt" class="header-cta">Get a free quote</a>
+      <span class="lang-switch" role="group" aria-label="Jazyk / Language"><a href="/clanky/oprava-vhs-kazet.html" hreflang="cs" title="Čeština">CS</a><a href="/en/articles/vhs-tape-repair.html" hreflang="en" title="English" class="active" aria-current="true">EN</a></span>
+      <a href="/en/#kontakt" class="header-cta">Get a free quote</a>
     </nav>
   </div>
 </header>
@@ -652,7 +670,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <ol>
       <li><a href="/en/">Home</a></li>
       <li class="sep" aria-hidden="true">&rsaquo;</li>
-      <li><a href="/#clanky">Articles</a></li>
+      <li><a href="/en/#clanky">Articles</a></li>
       <li class="sep" aria-hidden="true">&rsaquo;</li>
       <li aria-current="page">VHS tape repair</li>
     </ol>
@@ -673,7 +691,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
       <p>It is every retro enthusiast's nightmare. You put a tape in the recorder, there is an odd noise, the picture vanishes and the machine spits the cassette out with a tangle of crumpled tape hanging from it. Or worse – <strong>the tape has snapped</strong>.</p>
 
-      <p>That is when the cold sweat starts. „That was the wedding! That was the only footage of grandma!“ The first reaction is panic, the second is reaching for sticky tape. Stop right there. <strong>Repairing a VHS cassette</strong> is precise work that needs the right tools. At <strong><a href="https://zalohavzpominek.cz/">Záloha vzpomínek</a></strong> we can rescue cases that look beyond saving.</p>
+      <p>That is when the cold sweat starts. „That was the wedding! That was the only footage of grandma!“ The first reaction is panic, the second is reaching for sticky tape. Stop right there. <strong>Repairing a VHS cassette</strong> is precise work that needs the right tools. At <strong><a href="/en/">Záloha vzpomínek</a></strong> we can rescue cases that look beyond saving.</p>
 
       <h2 id="nelepit">Never repair a tape with sticky tape</h2>
       <p>This is the most common mistake we see. People try to join <strong>snapped tape</strong> at home with ordinary office sticky tape. Here is why that is a road to disaster:</p>
@@ -696,7 +714,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         <li><strong>A professional splice:</strong> we use proper splicing tape, which is extremely thin, chemically stable and made specifically for magnetic tape. The join is almost invisible and passes safely through the mechanism.</li>
         <li><strong>Transfer to a new shell:</strong> if the original shell is cracked or the reels have seized, we move the reels and tape into a new working cassette shell.</li>
       </ol>
-      <p>The price for this rescue, as set out in our <a href="https://zalohavzpominek.cz/#kalkulacka">price list and calculator</a>, is 300 CZK per cassette – a small price for saving the whole recording.</p>
+      <p>The price for this rescue, as set out in our <a href="/en/#kalkulacka">price list and calculator</a>, is 300 CZK per cassette – a small price for saving the whole recording.</p>
 
       <h2 id="plisen">Mould and dust: the silent killer</h2>
       <p>It is not only about snapping. We often get tapes that have been sitting in a damp cellar. If you see a white film on the tape, that is <strong>mould</strong>. Never put such a cassette into a recorder – the spores immediately contaminate the whole machine and can damage other tapes too.</p>
@@ -704,7 +722,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
       <h2 id="cil">The goal: digitised and safe</h2>
       <p>Repairing the cassette is usually only the first step. As soon as the tape is spliced and running, we digitise it. <strong>Transferring VHS to USB</strong> is the only guarantee the accident will not happen again – a digital file cannot snap, crumple or go mouldy.</p>
-      <p>Got a cassette at home that has given up? Do not throw it away. Send us a photo through the <a href="https://zalohavzpominek.cz/#kontakt">contact form</a> and we will tell you what can be done. There is more information in the <a href="https://zalohavzpominek.cz/#faq">frequently asked questions</a>section. At <strong><a href="https://zalohavzpominek.cz/">Záloha vzpomínek</a></strong> we can save the footage in most cases.</p>
+      <p>Got a cassette at home that has given up? Do not throw it away. Send us a photo through the <a href="/en/#kontakt">contact form</a> and we will tell you what can be done. There is more information in the <a href="/en/#faq">frequently asked questions</a>section. At <strong><a href="/en/">Záloha vzpomínek</a></strong> we can save the footage in most cases.</p>
 
     </article>
 
@@ -738,8 +756,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <h2>Rescue your <em>memories</em> in time</h2>
     <p>Professional repair and digitising of VHS, VHS-C, Hi8 and Mini DV. Handover in person in Prague 4 – Krč or by post from anywhere in Czechia.</p>
     <div class="cta-band-buttons">
-      <a href="/#kalkulacka" class="btn-secondary">Calculate the price</a>
-      <a href="/#kontakt" class="btn-primary">Request a free quote</a>
+      <a href="/en/#kalkulacka" class="btn-secondary">Calculate the price</a>
+      <a href="/en/#kontakt" class="btn-primary">Request a free quote</a>
     </div>
   </section>
 </div>
@@ -773,8 +791,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <div class="footer-copy">&copy; 2026 Záloha vzpomínek</div>
       <div class="footer-legal">
         <a href="/en/">Home page</a>
-        <a href="/#faq">FAQ</a>
-        <a href="/#kontakt">Contact</a>
+        <a href="/en/#faq">FAQ</a>
+        <a href="/en/#kontakt">Contact</a>
       </div>
     </div>
   </div>

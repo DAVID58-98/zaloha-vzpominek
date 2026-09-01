@@ -16,7 +16,7 @@
 <!-- ============================================================ -->
 <title>DVD to USB | Converting Old Discs to MP4 – Prague</title>
 <meta name="description" content="Family videos on DVD and nowhere to play them? Professional DVD digitising and transfer to a USB drive or the cloud. Rescue the data before the discs stop reading.">
-<meta name="keywords" content="digitalizace DVD, převod DVD na USB, VHS na DVD, digitalizace videa, převod do MP4, kopírování DVD na flash disk, stará DVD převod, digitalizace DVD Praha">
+<meta name="keywords" content="DVD digitising, DVD to USB, VHS to DVD, video digitising, convert to MP4, copying DVDs to a drive">
 
 <!-- ============================================================ -->
 <!-- CANONICAL + LOKALIZACE                                       -->
@@ -623,27 +623,45 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .lang-switch {
   display: inline-flex;
   align-items: center;
-  gap: 2px;
+  gap: 3px;
   padding: 3px;
-  border: 1px solid var(--gray-border);
-  border-radius: 100px;
-  background: rgba(255,255,255,0.45);
+  border: 1px solid rgba(13, 13, 13, 0.10);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
   flex-shrink: 0;
 }
 .lang-switch a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 27px;
+  padding: 0 4px;
+  font-family: 'Poppins', sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--gray-light);
-  padding: 5px 9px;
-  border-radius: 100px;
+  letter-spacing: 0.06em;
   line-height: 1;
-  transition: background 0.2s, color 0.2s;
+  color: var(--gray-light);
+  border-radius: 999px;
+  transition: background 0.18s ease, color 0.18s ease;
 }
-.lang-switch a:hover { color: var(--accent); }
-.lang-switch a.active { background: var(--accent); color: var(--white); }
+.lang-switch a::after { display: none !important; }
+.lang-switch a:hover { color: var(--black); background: rgba(13, 13, 13, 0.05); }
+.lang-switch a.active,
+.lang-switch a.active:hover {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 1px 3px rgba(13, 13, 13, 0.18);
+}
+/* Přepínač v hlavičce NESMÍ mít margin-left:auto — u justify-content:space-between
+   pohltí volné místo a přitiskne menu k logu. */
+.nav > .lang-switch { margin-left: 0; margin-right: 0; }
+@media (max-width: 920px) { .nav > .lang-switch { display: none; } }
+.nav-mobile-lang { display: none; padding: 14px 0 4px; }
+@media (max-width: 920px) { .nav-mobile-lang { display: block; } }
+@media (min-width: 921px) { .nav-mobile-lang { display: none; } }
 
-.nav > .lang-switch { margin-left: auto; margin-right: 14px; }
 </style>
 </head>
 
@@ -653,7 +671,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <header class="site-header">
   <div class="container">
     <nav class="nav">
-      <a href="/en/" class="logo" aria-label="Záloha vzpomínek – úvodní stránka">
+      <a href="/en/" class="logo" aria-label="Záloha vzpomínek – home page">
         <span class="logo-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
             <mask id="logoMask">
@@ -669,8 +687,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         </span>
         <span class="logo-text">Záloha vzpomínek</span>
       </a>
-      <span class="lang-switch" role="group" aria-label="Jazyk / Language"><a href="/en/articles/dvd-to-usb.html" hreflang="cs" title="Čeština">CS</a><a href="/en/articles/dvd-to-usb.html" hreflang="en" title="English" class="active" aria-current="true">EN</a></span>
-      <a href="/#kontakt" class="header-cta">Get a free quote</a>
+      <span class="lang-switch" role="group" aria-label="Jazyk / Language"><a href="/clanky/digitalizace-dvd.html" hreflang="cs" title="Čeština">CS</a><a href="/en/articles/dvd-to-usb.html" hreflang="en" title="English" class="active" aria-current="true">EN</a></span>
+      <a href="/en/#kontakt" class="header-cta">Get a free quote</a>
     </nav>
   </div>
 </header>
@@ -681,7 +699,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <ol>
       <li><a href="/en/">Home</a></li>
       <li class="sep" aria-hidden="true">&rsaquo;</li>
-      <li><a href="/#clanky">Articles</a></li>
+      <li><a href="/en/#clanky">Articles</a></li>
       <li class="sep" aria-hidden="true">&rsaquo;</li>
       <li aria-current="page">Digitising DVDs</li>
     </ol>
@@ -704,7 +722,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
       <p>Years ago it was all the rage. You threw out the old video recorders and had your tapes <strong>transferred from VHS to DVD</strong>. At the time it felt as though your memories were safe for good. But time moves on and technology changes. DVD players are now hard to find in the shops, and new laptops stopped having a drive to put a disc in long ago.</p>
 
-      <p>It also turns out that <strong>DVDs</strong> are not as indestructible as promised. The organic layer in cheaper discs can oxidise after 10 to 15 years. At <strong><a href="https://zalohavzpominek.cz/">Záloha vzpomínek</a></strong> we can bring the archive up to date – we handle <strong>DVD digitising</strong> and move your family treasures onto a modern <strong>USB flash drive</strong> or into the cloud.</p>
+      <p>It also turns out that <strong>DVDs</strong> are not as indestructible as promised. The organic layer in cheaper discs can oxidise after 10 to 15 years. At <strong><a href="/en/">Záloha vzpomínek</a></strong> we can bring the archive up to date – we handle <strong>DVD digitising</strong> and move your family treasures onto a modern <strong>USB flash drive</strong> or into the cloud.</p>
 
       <h2 id="problemy">The DVD problems nobody mentioned back then</h2>
       <p>Even discs carefully kept in their cases face several threats:</p>
@@ -713,33 +731,33 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         <li><strong>Incompatibility:</strong> try playing a DVD today on a new tablet or a modern television without an external player and a tangle of cables.</li>
         <li><strong>An outdated format:</strong> video on DVD is in VOB format, which is awkward to edit and does not play smoothly on every device.</li>
       </ul>
-      <p>There is more on why rescuing memories should not be put off in the <a href="https://zalohavzpominek.cz/#proc">Why not to put it off</a>.</p>
+      <p>There is more on why rescuing memories should not be put off in the <a href="/en/#proc">Why not to put it off</a>.</p>
 
       <h2 id="jak-probiha">How the DVD to USB transfer works</h2>
       <p>The process in our studio is quick and efficient. Bring us your <strong>old DVDs</strong> (burned or original) and we take care of extracting the data properly:</p>
       <ol>
         <li><strong>Readability check:</strong> we verify the disc is not damaged and that the data reads without errors.</li>
         <li><strong>Conversion to MP4:</strong> the DVD video is converted to the universal <strong>MP4</strong> format at the highest possible quality – the standard for every television, phone and computer.</li>
-        <li><strong>Saving to a medium:</strong> the resulting files are saved to your USB drive or ours. Current prices are in the <a href="https://zalohavzpominek.cz/#kalkulacka">price list and calculator</a>.</li>
+        <li><strong>Saving to a medium:</strong> the resulting files are saved to your USB drive or ours. Current prices are in the <a href="/en/#kalkulacka">price list and calculator</a>.</li>
       </ol>
-      <p>The whole process is also described in the <a href="https://zalohavzpominek.cz/#proces">How it works</a>.</p>
+      <p>The whole process is also described in the <a href="/en/#proces">How it works</a>.</p>
 
       <h2 id="cena">What updating the archive costs</h2>
-      <p>As set out in our <a href="https://zalohavzpominek.cz/#kalkulacka">calculator</a>, <strong>digitising one DVD costs from 250 CZK</strong>. It buys certainty that you will never lose your videos again. It also frees up a lot of shelf space – dozens of discs fit onto one small <strong>flash drive</strong> that goes in your pocket.</p>
+      <p>As set out in our <a href="/en/#kalkulacka">calculator</a>, <strong>digitising one DVD costs from 250 CZK</strong>. It buys certainty that you will never lose your videos again. It also frees up a lot of shelf space – dozens of discs fit onto one small <strong>flash drive</strong> that goes in your pocket.</p>
 
       <div class="callout">
         <span class="callout-icon">💡</span>
-        <p><strong>No deposit up front.</strong> At <strong><a href="https://zalohavzpominek.cz/">Záloha vzpomínek</a></strong> you pay for the digitising only once the work is done and you have checked the result yourself. On top of that we keep a backup copy free of charge for 12 months.</p>
+        <p><strong>No deposit up front.</strong> At <strong><a href="/en/">Záloha vzpomínek</a></strong> you pay for the digitising only once the work is done and you have checked the result yourself. On top of that we keep a backup copy free of charge for 12 months.</p>
       </div>
 
       <h2 id="proc-nas">Why choose Záloha vzpomínek</h2>
       <p>You may be thinking you could copy <strong>DVD</strong> at home. But when you hit discs with write errors or unusual menu structures, ordinary software fails. We work with equipment that copes even with media that read poorly.</p>
       <ul>
-        <li><strong>Handover in person:</strong> at our premises in Prague 4 – Krč (see <a href="https://zalohavzpominek.cz/#kontakt">Contact</a>).</li>
+        <li><strong>Handover in person:</strong> at our premises in Prague 4 – Krč (see <a href="/en/#kontakt">Contact</a>).</li>
         <li><strong>By post:</strong> just as with tapes, you can send DVDs to us safely.</li>
         <li><strong>No risk:</strong> you pay for the digitising only after checking the finished result yourself.</li>
       </ul>
-      <p>Do not let your family archive freeze on discs that soon nobody will be able to play. Any questions? Have a look at our <a href="https://zalohavzpominek.cz/#faq">frequently asked questions</a>, or write to us through the <a href="https://zalohavzpominek.cz/#kontakt">contact form</a>. <strong><a href="https://zalohavzpominek.cz/">Záloha vzpomínek</a></strong> will gladly advise you.</p>
+      <p>Do not let your family archive freeze on discs that soon nobody will be able to play. Any questions? Have a look at our <a href="/en/#faq">frequently asked questions</a>, or write to us through the <a href="/en/#kontakt">contact form</a>. <strong><a href="/en/">Záloha vzpomínek</a></strong> will gladly advise you.</p>
 
     </article>
 
@@ -774,8 +792,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <h2>Rescue your <em>memories</em> in time</h2>
     <p>Professional digitising of DVD, VHS, VHS-C, Hi8 and Mini DV. Handover in person in Prague 4 – Krč or by post from anywhere in Czechia.</p>
     <div class="cta-band-buttons">
-      <a href="/#kalkulacka" class="btn-secondary">Calculate the price</a>
-      <a href="/#kontakt" class="btn-primary">Request a free quote</a>
+      <a href="/en/#kalkulacka" class="btn-secondary">Calculate the price</a>
+      <a href="/en/#kontakt" class="btn-primary">Request a free quote</a>
     </div>
   </section>
 </div>
@@ -811,8 +829,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <div class="footer-copy">&copy; 2026 Záloha vzpomínek</div>
       <div class="footer-legal">
         <a href="/en/">Home page</a>
-        <a href="/#faq">FAQ</a>
-        <a href="/#kontakt">Contact</a>
+        <a href="/en/#faq">FAQ</a>
+        <a href="/en/#kontakt">Contact</a>
       </div>
     </div>
   </div>

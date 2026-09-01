@@ -10,7 +10,7 @@
 
 <title>Sending Tapes by Post for Digitising | A Safe Method</title>
 <meta name="description" content="Nervous about posting VHS tapes? How to pack them safely and how digitising by post works. Insured return shipping and payment only once you are happy.">
-<meta name="keywords" content="digitalizace VHS poštou, zaslání kazet, bezpečné balení VHS, převod VHS cena, doprava zdarma, jak poslat kazety, digitalizace Praha, digitalizace videokazet">
+<meta name="keywords" content="VHS digitising by post, sending tapes, safe VHS packing, VHS transfer price, free shipping, how to post tapes">
 
 <link rel="canonical" href="https://zalohavzpominek.cz/en/articles/sending-tapes-by-post.html">
 <link rel="alternate" hreflang="cs" href="https://zalohavzpominek.cz/clanky/zaslani-kazet-postou.html">
@@ -33,8 +33,8 @@
 <meta property="og:image:alt" content="Sending VHS tapes safely by post for digitising">
 <meta property="article:published_time" content="2026-02-01">
 <meta property="article:modified_time" content="2026-05-21">
-<meta property="article:section" content="Služby">
-<meta property="article:tag" content="zaslání poštou">
+<meta property="article:section" content="Services">
+<meta property="article:tag" content="sending by post">
 <meta property="article:tag" content="digitalizace VHS">
 <meta property="article:tag" content="doprava">
 
@@ -596,27 +596,45 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .lang-switch {
   display: inline-flex;
   align-items: center;
-  gap: 2px;
+  gap: 3px;
   padding: 3px;
-  border: 1px solid var(--gray-border);
-  border-radius: 100px;
-  background: rgba(255,255,255,0.45);
+  border: 1px solid rgba(13, 13, 13, 0.10);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
   flex-shrink: 0;
 }
 .lang-switch a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 27px;
+  padding: 0 4px;
+  font-family: 'Poppins', sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--gray-light);
-  padding: 5px 9px;
-  border-radius: 100px;
+  letter-spacing: 0.06em;
   line-height: 1;
-  transition: background 0.2s, color 0.2s;
+  color: var(--gray-light);
+  border-radius: 999px;
+  transition: background 0.18s ease, color 0.18s ease;
 }
-.lang-switch a:hover { color: var(--accent); }
-.lang-switch a.active { background: var(--accent); color: var(--white); }
+.lang-switch a::after { display: none !important; }
+.lang-switch a:hover { color: var(--black); background: rgba(13, 13, 13, 0.05); }
+.lang-switch a.active,
+.lang-switch a.active:hover {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 1px 3px rgba(13, 13, 13, 0.18);
+}
+/* Přepínač v hlavičce NESMÍ mít margin-left:auto — u justify-content:space-between
+   pohltí volné místo a přitiskne menu k logu. */
+.nav > .lang-switch { margin-left: 0; margin-right: 0; }
+@media (max-width: 920px) { .nav > .lang-switch { display: none; } }
+.nav-mobile-lang { display: none; padding: 14px 0 4px; }
+@media (max-width: 920px) { .nav-mobile-lang { display: block; } }
+@media (min-width: 921px) { .nav-mobile-lang { display: none; } }
 
-.nav > .lang-switch { margin-left: auto; margin-right: 14px; }
 </style>
 </head>
 
@@ -625,7 +643,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <header class="site-header">
   <div class="container">
     <nav class="nav">
-      <a href="/en/" class="logo" aria-label="Záloha vzpomínek – úvodní stránka">
+      <a href="/en/" class="logo" aria-label="Záloha vzpomínek – home page">
         <span class="logo-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
             <mask id="logoMask">
@@ -641,8 +659,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         </span>
         <span class="logo-text">Záloha vzpomínek</span>
       </a>
-      <span class="lang-switch" role="group" aria-label="Jazyk / Language"><a href="/en/articles/sending-tapes-by-post.html" hreflang="cs" title="Čeština">CS</a><a href="/en/articles/sending-tapes-by-post.html" hreflang="en" title="English" class="active" aria-current="true">EN</a></span>
-      <a href="/#kontakt" class="header-cta">Get a free quote</a>
+      <span class="lang-switch" role="group" aria-label="Jazyk / Language"><a href="/clanky/zaslani-kazet-postou.html" hreflang="cs" title="Čeština">CS</a><a href="/en/articles/sending-tapes-by-post.html" hreflang="en" title="English" class="active" aria-current="true">EN</a></span>
+      <a href="/en/#kontakt" class="header-cta">Get a free quote</a>
     </nav>
   </div>
 </header>
@@ -652,7 +670,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <ol>
       <li><a href="/en/">Home</a></li>
       <li class="sep" aria-hidden="true">&rsaquo;</li>
-      <li><a href="/#clanky">Articles</a></li>
+      <li><a href="/en/#clanky">Articles</a></li>
       <li class="sep" aria-hidden="true">&rsaquo;</li>
       <li aria-current="page">Sending tapes by post</li>
     </ol>
@@ -673,12 +691,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
       <p>We understand. Holding a tape with your wedding on it, or your children's first steps, and dropping it into the black hole of a courier service takes nerve. It is one of the most common worries people raise with us. So let us put your mind at rest: <strong>digitising VHS by post</strong> is an entirely routine and safe way of doing this.</p>
 
-      <p>Parcels arrive daily from all over the Czech Republic, and in the entire history of <strong><a href="https://zalohavzpominek.cz/">Záloha vzpomínek</a></strong> no parcel has ever been lost or damaged. The whole process is set up so that the risk is nil and the convenience is yours.</p>
+      <p>Parcels arrive daily from all over the Czech Republic, and in the entire history of <strong><a href="/en/">Záloha vzpomínek</a></strong> no parcel has ever been lost or damaged. The whole process is set up so that the risk is nil and the convenience is yours.</p>
 
       <h2 id="postup">What to do if you are far away</h2>
       <p>Before you head to the post office, there is one small step:</p>
       <ol>
-        <li><strong>Get in touch first:</strong> do not send tapes blind. Write or call us (see <a href="https://zalohavzpominek.cz/#kontakt">Contact</a>). We will go through what you need digitised, estimate the price from the <a href="https://zalohavzpominek.cz/#kalkulacka">price list</a> and send you the delivery address.</li>
+        <li><strong>Get in touch first:</strong> do not send tapes blind. Write or call us (see <a href="/en/#kontakt">Contact</a>). We will go through what you need digitised, estimate the price from the <a href="/en/#kalkulacka">price list</a> and send you the delivery address.</li>
         <li><strong>Pack the tapes securely:</strong> use a sturdy cardboard box and bubble wrap (or crumpled newspaper) so the tapes cannot move around inside. Put a note in the parcel with your name, phone number and email address.</li>
         <li><strong>Confirmation of arrival:</strong> as soon as the parcel arrives we let you know by text or email. At that point you know your memories are safe and the <strong>video tape digitising</strong>.</li>
       </ol>
@@ -699,7 +717,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
       <h2 id="doprava">Free shipping and a personal approach</h2>
       <p>We value every order. If you entrust us with a larger batch of tapes and the order comes to more than <strong>1,000 CZK</strong>, your <strong>return shipping is free</strong>.</p>
-      <p>Still uneasy? If you are coming to Prague anyway, we are glad to see you in person – we can arrange handover at our address in Prague 4 – Krč. There is more information in the <a href="https://zalohavzpominek.cz/#faq">frequently asked questions</a>section. Whether you choose the post or a visit, the goal is the same: to rescue your memories before it is too late. Write to us through the <a href="https://zalohavzpominek.cz/#kontakt">contact form</a> and <strong><a href="https://zalohavzpominek.cz/">Záloha vzpomínek</a></strong> will send you the posting instructions.</p>
+      <p>Still uneasy? If you are coming to Prague anyway, we are glad to see you in person – we can arrange handover at our address in Prague 4 – Krč. There is more information in the <a href="/en/#faq">frequently asked questions</a>section. Whether you choose the post or a visit, the goal is the same: to rescue your memories before it is too late. Write to us through the <a href="/en/#kontakt">contact form</a> and <strong><a href="/en/">Záloha vzpomínek</a></strong> will send you the posting instructions.</p>
 
     </article>
 
@@ -732,8 +750,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <h2>Rescue your <em>memories</em> in time</h2>
     <p>Digitising VHS, VHS-C, Hi8 and Mini DV. Post your tapes to us from anywhere in Czechia, or hand them over in person in Prague 4 – Krč.</p>
     <div class="cta-band-buttons">
-      <a href="/#kalkulacka" class="btn-secondary">Calculate the price</a>
-      <a href="/#kontakt" class="btn-primary">Request a free quote</a>
+      <a href="/en/#kalkulacka" class="btn-secondary">Calculate the price</a>
+      <a href="/en/#kontakt" class="btn-primary">Request a free quote</a>
     </div>
   </section>
 </div>
@@ -767,8 +785,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <div class="footer-copy">&copy; 2026 Záloha vzpomínek</div>
       <div class="footer-legal">
         <a href="/en/">Home page</a>
-        <a href="/#faq">FAQ</a>
-        <a href="/#kontakt">Contact</a>
+        <a href="/en/#faq">FAQ</a>
+        <a href="/en/#kontakt">Contact</a>
       </div>
     </div>
   </div>

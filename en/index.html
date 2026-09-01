@@ -306,38 +306,44 @@ img, svg { display: block; max-width: 100%; }
 .lang-switch {
   display: inline-flex;
   align-items: center;
-  gap: 2px;
+  gap: 3px;
   padding: 3px;
-  border: 1px solid var(--gray-border);
-  border-radius: 100px;
-  background: rgba(255,255,255,0.45);
+  border: 1px solid rgba(13, 13, 13, 0.10);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
   flex-shrink: 0;
 }
 .lang-switch a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 27px;
+  padding: 0 4px;
+  font-family: 'Poppins', sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--gray-light);
-  padding: 5px 9px;
-  border-radius: 100px;
+  letter-spacing: 0.06em;
   line-height: 1;
-  transition: background 0.2s, color 0.2s;
+  color: var(--gray-light);
+  border-radius: 999px;
+  transition: background 0.18s ease, color 0.18s ease;
 }
-.lang-switch a:hover { color: var(--accent); }
-.lang-switch a.active { background: var(--accent); color: var(--white); }
-.nav > .lang-switch { margin-left: auto; margin-right: 14px; }
+.lang-switch a::after { display: none !important; }
+.lang-switch a:hover { color: var(--black); background: rgba(13, 13, 13, 0.05); }
+.lang-switch a.active,
+.lang-switch a.active:hover {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 1px 3px rgba(13, 13, 13, 0.18);
+}
+/* Přepínač v hlavičce NESMÍ mít margin-left:auto — u justify-content:space-between
+   pohltí volné místo a přitiskne menu k logu. */
+.nav > .lang-switch { margin-left: 0; margin-right: 0; }
 @media (max-width: 920px) { .nav > .lang-switch { display: none; } }
-
-.nav-mobile-lang {
-  display: none;
-  padding: 14px 0 4px;
-}
-@media (max-width: 920px) {
-  .nav-mobile-lang { display: block; }
-}
-@media (min-width: 921px) {
-  .nav-mobile-lang { display: none; }
-}
+.nav-mobile-lang { display: none; padding: 14px 0 4px; }
+@media (max-width: 920px) { .nav-mobile-lang { display: block; } }
+@media (min-width: 921px) { .nav-mobile-lang { display: none; } }
 
 
 /* ============================================================
@@ -482,6 +488,17 @@ img, svg { display: block; max-width: 100%; }
 .nav-mobile-head,
 .nav-link-arrow,
 .nav-mobile-cta-wrap { display: none; }
+
+/* Menu vycentrovat mezi logo a pravou stranu; oddělit od loga */
+@media (min-width: 921px) {
+  .nav { gap: 24px; }
+  .nav-menu {
+    flex: 1;
+    justify-content: center;
+    margin-left: 18px;
+  }
+}
+
 
 .nav-cta {
   background: var(--black);
@@ -3416,7 +3433,7 @@ tr.pl-min td:first-child { color: var(--black); }
       </li>
     </ul>
 
-    <span class="lang-switch" role="group" aria-label="Jazyk / Language"><a href="/" hreflang="cs" title="Čeština">CS</a><a href="/en/" hreflang="en" title="English" class="active" aria-current="true">EN</a></span>
+    <span class="lang-switch" role="group" aria-label="Jazyk / Language"><a href="/en/" hreflang="cs" title="Čeština">CS</a><a href="/en/" hreflang="en" title="English" class="active" aria-current="true">EN</a></span>
     <a href="#kontakt" class="nav-cta">Get a free quote</a>
 
     <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
@@ -4606,7 +4623,7 @@ tr.pl-min td:first-child { color: var(--black); }
 
         <div class="form-row">
           <label for="formMsg">What would you like digitised?</label>
-          <textarea id="formMsg" name="message" placeholder="Např.: 12 kazet VHS ze svatby a dětství, předal bych osobně v Praze..." required></textarea>
+          <textarea id="formMsg" name="message" placeholder="E.g. 12 VHS tapes from a wedding and childhood, I would drop them off in Prague..." required></textarea>
         </div>
 
         <!-- hCaptcha widget (sitekey automaticky vloží Web3Forms client script) -->

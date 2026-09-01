@@ -16,7 +16,7 @@
 <!-- ============================================================ -->
 <title>Digitising VHS Tapes to USB | Guide and Prices – Prague, 250 CZK/h</title>
 <meta name="description" content="How professional VHS to USB digitising works. Why tape decays, what equipment we use (Panasonic NV-HS1000, TBC) and what it costs. 250 CZK per hour, Prague 4 – Krč.">
-<meta name="keywords" content="digitalizace VHS, převod VHS na USB, digitalizace videokazet, VHS na DVD, převod VHS Praha, digitalizace VHS cena, záchrana videokazet, VHS na MP4">
+<meta name="keywords" content="VHS digitising, VHS to USB, video tape transfer, VHS to DVD, VHS digitising Prague, VHS tape conversion">
 
 <!-- ============================================================ -->
 <!-- CANONICAL + LOKALIZACE                                       -->
@@ -632,27 +632,45 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .lang-switch {
   display: inline-flex;
   align-items: center;
-  gap: 2px;
+  gap: 3px;
   padding: 3px;
-  border: 1px solid var(--gray-border);
-  border-radius: 100px;
-  background: rgba(255,255,255,0.45);
+  border: 1px solid rgba(13, 13, 13, 0.10);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
   flex-shrink: 0;
 }
 .lang-switch a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 27px;
+  padding: 0 4px;
+  font-family: 'Poppins', sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--gray-light);
-  padding: 5px 9px;
-  border-radius: 100px;
+  letter-spacing: 0.06em;
   line-height: 1;
-  transition: background 0.2s, color 0.2s;
+  color: var(--gray-light);
+  border-radius: 999px;
+  transition: background 0.18s ease, color 0.18s ease;
 }
-.lang-switch a:hover { color: var(--accent); }
-.lang-switch a.active { background: var(--accent); color: var(--white); }
+.lang-switch a::after { display: none !important; }
+.lang-switch a:hover { color: var(--black); background: rgba(13, 13, 13, 0.05); }
+.lang-switch a.active,
+.lang-switch a.active:hover {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 1px 3px rgba(13, 13, 13, 0.18);
+}
+/* Přepínač v hlavičce NESMÍ mít margin-left:auto — u justify-content:space-between
+   pohltí volné místo a přitiskne menu k logu. */
+.nav > .lang-switch { margin-left: 0; margin-right: 0; }
+@media (max-width: 920px) { .nav > .lang-switch { display: none; } }
+.nav-mobile-lang { display: none; padding: 14px 0 4px; }
+@media (max-width: 920px) { .nav-mobile-lang { display: block; } }
+@media (min-width: 921px) { .nav-mobile-lang { display: none; } }
 
-.nav > .lang-switch { margin-left: auto; margin-right: 14px; }
 </style>
 </head>
 
@@ -664,7 +682,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 <header class="site-header">
   <div class="container">
     <nav class="nav">
-      <a href="/en/" class="logo" aria-label="Záloha vzpomínek – úvodní stránka">
+      <a href="/en/" class="logo" aria-label="Záloha vzpomínek – home page">
         <span class="logo-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
             <mask id="logoMask">
@@ -680,8 +698,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         </span>
         <span class="logo-text">Záloha vzpomínek</span>
       </a>
-      <span class="lang-switch" role="group" aria-label="Jazyk / Language"><a href="/en/articles/vhs-tape-digitising.html" hreflang="cs" title="Čeština">CS</a><a href="/en/articles/vhs-tape-digitising.html" hreflang="en" title="English" class="active" aria-current="true">EN</a></span>
-      <a href="/#kontakt" class="header-cta">Get a free quote</a>
+      <span class="lang-switch" role="group" aria-label="Jazyk / Language"><a href="/clanky/digitalizace-vhs-kazet.html" hreflang="cs" title="Čeština">CS</a><a href="/en/articles/vhs-tape-digitising.html" hreflang="en" title="English" class="active" aria-current="true">EN</a></span>
+      <a href="/en/#kontakt" class="header-cta">Get a free quote</a>
     </nav>
   </div>
 </header>
@@ -694,7 +712,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <ol>
       <li><a href="/en/">Home</a></li>
       <li class="sep" aria-hidden="true">›</li>
-      <li><a href="/#clanky">Articles</a></li>
+      <li><a href="/en/#clanky">Articles</a></li>
       <li class="sep" aria-hidden="true">›</li>
       <li aria-current="page">Digitising VHS tapes</li>
     </ol>
@@ -722,7 +740,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
       <p>Found a box of old video cassettes at home? Weddings, family celebrations, children's first steps, holidays – these memories are priceless, but on VHS they will not last for ever. Physical media age, and the quality of the recording drops every year. <strong>Digitising VHS</strong> is now the only reliable way to save these moments for future generations.</p>
 
-      <p>In this guide from <strong><a href="https://zalohavzpominek.cz/">Záloha vzpomínek</a></strong> we look in detail at why <strong>transferring VHS to USB</strong> matters so much, what threatens your tapes and how professional <strong>video tape digitising</strong>brings your memories safely into the 21st century.</p>
+      <p>In this guide from <strong><a href="/en/">Záloha vzpomínek</a></strong> we look in detail at why <strong>transferring VHS to USB</strong> matters so much, what threatens your tapes and how professional <strong>video tape digitising</strong>brings your memories safely into the 21st century.</p>
 
       <h2 id="proc-degraduje">The clock is ticking: why your VHS is losing quality</h2>
       <p>Many people assume that a cassette safely stored in a cupboard is safe. The opposite is true. The magnetic tape inside a <strong>VHS cassette</strong> is highly prone to decay, and time is working against you.</p>
@@ -730,9 +748,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         <li><strong>Demagnetisation:</strong> over time the magnetic layer weakens, which shows as loss of colour, a faded picture, more static and worse sound.</li>
         <li><strong>Physical damage:</strong> tape can become brittle or sticky, and mould can appear if the cassettes were stored somewhere damp.</li>
         <li><strong>Mechanical wear:</strong> every playback wears the tape slightly – so, ironically, watching the video is what destroys it.</li>
-        <li><strong>No equipment left:</strong> as we mention in our <a href="https://zalohavzpominek.cz/#faq">frequently asked questions</a>, VHS players stopped being made long ago. Finding a working, decent player gets harder every year.</li>
+        <li><strong>No equipment left:</strong> as we mention in our <a href="/en/#faq">frequently asked questions</a>, VHS players stopped being made long ago. Finding a working, decent player gets harder every year.</li>
       </ul>
-      <p>Every day you put <strong>video tape digitising</strong> off is a day you risk losing your memories for good. That is why at <strong><a href="https://zalohavzpominek.cz/">Záloha vzpomínek</a></strong> we focus on rescuing these recordings before it is too late.</p>
+      <p>Every day you put <strong>video tape digitising</strong> off is a day you risk losing your memories for good. That is why at <strong><a href="/en/">Záloha vzpomínek</a></strong> we focus on rescuing these recordings before it is too late.</p>
 
       <div class="callout">
         <span class="callout-icon">⚠️</span>
@@ -740,18 +758,18 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       </div>
 
       <h2 id="jak-probiha">How professional VHS digitising works</h2>
-      <p>You may have thought about <strong>digitising VHS at home</strong>. Cheap USB capture devices exist, but their quality is often poor – the result is a jittery picture, badly synchronised sound and generally worse quality than the tape itself can offer. At <strong><a href="https://zalohavzpominek.cz/">Záloha vzpomínek</a></strong> we therefore take a professional approach that guarantees the best possible quality:</p>
+      <p>You may have thought about <strong>digitising VHS at home</strong>. Cheap USB capture devices exist, but their quality is often poor – the result is a jittery picture, badly synchronised sound and generally worse quality than the tape itself can offer. At <strong><a href="/en/">Záloha vzpomínek</a></strong> we therefore take a professional approach that guarantees the best possible quality:</p>
       <ol>
-        <li><strong>Visual inspection:</strong> every cassette is checked first. If the tape has snapped or is dirty, we offer additional services such as splicing and mould cleaning (see our <a href="https://zalohavzpominek.cz/#kalkulacka">price list</a>).</li>
+        <li><strong>Visual inspection:</strong> every cassette is checked first. If the tape has snapped or is dirty, we offer additional services such as splicing and mould cleaning (see our <a href="/en/#kalkulacka">price list</a>).</li>
         <li><strong>Top-end equipment:</strong> for the <strong>VHS transfer</strong> itself we use professional Panasonic NV-HS1000 video recorders with <strong>TBC (Time Base Correction)</strong>, which digitally stabilises a jittery picture.</li>
         <li><strong>Signal conversion:</strong> the analogue signal passes through an external Canopus ADVC 300 A/D converter, also with TBC, which is what keeps the sound perfectly in step with the picture.</li>
         <li><strong>Basic treatment included:</strong> we crop the black edges, reduce noise, normalise the audio and balance the colours.</li>
         <li><strong>Saving to a medium:</strong> the finished digital file goes onto the medium you choose. The most popular is <strong>VHS to USB</strong> or <strong>VHS to a flash drive</strong>, which makes playback easy on a PC, a laptop or a modern television.</li>
       </ol>
-      <p>The complete process is also set out in the <a href="https://zalohavzpominek.cz/#proces">How it works</a> section.</p>
+      <p>The complete process is also set out in the <a href="/en/#proces">How it works</a> section.</p>
 
       <h2 id="format">What format you get the video in</h2>
-      <p>As standard we convert to <strong>MP4 with the H.264 codec</strong>. It is a universal format that plays on virtually anything – a computer, a smart TV, a phone or a tablet. If you need a different format, just tell us in advance through the <a href="https://zalohavzpominek.cz/#kontakt">contact form</a>.</p>
+      <p>As standard we convert to <strong>MP4 with the H.264 codec</strong>. It is a universal format that plays on virtually anything – a computer, a smart TV, a phone or a tablet. If you need a different format, just tell us in advance through the <a href="/en/#kontakt">contact form</a>.</p>
 
       <h2 id="vyhody">The advantages of going digital</h2>
       <p>Why go through a <strong>VHS transfer</strong>at all? The advantages are considerable:</p>
@@ -764,16 +782,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       </ul>
 
       <h2 id="cena">What VHS digitising costs</h2>
-      <p>Have a look at our clear <a href="https://zalohavzpominek.cz/#kalkulacka">price list and calculator</a> and you will see that the <strong>price of digitising VHS</strong> need not be high. We charge a fair <strong>250 CZK per hour of footage</strong>, and you do not pay for blank sections, static or adverts taped off the television – only genuine footage is counted. The minimum order value is 300 CZK, and volume rates apply to larger orders.</p>
+      <p>Have a look at our clear <a href="/en/#kalkulacka">price list and calculator</a> and you will see that the <strong>price of digitising VHS</strong> need not be high. We charge a fair <strong>250 CZK per hour of footage</strong>, and you do not pay for blank sections, static or adverts taped off the television – only genuine footage is counted. The minimum order value is 300 CZK, and volume rates apply to larger orders.</p>
 
       <div class="callout">
         <span class="callout-icon">💡</span>
-        <p><strong>No deposit up front.</strong> At <strong><a href="https://zalohavzpominek.cz/">Záloha vzpomínek</a></strong> you pay for the digitising only once the work is done and you have checked the result yourself. On top of that we keep a backup copy free of charge for 12 months.</p>
+        <p><strong>No deposit up front.</strong> At <strong><a href="/en/">Záloha vzpomínek</a></strong> you pay for the digitising only once the work is done and you have checked the result yourself. On top of that we keep a backup copy free of charge for 12 months.</p>
       </div>
 
       <h2 id="zaver">Do not wait until it is too late</h2>
       <p>No more putting it off. Stop the decay of your one-of-a-kind recordings today. Whether you are looking for a <strong>VHS to USB transfer in Prague</strong> (where handover in person is available by arrangement) or you would rather send the tapes by post, we are here.</p>
-      <p>Got a particular question? Have a look at our <a href="https://zalohavzpominek.cz/#faq">frequently asked questions</a>, or simply write to us through the <a href="https://zalohavzpominek.cz/#kontakt">contact form</a>. <strong><a href="https://zalohavzpominek.cz/">Záloha vzpomínek</a></strong> will gladly help you save what matters most – your family memories.</p>
+      <p>Got a particular question? Have a look at our <a href="/en/#faq">frequently asked questions</a>, or simply write to us through the <a href="/en/#kontakt">contact form</a>. <strong><a href="/en/">Záloha vzpomínek</a></strong> will gladly help you save what matters most – your family memories.</p>
 
     </article>
 
@@ -813,8 +831,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <h2>Rescue your <em>memories</em> in time</h2>
     <p>Professional digitising of VHS, VHS-C, Hi8 and Mini DV. Handover in person in Prague 4 – Krč or by post from anywhere in Czechia.</p>
     <div class="cta-band-buttons">
-      <a href="/#kalkulacka" class="btn-secondary">Calculate the price</a>
-      <a href="/#kontakt" class="btn-primary">Request a free quote</a>
+      <a href="/en/#kalkulacka" class="btn-secondary">Calculate the price</a>
+      <a href="/en/#kontakt" class="btn-primary">Request a free quote</a>
     </div>
   </section>
 </div>
@@ -827,19 +845,19 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <h2>You might also find useful</h2>
     <div class="related-grid">
 
-      <a href="/#clanek-vhsc" class="related-card">
+      <a href="/en/#clanek-vhsc" class="related-card">
         <h3>VHS-C from family camcorders</h3>
         <p>Small camcorder cassettes. You need neither an adapter nor a working camera.</p>
         <span>Read the article →</span>
       </a>
 
-      <a href="/#clanek-hi8" class="related-card">
+      <a href="/en/#clanek-hi8" class="related-card">
         <h3>Hi8 and Video8 from Sony</h3>
         <p>Tapes from the popular Handycam camcorders. A professional Sony Digital8 deck with TBC.</p>
         <span>Read the article →</span>
       </a>
 
-      <a href="/#clanek-kapacita" class="related-card">
+      <a href="/en/#clanek-kapacita" class="related-card">
         <h3>How much fits on a USB drive</h3>
         <p>What size flash drive you need and how much space an hour of footage takes.</p>
         <span>Read the article →</span>
@@ -858,8 +876,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <div class="footer-copy">© 2026 Záloha vzpomínek</div>
       <div class="footer-legal">
         <a href="/en/">Home page</a>
-        <a href="/#faq">FAQ</a>
-        <a href="/#kontakt">Contact</a>
+        <a href="/en/#faq">FAQ</a>
+        <a href="/en/#kontakt">Contact</a>
       </div>
     </div>
   </div>
